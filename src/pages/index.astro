@@ -3,34 +3,64 @@ import Base from '../layouts/Base.astro';
 import { ALL_TOOLS } from '../data/tools';
 import { BLOG_POSTS } from '../data/blog-posts';
 
-// Top tools by rating
+// Top tools by rating (take 12 for grid)
 const topTools = [...ALL_TOOLS]
   .sort((a, b) => b.rating - a.rating)
-  .slice(0, 8);
+  .slice(0, 12);
 
 // Recent blog posts
 const recentPosts = [...BLOG_POSTS]
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-  .slice(0, 6);
+  .slice(0, 5);
 
 // Categories for sidebar
 const categories = [...new Set(ALL_TOOLS.map(t => t.category))].slice(0, 10);
 
-// Editors pick - highest rated in each major category
-const editorPicks = [
-  ...new Map(
-    [...ALL_TOOLS]
-      .filter(t => ['IDE / Code Editor', 'CI/CD Pipeline', 'Git Hosting', 'API Testing'].includes(t.category))
-      .map(t => [t.category, t])
-  ).values()
-];
+// Category counts
+const categoryCounts = {};
+ALL_TOOLS.forEach(t => {
+  categoryCounts[t.category] = (categoryCounts[t.category] || 0) + 1;
+});
+
+// Stats
+const totalTools = ALL_TOOLS.length;
+const avgRating = (ALL_TOOLS.reduce((s, t) => s + t.rating, 0) / totalTools).toFixed(1);
+const totalReviews = ALL_TOOLS.reduce((s, t) => s + t.reviewCount, 0);
+
+// Editor's picks - highest rated from 4 key categories
+const keyCategories = ['IDE / Code Editor', 'CI/CD', 'Version Control', 'API Development'];
+const editorPicks = [];
+for (const cat of keyCategories) {
+  const best = ALL_TOOLS.filter(t => t.category === cat).sort((a, b) => b.rating - a.rating)[0];
+  if (best) editorPicks.push(best);
+}
 ---
 
 <Base title="Developer Tools Reviewed by Engineers — DeveX Tools">
   <div class="container" style="padding-top: 32px;">
     
-    <!-- Hero -->
-    <section class="hero" style="margin-bottom: 48px;">
+    <!-- === TOP STATS BAR === -->
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 40px;">
+      <div style="text-align: center; padding: 20px 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-card);">
+        <div style="font-size: 1.75rem; font-weight: 800; color: var(--accent);">{totalTools}</div>
+        <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 2px;">Tools Reviewed</div>
+      </div>
+      <div style="text-align: center; padding: 20px 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-card);">
+        <div style="font-size: 1.75rem; font-weight: 800; color: var(--text);">{avgRating}</div>
+        <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 2px;">Avg Rating</div>
+      </div>
+      <div style="text-align: center; padding: 20px 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-card);">
+        <div style="font-size: 1.75rem; font-weight: 800; color: var(--text);">{(totalReviews / 1000).toFixed(0)}k</div>
+        <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 2px;">User Reviews</div>
+      </div>
+      <div style="text-align: center; padding: 20px 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-card);">
+        <div style="font-size: 1.75rem; font-weight: 800; color: var(--text);">{BLOG_POSTS.length}</div>
+        <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 2px;">Articles</div>
+      </div>
+    </div>
+
+    <!-- === HERO === -->
+    <section class="hero" style="margin-bottom: 40px;">
       <span class="hero-tagline">🔧 Reviewed by Practicing Engineers</span>
       <h1 class="page-title" style="font-size: 2.75rem;">
         Developer Tools,<br />
@@ -47,87 +77,108 @@ const editorPicks = [
       </div>
     </section>
 
-    <!-- Editor's Picks Banner -->
-    <section style="background: var(--bg-subtle); border-radius: 12px; padding: 28px; margin-bottom: 48px; border: 1px solid var(--border);">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-        <h2 style="font-size: 1.1rem; font-weight: 700; letter-spacing: -0.01em;">⭐ Editor's Picks</h2>
+    <!-- === FEATURED: TOP TOOLS WITH SCREENSHOTS === -->
+    <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 16px; letter-spacing: -0.01em;">
+      ⭐ Top Rated Developer Tools
+    </h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin-bottom: 40px;">
+      {topTools.slice(0, 8).map(tool => (
+        <a href={`/tools/${tool.id}`} style="display: block; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; text-decoration: none; color: inherit; transition: box-shadow 0.15s, transform 0.15s;">
+          <div style="height: 140px; background: var(--bg-subtle); overflow: hidden;">
+            <img 
+              src={`/screenshots/${tool.id}.jpg`}
+              alt={`${tool.name} screenshot`}
+              style="width: 100%; height: 100%; object-fit: cover;"
+              loading="lazy"
+              width="280" height="140"
+              onerror="this.style.display='none'; this.parentElement.style.display='none'"
+            />
+          </div>
+          <div style="padding: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+              <div style="font-weight: 600; font-size: 0.9375rem;">{tool.name}</div>
+              <div style="font-weight: 700; color: var(--accent); font-size: 0.875rem;">{tool.rating}</div>
+            </div>
+            <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 6px;">{tool.category}</div>
+            <p style="font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+              {tool.description}
+            </p>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <!-- === EDITOR'S PICKS (Horizontal Scroll) === -->
+    <section style="background: var(--bg-subtle); border-radius: 12px; padding: 28px; margin-bottom: 40px; border: 1px solid var(--border);">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+        <h2 style="font-size: 1.1rem; font-weight: 700;">🏆 Editor's Picks</h2>
         <a href="/tools" style="font-size: 0.875rem; color: var(--accent);">View all →</a>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px;">
-        {editorPicks.map(tool => (
-          <a href={`/tools/${tool.id}`} style="display: flex; align-items: center; gap: 10px; padding: 12px; background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border); text-decoration: none; color: inherit; transition: border-color 0.15s, box-shadow 0.15s;">
-            <div style="width: 36px; height: 36px; border-radius: 6px; background: var(--accent-light); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--accent); flex-shrink: 0;">
-              {['⌨', '🔄', '🔀', '🧪'][editorPicks.indexOf(tool)] || '🔧'}
-            </div>
-            <div>
-              <div style="font-weight: 600; font-size: 0.875rem;">{tool.name}</div>
-              <div style="font-size: 0.75rem; color: var(--text-muted);">{tool.category}</div>
-            </div>
-            <div style="margin-left: auto; font-size: 0.75rem; color: var(--accent); font-weight: 600;">{tool.rating}</div>
-          </a>
-        ))}
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px;">
+        {editorPicks.map((tool, idx) => {
+          const emojis = ['⌨️', '🔄', '🔀', '🧪'];
+          return (
+            <a href={`/tools/${tool.id}`} style="display: flex; align-items: center; gap: 10px; padding: 12px; background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border); text-decoration: none; color: inherit;">
+              <div style="width: 36px; height: 36px; border-radius: 6px; background: var(--accent-light); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;">
+                {emojis[idx] || '🔧'}
+              </div>
+              <div style="min-width: 0;">
+                <div style="font-weight: 600; font-size: 0.8125rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{tool.name}</div>
+                <div style="font-size: 0.6875rem; color: var(--text-muted);">{tool.category}</div>
+              </div>
+              <div style="margin-left: auto; font-size: 0.75rem; color: var(--accent); font-weight: 600;">{tool.rating}</div>
+            </a>
+          );
+        })}
       </div>
     </section>
 
-    <!-- Main Content: Two column layout -->
+    <!-- === MAIN LAYOUT: Content + Sidebar === -->
     <div class="page-layout" style="margin-top: 0; padding-top: 0;">
       
-      <!-- Left: Blog feed style -->
+      <!-- Left: Blog + Category Grid -->
       <div>
-        <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 20px; letter-spacing: -0.01em;">
-          Latest Reviews & Articles
+        <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 16px; letter-spacing: -0.01em;">
+          📝 Latest Reviews & Articles
         </h2>
         
-        <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 32px;">
           {recentPosts.map(post => (
             <a href={`/blog/${post.slug}`} style="display: block; padding: 20px; border: 1px solid var(--border); border-radius: 8px; text-decoration: none; color: inherit; transition: border-color 0.15s;">
               <div class="card-meta" style="margin-bottom: 6px;">
-                <span>{post.category}</span>
-                <span> · </span>
-                <span>{post.date}</span>
-                <span> · </span>
-                <span>{post.readTime} min read</span>
+                <span class="tag" style="font-size: 0.7rem;">{post.category}</span>
+                <span style="margin-left: 6px; font-size: 0.75rem; color: var(--text-muted);">{post.date} · {post.readTime} min read</span>
               </div>
-              <h3 style="font-size: 1.125rem; font-weight: 700; margin-bottom: 6px; line-height: 1.3;">
+              <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 6px; line-height: 1.3;">
                 {post.title}
               </h3>
-              <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.5;">
-                {post.excerpt?.slice(0, 200)}...
+              <p style="font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.5;">
+                {post.excerpt?.slice(0, 180)}...
               </p>
-              <div style="margin-top: 10px; display: flex; gap: 6px; flex-wrap: wrap;">
+              <div style="margin-top: 8px; display: flex; gap: 6px; flex-wrap: wrap;">
                 {post.tags?.slice(0, 3).map(tag => (
-                  <span class="tag">{tag}</span>
+                  <span class="tag" style="font-size: 0.7rem;">{tag}</span>
                 ))}
               </div>
             </a>
           ))}
         </div>
 
-        <div style="margin-top: 24px; text-align: center;">
-          <a href="/blog" class="btn">View all articles →</a>
+        <div style="text-align: center; margin-bottom: 40px;">
+          <a href="/blog" class="btn">View all {BLOG_POSTS.length} articles →</a>
         </div>
 
-        <!-- Top Tools Section -->
-        <h2 style="font-size: 1.25rem; font-weight: 700; margin: 40px 0 20px; letter-spacing: -0.01em;">
-          Top Rated Dev Tools
+        <!-- Category Exploration -->
+        <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 16px; letter-spacing: -0.01em;">
+          📂 Browse by Category
         </h2>
-        
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-          {topTools.map(tool => (
-            <a href={`/tools/${tool.id}`} style="display: block; padding: 16px; border: 1px solid var(--border); border-radius: 8px; text-decoration: none; color: inherit; transition: border-color 0.15s;">
-              <div style="display: flex; justify-content: space-between; align-items: start;">
-                <div>
-                  <div style="font-weight: 600; font-size: 0.9375rem;">{tool.name}</div>
-                  <div style="font-size: 0.8125rem; color: var(--text-muted); margin-top: 2px;">{tool.category}</div>
-                </div>
-                <div style="text-align: right;">
-                  <div style="font-weight: 700; color: var(--accent); font-size: 0.9375rem;">{tool.rating}</div>
-                  <div style="font-size: 0.6875rem; color: var(--text-muted);">({tool.reviewCount})</div>
-                </div>
-              </div>
-              <p style="font-size: 0.8125rem; color: var(--text-secondary); margin-top: 8px; line-height: 1.4;">
-                {tool.description}
-              </p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+          {categories.map(cat => (
+            <a href={`/category/${cat.toLowerCase().replace(/[\/\s]+/g, '-')}`} style="display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; border: 1px solid var(--border); border-radius: 8px; text-decoration: none; color: inherit; transition: border-color 0.15s;">
+              <span style="font-size: 0.875rem; font-weight: 500;">{cat}</span>
+              <span style="font-size: 0.75rem; color: var(--text-muted); background: var(--bg-subtle); padding: 2px 10px; border-radius: 12px;">
+                {categoryCounts[cat]} tools
+              </span>
             </a>
           ))}
         </div>
@@ -136,10 +187,21 @@ const editorPicks = [
       <!-- Right Sidebar -->
       <aside class="sidebar">
         <div class="sidebar-section">
+          <h3 class="sidebar-title">📊 Quick Stats</h3>
+          <div style="font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.8;">
+            <div>✅ {totalTools} tools reviewed</div>
+            <div>⭐ Avg rating: {avgRating}/5</div>
+            <div>📝 {BLOG_POSTS.length} in-depth articles</div>
+            <div>📂 {categories.length} categories</div>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
           <h3 class="sidebar-title">Categories</h3>
           {categories.map(cat => (
             <a href={`/category/${cat.toLowerCase().replace(/[\/\s]+/g, '-')}`} class="sidebar-link">
               {cat}
+              <span style="float: right; color: var(--text-muted); font-size: 0.75rem;">({categoryCounts[cat]})</span>
             </a>
           ))}
         </div>
@@ -152,8 +214,18 @@ const editorPicks = [
             Just honest, hands-on evaluations from people who code for a living.
           </p>
         </div>
-      </aside>
 
+        <!-- Newsletter Signup (placeholder for future) -->
+        <div class="sidebar-section" style="background: var(--bg-subtle); border-radius: 8px; padding: 16px; border: 1px solid var(--border);">
+          <h3 class="sidebar-title">Stay Updated</h3>
+          <p style="font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 10px;">Get notified when we publish new reviews.</p>
+          <div style="display: flex; gap: 6px;">
+            <input type="email" placeholder="your@email.com" disabled style="flex: 1; padding: 6px 10px; border: 1px solid var(--border); border-radius: 4px; font-size: 0.75rem; background: var(--bg-card);" />
+            <button class="btn" disabled style="font-size: 0.75rem; padding: 6px 10px;">Subscribe</button>
+          </div>
+          <p style="font-size: 0.625rem; color: var(--text-muted); margin-top: 6px;">Coming soon — enter your email to join our mailing list.</p>
+        </div>
+      </aside>
     </div>
   </div>
 </Base>
