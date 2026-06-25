@@ -1,0 +1,197 @@
+---
+import Base from '../../layouts/Base.astro';
+import { ALL_TOOLS } from '../../data/tools';
+
+export function getStaticPaths() {
+  return ALL_TOOLS.map(tool => ({
+    params: { id: tool.id },
+    props: { tool },
+  }));
+}
+
+const { tool } = Astro.props;
+const relatedTools = ALL_TOOLS
+  .filter(t => t.category === tool.category && t.id !== tool.id)
+  .slice(0, 4);
+---
+
+<Base title={`${tool.name} Review — DeveX Tools`} description={`Honest hands-on review of ${tool.name}. ${tool.description.slice(0, 150)}`}>
+  <div class="container" style="padding-top: 32px;">
+    
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <a href="/">Home</a>
+      <span>›</span>
+      <a href="/tools">Tools</a>
+      <span>›</span>
+      <span>{tool.name}</span>
+    </div>
+
+    <!-- Header -->
+    <div class="tool-detail-header">
+      <div style="display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; gap: 16px;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+            <span class="tag" style="background: var(--accent-light); color: var(--accent); font-weight: 600;">{tool.category}</span>
+            <span class="tag">{tool.pricing}</span>
+          </div>
+          <h1 class="tool-detail-title">{tool.name}</h1>
+          <p style="font-size: 1.05rem; color: var(--text-secondary); max-width: 600px;">{tool.description}</p>
+        </div>
+        
+        <div style="text-align: center; border: 1px solid var(--border); border-radius: 8px; padding: 16px 24px; min-width: 120px;">
+          <div style="font-size: 2rem; font-weight: 800; color: var(--accent);">{tool.rating}</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted);">{tool.reviewCount.toLocaleString()} reviews</div>
+        </div>
+      </div>
+
+      <div style="margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href={tool.websiteUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          Visit Website →
+        </a>
+      </div>
+    </div>
+
+    <!-- Content: Two column layout -->
+    <div style="display: grid; grid-template-columns: 1fr 280px; gap: 40px;">
+      <!-- Main Content -->
+      <div>
+        <!-- Long description -->
+        <section style="margin-bottom: 32px;">
+          <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 12px;">Overview</h2>
+          <div style="line-height: 1.7; color: var(--text-secondary);">
+            {tool.longDescription.split('\n').map(p => p.trim()).filter(p => p).map(p => (
+              <p style="margin-bottom: 12px;">{p}</p>
+            ))}
+          </div>
+        </section>
+
+        <!-- Pros & Cons -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 32px;">
+          <div style="border: 1px solid #22c55e20; border-radius: 8px; padding: 20px; background: #f0fdf4;">
+            <h3 style="font-size: 0.9375rem; font-weight: 700; color: #15803d; margin-bottom: 10px;">✅ Pros</h3>
+            <ul style="list-style: none; padding: 0;">
+              {tool.pros.map(p => (
+                <li style="padding: 4px 0; font-size: 0.875rem; color: var(--text-secondary); border-bottom: 1px solid #22c55e15;">
+                  <span style="color: #22c55e; margin-right: 6px;">+</span> {p}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div style="border: 1px solid #ef444420; border-radius: 8px; padding: 20px; background: #fef2f2;">
+            <h3 style="font-size: 0.9375rem; font-weight: 700; color: #dc2626; margin-bottom: 10px;">⚠️ Cons</h3>
+            <ul style="list-style: none; padding: 0;">
+              {tool.cons.map(c => (
+                <li style="padding: 4px 0; font-size: 0.875rem; color: var(--text-secondary); border-bottom: 1px solid #ef444415;">
+                  <span style="color: #ef4444; margin-right: 6px;">−</span> {c}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <!-- Features -->
+        <section style="margin-bottom: 32px;">
+          <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 12px;">Key Features</h2>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+            {tool.features.map(f => (
+              <div style="padding: 10px 14px; border: 1px solid var(--border); border-radius: 6px; font-size: 0.875rem; color: var(--text-secondary);">
+                ✓ {f}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <!-- Pricing Detail -->
+        <section style="margin-bottom: 32px;">
+          <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 12px;">Pricing</h2>
+          <div style="border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px;">
+            <div style="font-weight: 600; margin-bottom: 4px;">{tool.pricing}</div>
+            <div style="font-size: 0.875rem; color: var(--text-secondary);">{tool.pricingDetail}</div>
+          </div>
+        </section>
+
+        <!-- Score Breakdown -->
+        <section style="margin-bottom: 32px;">
+          <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 12px;">Score Breakdown</h2>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            {Object.entries(tool.scoreBreakdown || {}).map(([key, val]) => (
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 0.8125rem; color: var(--text-secondary); min-width: 80px; text-transform: capitalize;">{key}</span>
+                <div style="flex: 1; height: 8px; background: var(--bg-subtle); border-radius: 4px; overflow: hidden;">
+                  <div style={`height: 100%; width: ${(val / 10) * 100}%; background: var(--accent); border-radius: 4px;`}></div>
+                </div>
+                <span style="font-size: 0.8125rem; font-weight: 600; color: var(--text); min-width: 28px; text-align: right;">{val}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <!-- User Quotes -->
+        {tool.userQuotes?.length > 0 && (
+          <section style="margin-bottom: 32px;">
+            <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 12px;">What Users Say</h2>
+            <div style="display: grid; gap: 12px;">
+              {tool.userQuotes.map(q => (
+                <div style="border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px;">
+                  <p style="font-size: 0.875rem; color: var(--text-secondary); font-style: italic; margin-bottom: 8px;">"{q.quote}"</p>
+                  <div style="font-size: 0.8125rem; font-weight: 600;">— {q.role}{q.company ? `, ${q.company}` : ''}</div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        <!-- FTC Disclosure -->
+        <section style="border-top: 1px solid var(--border); padding-top: 16px; margin-top: 32px;">
+          <p style="font-size: 0.75rem; color: var(--text-muted);">
+            ⚖️ All reviews reflect honest, hands-on evaluations by our engineering team. 
+            We do not accept sponsored placements. Some links may be affiliate links — 
+            see our <a href="/disclosure">full disclosure</a>.
+          </p>
+        </section>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">Tool Info</h3>
+          <div style="font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.6;">
+            <div><strong>Category:</strong> {tool.category}</div>
+            <div><strong>Pricing:</strong> {tool.pricing}</div>
+            <div><strong>Website:</strong> <a href={tool.websiteUrl} target="_blank">{tool.websiteUrl?.replace('https://', '')}</a></div>
+            <div><strong>Use Case:</strong> {tool.useCase}</div>
+          </div>
+        </div>
+
+        {tool.alternatives?.length > 0 && (
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">Alternatives</h3>
+            {tool.alternatives.map(alt => (
+              <div style="font-size: 0.8125rem; color: var(--text-secondary); padding: 4px 0;">
+                {ALL_TOOLS.find(t => t.name.toLowerCase() === alt.toLowerCase()) ? (
+                  <a href={`/tools/${ALL_TOOLS.find(t => t.name.toLowerCase() === alt.toLowerCase())?.id}`} class="sidebar-link">
+                    {alt}
+                  </a>
+                ) : (
+                  <span>{alt}</span>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
+
+        {relatedTools.length > 0 && (
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">Related Tools</h3>
+            {relatedTools.map(t => (
+              <a href={`/tools/${t.id}`} class="sidebar-link">
+                {t.name}
+              </a>
+            ))}
+          </div>
+        )}
+      </aside>
+    </div>
+  </div>
+</Base>

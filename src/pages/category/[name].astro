@@ -1,0 +1,50 @@
+---
+import Base from '../../layouts/Base.astro';
+import { ALL_TOOLS } from '../../data/tools';
+
+export function getStaticPaths() {
+  const categories = [...new Set(ALL_TOOLS.map(t => t.category))];
+  return categories.map(cat => ({
+    params: { name: cat.toLowerCase().replace(/[\/\s]+/g, '-') },
+    props: { category: cat },
+  }));
+}
+
+const { category } = Astro.props;
+const tools = ALL_TOOLS.filter(t => t.category === category);
+const categorySlug = category.toLowerCase().replace(/[\/\s]+/g, '-');
+---
+
+<Base title={`${category} Tools — DeveX Tools`} description={`Browse our collection of ${tools.length} ${category} tool reviews and comparisons.`}>
+  <div class="container" style="padding-top: 32px;">
+    <div class="breadcrumb">
+      <a href="/">Home</a>
+      <span>›</span>
+      <a href="/tools">Tools</a>
+      <span>›</span>
+      <span>{category}</span>
+    </div>
+
+    <h1 class="page-title">{category} Tools</h1>
+    <p class="page-subtitle">{tools.length} tools reviewed in this category</p>
+
+    <div class="tools-grid">
+      {tools.map(tool => (
+        <a href={`/tools/${tool.id}`} class="card" style="text-decoration: none; color: inherit; display: block;">
+          <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 8px;">
+            <div>
+              <div class="card-title">{tool.name}</div>
+            </div>
+            <div style="font-weight: 700; color: var(--accent);">{tool.rating}</div>
+          </div>
+          <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+            {tool.description}
+          </p>
+          <div style="margin-top: 8px; font-size: 0.8125rem; color: var(--text-muted);">
+            {tool.pricing} · {tool.reviewCount.toLocaleString()} reviews
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</Base>

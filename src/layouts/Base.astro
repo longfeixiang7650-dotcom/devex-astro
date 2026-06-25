@@ -1,0 +1,44 @@
+---
+import '../styles/global.css';
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title ? `${title} — DeveX Tools` : 'DeveX Tools — Developer Tools Reviewed by Engineers'}</title>
+    <meta name="description" content={description || 'Hands-on reviews of the best developer tools. IDEs, CI/CD platforms, Git tools, and more — tested by practicing engineers.'} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="/" class="site-logo"><span>DeveX</span> Tools</a>
+        <nav class="main-nav">
+          <a href="/" class="active">Home</a>
+          <a href="/tools">Tools</a>
+          <a href="/blog">Blog</a>
+          <a href="/about">About</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <span>&copy; {new Date().getFullYear()} DeveX Tools. Independent developer tool reviews.</span>
+        <div class="footer-links">
+          <a href="/about">About</a>
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
+          <a href="/disclosure">Disclosure</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

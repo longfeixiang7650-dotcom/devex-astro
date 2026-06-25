@@ -1,0 +1,159 @@
+---
+import Base from '../layouts/Base.astro';
+import { ALL_TOOLS } from '../data/tools';
+import { BLOG_POSTS } from '../data/blog-posts';
+
+// Top tools by rating
+const topTools = [...ALL_TOOLS]
+  .sort((a, b) => b.rating - a.rating)
+  .slice(0, 8);
+
+// Recent blog posts
+const recentPosts = [...BLOG_POSTS]
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  .slice(0, 6);
+
+// Categories for sidebar
+const categories = [...new Set(ALL_TOOLS.map(t => t.category))].slice(0, 10);
+
+// Editors pick - highest rated in each major category
+const editorPicks = [
+  ...new Map(
+    [...ALL_TOOLS]
+      .filter(t => ['IDE / Code Editor', 'CI/CD Pipeline', 'Git Hosting', 'API Testing'].includes(t.category))
+      .map(t => [t.category, t])
+  ).values()
+];
+---
+
+<Base title="Developer Tools Reviewed by Engineers — DeveX Tools">
+  <div class="container" style="padding-top: 32px;">
+    
+    <!-- Hero -->
+    <section class="hero" style="margin-bottom: 48px;">
+      <span class="hero-tagline">🔧 Reviewed by Practicing Engineers</span>
+      <h1 class="page-title" style="font-size: 2.75rem;">
+        Developer Tools,<br />
+        <span style="color: var(--accent);">Honestly Reviewed</span>
+      </h1>
+      <p class="page-subtitle" style="font-size: 1.1rem; max-width: 600px;">
+        Real CI/CD pipelines, real IDE benchmarks, real Git workflows — 
+        no sponsored rankings, just <strong>honest evaluations</strong> from 
+        a tight-knit team of engineers who actually use these tools daily.
+      </p>
+      <div style="display: flex; gap: 12px; margin-top: 24px;">
+        <a href="/tools" class="btn btn-primary">Browse All Tools →</a>
+        <a href="/blog" class="btn">Read Our Blog</a>
+      </div>
+    </section>
+
+    <!-- Editor's Picks Banner -->
+    <section style="background: var(--bg-subtle); border-radius: 12px; padding: 28px; margin-bottom: 48px; border: 1px solid var(--border);">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <h2 style="font-size: 1.1rem; font-weight: 700; letter-spacing: -0.01em;">⭐ Editor's Picks</h2>
+        <a href="/tools" style="font-size: 0.875rem; color: var(--accent);">View all →</a>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px;">
+        {editorPicks.map(tool => (
+          <a href={`/tools/${tool.id}`} style="display: flex; align-items: center; gap: 10px; padding: 12px; background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border); text-decoration: none; color: inherit; transition: border-color 0.15s, box-shadow 0.15s;">
+            <div style="width: 36px; height: 36px; border-radius: 6px; background: var(--accent-light); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--accent); flex-shrink: 0;">
+              {['⌨', '🔄', '🔀', '🧪'][editorPicks.indexOf(tool)] || '🔧'}
+            </div>
+            <div>
+              <div style="font-weight: 600; font-size: 0.875rem;">{tool.name}</div>
+              <div style="font-size: 0.75rem; color: var(--text-muted);">{tool.category}</div>
+            </div>
+            <div style="margin-left: auto; font-size: 0.75rem; color: var(--accent); font-weight: 600;">{tool.rating}</div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Main Content: Two column layout -->
+    <div class="page-layout" style="margin-top: 0; padding-top: 0;">
+      
+      <!-- Left: Blog feed style -->
+      <div>
+        <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 20px; letter-spacing: -0.01em;">
+          Latest Reviews & Articles
+        </h2>
+        
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          {recentPosts.map(post => (
+            <a href={`/blog/${post.slug}`} style="display: block; padding: 20px; border: 1px solid var(--border); border-radius: 8px; text-decoration: none; color: inherit; transition: border-color 0.15s;">
+              <div class="card-meta" style="margin-bottom: 6px;">
+                <span>{post.category}</span>
+                <span> · </span>
+                <span>{post.date}</span>
+                <span> · </span>
+                <span>{post.readTime} min read</span>
+              </div>
+              <h3 style="font-size: 1.125rem; font-weight: 700; margin-bottom: 6px; line-height: 1.3;">
+                {post.title}
+              </h3>
+              <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.5;">
+                {post.excerpt?.slice(0, 200)}...
+              </p>
+              <div style="margin-top: 10px; display: flex; gap: 6px; flex-wrap: wrap;">
+                {post.tags?.slice(0, 3).map(tag => (
+                  <span class="tag">{tag}</span>
+                ))}
+              </div>
+            </a>
+          ))}
+        </div>
+
+        <div style="margin-top: 24px; text-align: center;">
+          <a href="/blog" class="btn">View all articles →</a>
+        </div>
+
+        <!-- Top Tools Section -->
+        <h2 style="font-size: 1.25rem; font-weight: 700; margin: 40px 0 20px; letter-spacing: -0.01em;">
+          Top Rated Dev Tools
+        </h2>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          {topTools.map(tool => (
+            <a href={`/tools/${tool.id}`} style="display: block; padding: 16px; border: 1px solid var(--border); border-radius: 8px; text-decoration: none; color: inherit; transition: border-color 0.15s;">
+              <div style="display: flex; justify-content: space-between; align-items: start;">
+                <div>
+                  <div style="font-weight: 600; font-size: 0.9375rem;">{tool.name}</div>
+                  <div style="font-size: 0.8125rem; color: var(--text-muted); margin-top: 2px;">{tool.category}</div>
+                </div>
+                <div style="text-align: right;">
+                  <div style="font-weight: 700; color: var(--accent); font-size: 0.9375rem;">{tool.rating}</div>
+                  <div style="font-size: 0.6875rem; color: var(--text-muted);">({tool.reviewCount})</div>
+                </div>
+              </div>
+              <p style="font-size: 0.8125rem; color: var(--text-secondary); margin-top: 8px; line-height: 1.4;">
+                {tool.description}
+              </p>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Right Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">Categories</h3>
+          {categories.map(cat => (
+            <a href={`/category/${cat.toLowerCase().replace(/[\/\s]+/g, '-')}`} class="sidebar-link">
+              {cat}
+            </a>
+          ))}
+        </div>
+
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">About DeveX</h3>
+          <p style="font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.5;">
+            We're a small team of practicing engineers who test and review developer tools 
+            in real production environments. No sponsored placements. No marketing fluff. 
+            Just honest, hands-on evaluations from people who code for a living.
+          </p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</Base>
