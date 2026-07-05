@@ -74,7 +74,7 @@ export const YOUTUBE_VIDEOS: Record<string, string> = {
   "elasticsearch": "gS_nHTWZEJ8",  // Elastic Community - Elastic Stack Crash Course
     "jaeger": "cYAE0ZhT43c", // theartwatches — Watch Collector Problems: Jacob &amp; Co vs FPJOUR
     "opentelemetry": "hLvwoow3XTk", // IBM Technology — OpenTelemetry: Simplifying Hybrid Cloud Monitoring
-    "chronosphere": "", // hOlyhexOr — the best chronosphere you will see today
+    "chronosphere": "osA4MBysMZQ", // hOlyhexOr — the best chronosphere you will see today
 
   // Test Automation
     "jest": "7f-71kYhK00", // Web Dev Simplified — Why Vitest Is Better Than Jest

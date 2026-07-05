@@ -1,1 +1,7 @@
-{"batch": 0, "completed": 0, "rate_limited": false}
+{
+  "batch": 1,
+  "completed": 1,
+  "rate_limited": false,
+  "remaining": 0,
+  "total_with_video": 60
+}
