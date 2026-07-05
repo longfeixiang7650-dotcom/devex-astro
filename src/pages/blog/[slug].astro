@@ -1,7 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { BLOG_POSTS } from '../../data/blog-posts';
-import { ALL_TOOLS } from '../../data/tools';
 
 export function getStaticPaths() {
   return BLOG_POSTS.map(post => ({
@@ -14,9 +13,37 @@ const { post } = Astro.props;
 const relatedPosts = BLOG_POSTS
   .filter(p => p.category === post.category && p.slug !== post.slug)
   .slice(0, 3);
+
+function renderContent(content: string): string {
+  return content.split('\n').map(line => {
+    line = line.trim();
+    if (!line) return '';
+
+    if (line.startsWith('#### '))
+      return `<h4>${line.slice(5)}</h4>`;
+    if (line.startsWith('### '))
+      return `<h3>${line.slice(4)}</h3>`;
+    if (line.startsWith('## '))
+      return `<h2>${line.slice(3)}</h2>`;
+    if (line.startsWith('# '))
+      return `<h1>${line.slice(2)}</h1>`;
+    if (line.startsWith('###'))
+      return `<h3>${line.slice(3)}</h3>`;
+    if (line.startsWith('##'))
+      return `<h2>${line.slice(2)}</h2>`;
+    if (line.startsWith('- '))
+      return `<li>${line.slice(2)}</li>`;
+    if (line.startsWith('|'))
+      return '';
+    if (line.startsWith('**') && line.endsWith('**'))
+      return `<p><strong>${line.slice(2, -2)}</strong></p>`;
+
+    return `<p>${line}</p>`;
+  }).filter(Boolean).join('\n');
+}
 ---
 
-<Base title={`${post.title} — DeveX Tools Blog`} description={post.excerpt?.slice(0, 160)}>
+<Base title={`${post.title} — DeveX Tools`} description={post.excerpt?.slice(0, 160)}>
   <div class="container" style="padding-top: 32px;">
     <div class="blog-article">
       <!-- Breadcrumb -->
@@ -47,7 +74,7 @@ const relatedPosts = BLOG_POSTS
           </div>
         </div>
         <div style="margin-top: 12px; display: flex; gap: 6px; flex-wrap: wrap;">
-          {post.tags?.map(tag => (
+          {(post.tags || []).map(tag => (
             <span class="tag">{tag}</span>
           ))}
         </div>
@@ -57,53 +84,7 @@ const relatedPosts = BLOG_POSTS
       </header>
 
       <!-- Article Content -->
-      <article style="line-height: 1.8; color: var(--text-secondary); font-size: 1rem;">
-        {post.content.split('\n').map(line => {
-          line = line.trim();
-          if (!line) return '';
-          
-          if (line.startsWith('### '))
-            return `<h3>${line.slice(4)}</h3>`;
-          if (line.startsWith('## '))
-            return `<h2>${line.slice(3)}</h2>`;
-          if (line.startsWith('###'))
-            return `<h3>${line.slice(3)}</h3>`;
-          if (line.startsWith('##'))
-            return `<h2>${line.slice(2)}</h2>`;
-          if (line.startsWith('- '))
-            return `<li>${line.slice(2)}</li>`;
-          if (line.startsWith('|'))
-            return '';  // skip table lines
-          if (line.startsWith('**') && line.endsWith('**'))
-            return `<p><strong>${line.slice(2, -2)}</strong></p>`;
-          
-          return `<p>${line}</p>`;
-        }).filter(Boolean).join('\n')}
-      </article>
-
-      <!-- Share / Footer -->
-      <div style="margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border);">
-        <p style="font-size: 0.8125rem; color: var(--text-muted);">
-          📌 Published by <strong>{post.author}</strong> ({post.authorRole}) on {post.date}.
-          All reviews reflect honest engineering evaluations. 
-          See our <a href="/disclosure">disclosure policy</a>.
-        </p>
-      </div>
-
-      <!-- Related Posts -->
-      {relatedPosts.length > 0 && (
-        <section style="margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border);">
-          <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 16px;">Related Articles</h2>
-          <div style="display: flex; flex-direction: column; gap: 12px;">
-            {relatedPosts.map(rp => (
-              <a href={`/blog/${rp.slug}`} style="display: block; padding: 16px 20px; border: 1px solid var(--border); border-radius: 8px; text-decoration: none; color: inherit;">
-                <div style="font-size: 0.8125rem; color: var(--text-muted); margin-bottom: 4px;">{rp.date} · {rp.readTime} min read</div>
-                <div style="font-weight: 600;">{rp.title}</div>
-              </a>
-            ))}
-          </div>
-        </section>
-      )}
+      <article style="line-height: 1.8; color: var(--text-secondary); font-size: 1rem;" set:html={renderContent(post.content)} />
     </div>
   </div>
 </Base>

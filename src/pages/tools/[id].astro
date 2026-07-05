@@ -3,6 +3,7 @@
 import Base from '../../layouts/Base.astro';
 import ScoreRadarChart from '../../components/ScoreRadarChart.astro';
 import { ALL_TOOLS } from '../../data/tools';
+import { YOUTUBE_VIDEOS } from '../../data/youtube';
 
 export async function getStaticPaths() {
   return ALL_TOOLS.map(tool => ({
@@ -15,7 +16,9 @@ const { tool } = Astro.props;
 const relatedTools = ALL_TOOLS
   .filter(t => t.category === tool.category && t.id !== tool.id)
   .slice(0, 4);
-const youtubeQuery = encodeURIComponent(`${tool.name} review 2026 tutorial`);
+const youtubeQuery = encodeURIComponent(`${tool.name} review tutorial`);
+const videoId = YOUTUBE_VIDEOS[tool.id];
+const hasVideo = !!videoId;
 ---
 <Base title={`${tool.name} Review 2026 — Hands-on Analysis | DeveX Tools`} description={`Honest hands-on review of ${tool.name}. ${tool.description.slice(0, 150)}`}>
   <div class="container" style="padding-top: 32px;">
@@ -109,12 +112,22 @@ const youtubeQuery = encodeURIComponent(`${tool.name} review 2026 tutorial`);
 
         <section id="video" style="margin-bottom: 32px; scroll-margin-top: 80px;">
           <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 12px;">🎬 Video Review</h2>
-          <div style="border: 1px solid var(--border); border-radius: 8px; overflow: hidden;">
-            <div style="position: relative; padding-bottom: 56.25%; height: 0; background: var(--bg-subtle);">
-              <iframe src={`https://www.youtube.com/embed?listType=search&amp;list=${youtubeQuery}`} style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allowfullscreen loading="lazy" title={`${tool.name} video review`}></iframe>
+          {hasVideo ? (
+            <div style="border: 1px solid var(--border); border-radius: 8px; overflow: hidden;">
+              <div style="position: relative; padding-bottom: 56.25%; height: 0; background: var(--bg-subtle);">
+                <iframe src={`https://www.youtube.com/embed/${videoId}`} style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allowfullscreen loading="lazy" title={`${tool.name} video review`}></iframe>
+              </div>
             </div>
-          </div>
-          <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 8px;">📺 YouTube search results for "{tool.name} review". Watch multiple perspectives before making a decision.</p>
+          ) : (
+            <div style="display: flex; flex-direction: column; gap: 12px; padding: 32px 24px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-subtle); text-align: center;">
+              <div style="font-size: 2.5rem;">🎥</div>
+              <div style="font-size: 1rem; font-weight: 600;">Watch "{tool.name}" Reviews on YouTube</div>
+              <p style="font-size: 0.875rem; color: var(--text-secondary); max-width: 400px; margin: 0 auto;">See real users demonstrate and review {tool.name} — hands-on walkthroughs, feature deep-dives, and honest comparisons.</p>
+              <a href={`https://www.youtube.com/results?search_query=${youtubeQuery}`} target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="display: inline-flex; justify-content: center; gap: 6px; margin-top: 4px;">
+                ▶ Watch on YouTube
+              </a>
+            </div>
+          )}
         </section>
 
         <section id="score" style="margin-bottom: 32px; scroll-margin-top: 80px;">
