@@ -30,11 +30,11 @@ export const YOUTUBE_VIDEOS: Record<string, string> = {
   "circleci": "1HpEagsIY2o",         // Paperclick - CircleCI vs Jenkins vs GitHub Actions
   "gitlab-ci-cd": "qP8kir2GUgo",     // TechWorld with Nana - GitLab CI CD
   "travis-ci": "JsEd6dpLGbs",        // Bluelight Co - Best CI/CD Tools
-  "teamcity": "Byk9XQtaNzY",         // TeamCity game (placeholder)
-    "bamboo": "fl_AelgaWKE", // Angus Wan — Plastic vs. bamboo matcha whisk. What’s better?
+  "teamcity": "cmiPr0S-7lo",         // JetBrains - Introducing TeamCity 2026.1: AI, Pipelines, and Enterprise CI/CD
+    "bamboo": "lg9f52SmFyw",         // SLC - Introduction to Atlassian Bamboo
   "argocd": "MeU5_k9ssrs",           // TechWorld with Nana - ArgoCD
   "spinnaker": "jYtC8cDq4b0",       // Google Cloud Tech - Spinnaker CI/CD pipeline
-    "drone-ci": "myCcJJ_Fk10", // LinkGenius Picks — কম দামে best drone camera😳 || e88 max drone full r
+    "drone-ci": "Qf8EHRzAgHQ",         // Harness - Drone CI Quickstart
 
   // API Development
   "postman": "CLG0ha_a0q8",          // Code Bless You - Postman API Testing
