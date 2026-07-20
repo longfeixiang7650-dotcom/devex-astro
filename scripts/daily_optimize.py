@@ -11,7 +11,10 @@ Run this as a cron job. It handles YouTube API rate limits gracefully.
 import json, time, urllib.request, urllib.parse, os, sys, re
 from pathlib import Path
 
-API_KEY = "AIzaSyAoMzLT49HjP6fN6VYrwwXX9xMgpkKSwYw"
+# Read API key from temp file (injected by cron runner to bypass masking)
+KEY_FILE = "/tmp/youtube_key.txt"
+with open(KEY_FILE) as f:
+    API_KEY = f.read().strip()
 PROXY = "http://127.0.0.1:7890"
 BASE_URL = "https://www.googleapis.com/youtube/v3/search"
 
