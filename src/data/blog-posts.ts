@@ -2378,7 +2378,7 @@ The right question is not "Should we go micro?" but "What is the smallest, most 
       "APIs are no longer the plumbing of modern software. In 2026, with over 75 percent of enterprise applications relying on at least three external APIs, robust, scalable, and secure API testing is non-negotiable. This comparison evaluates four tools across five dimensions: core functionality, developer experience, security and compliance, ecosystem and extensibility, and total cost of ownership.",
     content: `
 The State of API Testing in 2026: Postman, Bruno, Hoppscotch, and Insomnia Compared  
-*By Aria Santos, Business Analyst at #82 Isle Works*  
+*By Aria Santos, Senior API Analyst*  
 *June 22, 2026*  
 *Read time: ~10 minutes*  
 

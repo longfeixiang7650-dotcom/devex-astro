@@ -35,7 +35,7 @@ export const ALL_TOOLS: ToolData[] = [
     name: "Visual Studio Code",
     category: "IDE / Code Editor",
     rating: 4.7,
-    reviewCount: 42890,
+    reviewCount: 0,
     icon: "code-2",
     description: "Lightweight, extensible, open-source code editor with rich debugging and Git integration.",
     longDescription:
@@ -86,25 +86,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 85.0,
   },
 
-    userQuotes: [
-    {
-      role: "Senior Frontend Engineer",
-      company: "TechNova Labs",
-      quote: "VS Code’s IntelliSense and extension ecosystem cut our onboarding time by 60% — new hires ship features on day one."
-    },
-    {
-      role: "DevOps Lead",
-      company: "CloudForge Inc",
-      quote: "We run 90% of our infrastructure code in VS Code with Remote-Containers. It’s the only editor that lets us develop inside production-like environments without local setup hell."
-    },
-  ],
+    userQuotes: [],
   },
 {
     id: "intellij-idea",
     name: "IntelliJ IDEA",
     category: "IDE / Code Editor",
     rating: 4.6,
-    reviewCount: 21450,
+    reviewCount: 0,
     icon: "code-2",
     description: "Feature-rich Java IDE with unmatched smart coding assistance and framework support.",
     longDescription:
@@ -161,25 +150,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 91.5,
   },
 
-    userQuotes: [
-    {
-      role: "Backend Tech Lead",
-      company: "Major Bank",
-      quote: "IntelliJ’s semantic analysis caught a cyclic bean dependency we’d missed for three sprints—before compilation—saving us two days of debugging in our core payment service."
-    },
-    {
-      role: "Kotlin Developer",
-      company: "Android App Studio",
-      quote: "The KMP-aware debugger lets me step from shared domain logic into iOS SwiftUI bindings—no more guessing which platform threw the exception."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "sublime-text",
     name: "Sublime Text",
     category: "IDE / Code Editor",
     rating: 4.3,
-    reviewCount: 12760,
+    reviewCount: 0,
     icon: "code-2",
     description: "Fast, minimalist text editor prized for speed, simplicity, and powerful multi-cursor editing.",
     longDescription:
@@ -233,25 +211,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 85.0,
   },
 
-    userQuotes: [
-    {
-      role: "Senior Frontend Engineer",
-      company: "TechNova Labs",
-      quote: "Sublime’s regex find/replace across 200+ files saves me 2 hours weekly—VS Code’s equivalent feels sluggish and crashes on our monorepo."
-    },
-    {
-      role: "DevOps Specialist",
-      company: "CloudForge Inc",
-      quote: "I edit 10GB nginx logs daily. Sublime opens them in 3 seconds; every other editor chokes or loads partially."
-    },
-  ],
+    userQuotes: [],
   },
   {
     id: "vim",
     name: "Vim",
     category: "IDE / Code Editor",
     rating: 4.6,
-    reviewCount: 12480,
+    reviewCount: 0,
     icon: "terminal",
     description: "Modal, terminal-based text editor famed for efficiency and minimalism.",
     longDescription:
@@ -299,25 +266,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 85.0,
   },
 
-    userQuotes: [
-    {
-      role: "Senior DevOps Engineer",
-      company: "CloudScale Inc.",
-      quote: "We deploy Vim on every production node—it’s the only editor guaranteed to be there when SSH drops into rescue mode. No dependencies, no failures."
-    },
-    {
-      role: "Embedded Systems Developer",
-      company: "Firmware Labs",
-      quote: "Editing C on ARM cross-compilation toolchains? Vim’s :terminal and :make integration saves hours per week—no GUI lag, no memory leaks."
-    },
-  ],
+    userQuotes: [],
   },
   {
     id: "eclipse-ide",
     name: "Eclipse IDE",
     category: "IDE / Code Editor",
     rating: 4.1,
-    reviewCount: 8720,
+    reviewCount: 0,
     icon: "code-2",
     description: "Extensible Java-centric IDE with rich plugin architecture and enterprise tooling.",
     longDescription:
@@ -369,30 +325,14 @@ export const ALL_TOOLS: ToolData[] = [
 
     scoreBreakdown: { features: 92.0, reviews: 86.0, momentum: 76.0, popularity: 82.0 },
 
-    userQuotes: [
-      {
-        role: "Senior Java Architect",
-        company: "Bank of Montreal",
-        quote: "We standardized on Eclipse for our core banking middleware because JDT's refactoring safety and PDE's ability to test OSGi bundles in isolation cut our regression testing cycle by 31%."
-      },
-      {
-        role: "Embedded Systems Engineer",
-        company: "Siemens Healthineers",
-        quote: "CDT's cross-compilation wizard and GDB integration let us debug ARM Cortex-M firmware directly from Eclipse — no need to juggle separate toolchains."
-      },
-      {
-        role: "Platform Developer",
-        company: "Red Hat",
-        quote: "Building our internal RCP-based tooling suite inside Eclipse means we ship one consistent UI framework instead of fighting Electron bloat."
-      }
-    ],
+    userQuotes: [],
   },
   {
     id: "neovim",
     name: "Neovim",
     category: "IDE / Code Editor",
     rating: 4.8,
-    reviewCount: 28950,
+    reviewCount: 0,
     icon: "terminal",
     description: "Modern, hackable Vim fork with async plugins, LSP, and embedded terminal.",
     longDescription:
@@ -444,30 +384,14 @@ export const ALL_TOOLS: ToolData[] = [
 
     scoreBreakdown: { features: 94.0, reviews: 90.0, momentum: 96.0, popularity: 86.0 },
 
-    userQuotes: [
-      {
-        role: "Senior Backend Engineer",
-        company: "Shopify",
-        quote: "We standardized on Neovim across our Rust infrastructure team because its LSP + Treesitter combo lets us refactor 10K-line modules in under 90 seconds—something VS Code couldn't do reliably at our scale."
-      },
-      {
-        role: "DevOps Lead",
-        company: "Dropbox",
-        quote: "Neovim's SSH + tmux integration cut our remote debugging latency by 63%. We deploy configs via Ansible and maintain identical dev environments across 1,200+ engineers—no GUI dependencies."
-      },
-      {
-        role: "Staff Software Engineer",
-        company: "Bloomberg",
-        quote: "Switching from Vim to Neovim reduced our C++ header indexing time from 4.2s to 1.1s. The built-in LSP client eliminated 3 legacy plugins—and we now ship configs as Lua modules via internal npm."
-      }
-    ],
+    userQuotes: [],
   },
   {
     id: "webstorm",
     name: "WebStorm",
     category: "IDE / Code Editor",
     rating: 4.6,
-    reviewCount: 13500,
+    reviewCount: 0,
     icon: "code-2",
     description: "JetBrains' intelligent IDE for modern JavaScript, TypeScript, and web development.",
     longDescription:
@@ -524,25 +448,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 84.5,
   },
 
-    userQuotes: [
-    {
-      role: "Senior Frontend Engineer",
-      company: "Shopify",
-      quote: "We standardized on WebStorm for our Next.js teams — its TypeScript inference across 100+ micro-frontend packages cut refactoring time by ~40%. The built-in HTTP client replaced Postman for most internal API checks."
-    },
-    {
-      role: "Lead Developer",
-      company: "BBC Digital",
-      quote: "After migrating from VS Code + 12 extensions, our onboarding time dropped from 3 days to 4 hours. The out-of-the-box Jest runner and inline coverage saved us weeks of config debugging."
-    },
-    ],
+    userQuotes: [],
   },
 {
     id: "xcode",
     name: "Xcode",
     category: "IDE / Code Editor",
     rating: 4.8,
-    reviewCount: 42650,
+    reviewCount: 0,
     icon: "code-2",
     description: "Apple's official IDE for macOS, iOS, iPadOS, watchOS, and visionOS development.",
     longDescription:
@@ -600,25 +513,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 93.5,
   },
 
-    userQuotes: [
-    {
-      role: "iOS Engineering Lead",
-      company: "Popular iOS App Company",
-      quote: "Xcode 16’s Swift 6 diagnostics caught three race conditions in our background sync layer before QA even started—something we’d never have caught with unit tests alone."
-    },
-    {
-      role: "VisionOS Developer",
-      company: "AR/VR Studio",
-      quote: "The hand-gesture replay feature in the visionOS simulator cut our spatial interaction debugging time by 70%—it’s the only tool that lets us step through palm detection frames like a video timeline."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "android-studio",
     name: "Android Studio",
     category: "IDE / Code Editor",
     rating: 4.3,
-    reviewCount: 28970,
+    reviewCount: 0,
     icon: "code-2",
     description: "Official IDE for Android development, based on IntelliJ IDEA with deep Kotlin/Java tooling.",
     longDescription:
@@ -674,25 +576,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 97,
   },
 
-    userQuotes: [
-    {
-      role: "Senior Android Engineer",
-      company: "Lyft",
-      quote: "The Database Inspector and Compose Preview have cut our UI iteration time by ~40%. We rely on Apply Changes daily — it's indispensable for rapid prototyping without full rebuilds."
-    },
-    {
-      role: "Mobile Lead",
-      company: "Capital One",
-      quote: "Gradle sync stability improved dramatically in Giraffe patch 3, but we still disable unnecessary plugins and use JDK 17 to avoid memory leaks during large-scale refactorings."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "pycharm",
     name: "PyCharm",
     category: "IDE / Code Editor",
     rating: 4.6,
-    reviewCount: 12840,
+    reviewCount: 0,
     icon: "code-2",
     description: "Powerful Python-focused IDE with intelligent code assistance and integrated tools.",
     longDescription:
@@ -749,25 +640,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 88.9,
   },
 
-    userQuotes: [
-    {
-      role: "Senior Backend Engineer",
-      company: "Stripe",
-      quote: "We standardized on PyCharm Pro across our Python services team—its remote Docker interpreter and Django template debugging cut our onboarding time by 40% and reduced template-related production bugs by half."
-    },
-    {
-      role: "Data Science Lead",
-      company: "Roche",
-      quote: "The scientific mode + native Jupyter integration lets our researchers iterate faster than with VS Code + extensions—though we still use VS Code for quick shell scripting and markdown docs."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "github",
     name: "GitHub",
     category: "Version Control",
     rating: 4.7,
-    reviewCount: 52381,
+    reviewCount: 0,
     icon: "git-branch",
     description: "Cloud-based Git platform with collaboration, CI/CD, and project management tools.",
     longDescription:
@@ -824,25 +704,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 98,
   },
 
-    userQuotes: [
-    {
-      role: "Staff Platform Engineer",
-      company: "Stripe",
-      quote: "We migrated our entire monorepo CI to GitHub Actions with self-hosted runners on AWS Nitro Enclaves—build times dropped 42% and compliance attestations are now fully automated."
-    },
-    {
-      role: "Lead DevOps Architect",
-      company: "Shopify",
-      quote: "GitHub's new policy-as-code engine cut our internal compliance audit prep from 3 weeks to under 2 hours—we enforce 147 org-wide policies across 2,300 repos automatically."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "gitlab",
     name: "GitLab",
     category: "Version Control",
     rating: 4.3,
-    reviewCount: 8740,
+    reviewCount: 0,
     icon: "git-branch",
     description: "Unified DevOps platform with Git repo management, CI/CD, security, and monitoring.",
     longDescription:
@@ -899,25 +768,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 83.5,
   },
 
-    userQuotes: [
-    {
-      role: "DevOps Director",
-      company: "Capital One",
-      quote: "Running GitLab self-managed on our private cloud gave us full control over PII handling and met FFIEC audit requirements — something GitHub Enterprise Cloud couldn’t guarantee without additional legal overhead."
-    },
-    {
-      role: "CTO",
-      company: "GitLab Inc.",
-      quote: "We dogfood GitLab for everything — including our own product development. The ability to trace an issue → epic → MR → pipeline → production deploy → error tracking in one click is unmatched for cross-functional alignment."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "bitbucket",
     name: "Bitbucket",
     category: "Version Control",
     rating: 4.2,
-    reviewCount: 12480,
+    reviewCount: 0,
     icon: "git-branch",
     description: "Git and Mercurial repository hosting with built-in CI/CD, PRs, and team collaboration.",
     longDescription:
@@ -975,25 +833,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 79.6,
   },
 
-    userQuotes: [
-    {
-      role: "DevOps Lead",
-      company: "FinTrust Labs",
-      quote: "We cut PR cycle time by 40% after migrating from SVN to Bitbucket — Jira auto-sync and enforced status checks made compliance audits trivial."
-    },
-    {
-      role: "Frontend Engineer",
-      company: "NexusMedia",
-      quote: "Pipelines work great for our React monorepo, but we had to offload Cypress tests to GitHub Actions because of the 60-minute timeout."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "sourceforge",
     name: "SourceForge",
     category: "Version Control",
     rating: 3.9,
-    reviewCount: 5270,
+    reviewCount: 0,
     icon: "git-branch",
     description: "Legacy open-source hosting platform supporting Git, SVN, Mercurial, and CVS with download analytics.",
     longDescription:
@@ -1053,30 +900,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 80.8,
   },
 
-    userQuotes: [
-    {
-      role: "Research Software Engineer",
-      company: "AstroSim Consortium",
-      quote: "SourceForge's archival reliability saved us during a critical NASA data release—our 2008 binaries were still intact and verifiable in 2026"
-    },
-    {
-      role: "Open Source Maintainer",
-      company: "LibUSB Legacy",
-      quote: "The SBOM and license scanner caught a GPL-incompatible dependency we'd missed for years—game changer for legacy project maintenance"
-    },
-    {
-      role: "Project Lead",
-      company: "ThirdProject",
-      quote: "Migrating our 15-year-old C++ toolkit was seamless; the build service even auto-ported our ancient Autotools setup to modern CI hooks"
-    },
-  ],
+    userQuotes: [],
   },
   {
     id: "apache-subversion",
     name: "Apache Subversion",
     category: "Version Control",
     rating: 4.6,
-    reviewCount: 28950,
+    reviewCount: 0,
     icon: "git-branch",
     description: "Centralized, enterprise-grade version control system with atomic commits and path-based permissions.",
     longDescription:
@@ -1135,25 +966,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 88.5,
   },
 
-    userQuotes: [
-    {
-      role: "Configuration Manager",
-      company: "MediCore Devices",
-      quote: "SVN’s immutable revisions and per-path ACLs passed our FDA audit with zero findings — Git’s rewrite history would’ve failed Part 11 outright."
-    },
-    {
-      role: "Build Infrastructure Lead",
-      company: "AeroDyn Systems",
-      quote: "We manage 4TB of avionics firmware binaries in SVN — Git LFS choked on our nightly delta builds, but SVN’s native binary handling stays stable at scale."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "jenkins",
     name: "Jenkins",
     category: "CI/CD",
     rating: 4.3,
-    reviewCount: 12478,
+    reviewCount: 0,
     icon: "box",
     description: "Open-source automation server for building, testing, and deploying software.",
     longDescription: `Jenkins remains the de facto open-source automation server for CI/CD, uniquely balancing deep customization with enterprise-scale orchestration--deployed by 85% of Fortune 500 companies and powering over 1.2 million active instances globally (CloudBees 2024 State of Jenkins Report). Its strength lies in unparalleled extensibility: 1,850+ production-ready plugins, Groovy-based Pipeline-as-Code enabling dynamic Kubernetes agent provisioning, and native support for heterogeneous toolchains--from COBOL on z/OS to Rust on ARM. Capital One reports 24,300+ weekly builds across 17 legacy and modern stacks, sustaining a 92.4% build success rate and median duration of 4.7 minutes; Bosch uses custom Jenkins agents to flash firmware onto 200K+ embedded controllers per month; and Netflix's Spinnaker still relies on Jenkins for pre-deployment validation pipelines. Yet Jenkins demands significant operational overhead: median time-to-production for new teams is 14.2 hours (DevEx Tools Benchmark, Q2 2024), requiring manual HA clustering, RBAC hardening, and JVM tuning (heap >4GB + G1GC) to sustain >500 concurrent jobs without UI latency. Plugin risk persists--37% of Jenkins-related CVEs in 2023 traced to third-party plugins, necessitating rigorous audit workflows. Compared to GitLab CI (tighter SCM integration, built-in container registry, but less flexible agent topology), GitHub Actions (developer-friendly YAML, excellent for cloud-native apps, yet constrained in on-prem or air-gapped environments), and CircleCI (strong macOS/iOS support, faster out-of-box setup, but limited plugin ecosystem and self-hosting complexity), Jenkins stands alone in hybrid, regulated, or deeply customized contexts--especially finance, aerospace, and industrial IoT. Looking ahead, Jenkins 2.4x's improved Blue Ocean UX, declarative pipeline enhancements, and Project Wisdom's AI-assisted pipeline debugging signal a pragmatic evolution--not a pivot toward simplicity, but toward *sustainable* complexity. For organizations where control, compliance, and legacy interoperability outweigh developer velocity, Jenkins isn't legacy--it's infrastructure.`,
@@ -1205,18 +1025,14 @@ export const ALL_TOOLS: ToolData[] = [
 
     scoreBreakdown: { features: 4.8, reviews: 4.5, momentum: 3.9, popularity: 4.7 },
 
-    userQuotes: [
-        { role: "Senior DevOps Engineer", company: "Capital One", quote: "We run 24k builds/week across 1200+ repos—Jenkins gives us the knobs we need for compliance, but onboarding juniors takes weeks of pipeline training." },
-        { role: "Platform Architect", company: "Bosch", quote: "Flashing firmware onto 10,000+ embedded controllers mid-pipeline? Only Jenkins lets us inject custom binaries and validate hardware responses in real time." },
-        { role: "Engineering Manager", company: "Shopify", quote: "We migrated 70% of pipelines to GitHub Actions—but kept Jenkins for our Ruby monolith because of its unmatched plugin ecosystem for legacy gem testing." }
-      ],
+    userQuotes: [],
   },
   {
     id: "github-actions",
     name: "GitHub Actions",
     category: "CI/CD",
     rating: 4.68,
-    reviewCount: 52874,
+    reviewCount: 0,
     icon: "git-branch",
     description: "Native CI/CD platform tightly integrated with GitHub repositories and workflows.",
     longDescription: `GitHub Actions is GitHub's native automation platform--more than just CI/CD, it's a unified workflow engine deeply embedded in the developer's daily context. Launched in 2018 and now used by over 90% of Fortune 500 engineering teams, it processes more than 40 million workflows daily across 100+ million public repositories. Its YAML-driven syntax supports complex orchestration--including matrix builds (e.g., testing across 12 OS/Node.js version combos in parallel), concurrency limits (up to 100 jobs/account on Team plans), and fine-grained permissions (e.g., PR-triggered workflows run with read-only tokens by default). Benchmarks show median job startup latency of 8-12 seconds on hosted runners, with Linux job completion averaging 47s for standard Node.js test suites--on par with CircleCI (45s) but 18% faster than GitLab CI (58s) for equivalent configurations. Unlike Jenkins (which requires extensive plugin management and infrastructure upkeep) or Bitbucket Pipelines (limited to 50 build minutes/month on free tier), GitHub Actions offers generous free tiers (2,000 minutes/month on Linux, 1,000 on Windows) and seamless integration with GitHub-native features: auto-merging Dependabot PRs post-test, triggering issue-based deployments via /deploy comments, and syncing status to Projects boards. Financial services firms use it for SOC2-compliant artifact signing with self-hosted runners air-gapped from the internet; SaaS startups leverage reusable workflows to enforce Terraform plan validation across 50+ microservices. Still, limitations persist: Windows runner queue times exceed 3 minutes during peak hours (affecting 20% of Windows-targeted workflows), macOS runners lack M2 support in public pools, and audit logging requires Enterprise-level billing. Looking ahead, GitHub's 2024 roadmap emphasizes AI-assisted workflow generation (via Copilot Actions), improved observability with OpenTelemetry-native tracing, and expanded ARM64 and GPU-accelerated runner availability--signaling a shift from infrastructure automation toward intelligent, context-aware DevEx orchestration.`,
@@ -1265,18 +1081,14 @@ export const ALL_TOOLS: ToolData[] = [
 
     scoreBreakdown: { features: 4.7, reviews: 4.7, momentum: 4.8, popularity: 4.6 },
 
-    userQuotes: [
-        { role: "Staff DevOps Engineer", company: "Finova Labs", quote: "The new granular minute allocation across OS types -- plus unified billing in the Enterprise dashboard -- cut our CI spend by 22% while improving build traceability with built-in OpenTelemetry export." },
-        { role: "Engineering Manager", company: "NexusHealth", quote: "Migrating from self-hosted runners to GitHub-hosted with the updated Windows runner performance (v4.2) reduced median job duration by 37%. The new 'action cache' feature across workflows is a quiet game-changer." },
-        { role: "Open Source Maintainer", company: "LunarJS Foundation", quote: "Free tier remains rock-solid for public repos -- and the new community action verification badge gives users real confidence in security posture without slowing down adoption." }
-      ],
+    userQuotes: [],
   },
   {
     id: "circleci",
     name: "CircleCI",
     category: "CI/CD",
     rating: 4.1,
-    reviewCount: 8924,
+    reviewCount: 0,
     icon: "box",
     description: "Cloud-native CI/CD platform optimized for speed, caching, and parallelism.",
     longDescription:
@@ -1333,25 +1145,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 85.4,
   },
 
-    userQuotes: [
-    {
-      role: "Lead Platform Engineer",
-      company: "PayFlow Innovations",
-      quote: "Our Next.js monorepo builds went from 9.4 to 1.8 minutes after switching to CircleCI’s workspace caching and 16-way parallelism — and we didn’t have to rewrite our entire pipeline."
-    },
-    {
-      role: "Engineering Director",
-      company: "Streamline Dev",
-      quote: "Orbs saved us from maintaining 14 custom shell scripts. But we learned the hard way: always pin orb versions — an unpinned 'aws-ecr@volatile' broke deploys twice in Q3."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "gitlab-ci-cd",
     name: "GitLab CI/CD",
     category: "CI/CD",
     rating: 4.6,
-    reviewCount: 12480,
+    reviewCount: 0,
     icon: "git-branch",
     description: "Integrated, Git-native CI/CD platform with pipelines, environments, and security scanning.",
     longDescription: `GitLab CI/CD is the industry's most tightly coupled, Git-native automation platform--uniquely embedded within a unified DevOps suite rather than bolted on as an add-on. With 30+ million registered users and adoption by 75% of Fortune 100 enterprises (GitLab 2023 Annual Report), it delivers unparalleled traceability: every pipeline stage maps directly to a commit, branch, or merge request, enabling true end-to-end auditability. Benchmarks show median pipeline startup latency of 780ms for repos <10k LOC and 1.8s for 50k-100k LOC (GitLab 2023 Performance Whitepaper), outperforming GitHub Actions (avg. 2.4s) and Bitbucket Pipelines (avg. 3.1s) in controlled multi-tenant SaaS environments. Unlike Jenkins--whose plugin-driven architecture introduces configuration drift and scaling complexity--GitLab uses declarative YAML (.gitlab-ci.yml) with built-in support for dynamic child pipelines, cross-project triggers, and matrix builds across 12+ executor types (Docker, Kubernetes, HashiCorp Nomad, custom). Real-world deployments include Siemens' industrial IoT firmware pipelines (reducing release cycles from 6 weeks to 96 hours), Capital One's PCI-compliant banking microservices (enabling 12,000+ daily deployments with SOC 2-aligned artifact signing), and NASA JPL's open-source flight software CI (leveraging air-gapped self-hosted runners with FIPS 140-2 validated encryption). While GitLab excels in visibility and compliance--offering built-in SAST (powered by Semgrep & CodeQL), DAST (ZAP-based), container scanning, and dependency scanning--it faces trade-offs: self-hosted instances require significant operational overhead (e.g., Redis/Elasticsearch tuning for >500 concurrent jobs), and complex monorepo workflows still lag behind Buildkite's granular job routing and caching fidelity. Pricing transparency remains a pain point--advanced security and compliance features (e.g., policy-as-code enforcement, audit event streaming) are gated behind Ultimate-tier subscriptions ($99/user/year). Looking ahead, GitLab's 2024 roadmap prioritizes AI-assisted pipeline optimization (auto-suggesting parallelization and cache strategies), deeper Kubernetes-native observability via OpenTelemetry integration, and expanded edge CI for embedded systems. For organizations prioritizing auditability, regulatory alignment, and single-vendor lifecycle management, GitLab CI/CD remains the benchmark--though high-scale, polyglot infrastructure teams may still supplement with Jenkins or Buildkite for niche orchestration needs.`,
@@ -1402,18 +1203,14 @@ export const ALL_TOOLS: ToolData[] = [
 
     scoreBreakdown: { features: 4.8, reviews: 4.6, momentum: 4.7, popularity: 4.5 },
 
-    userQuotes: [
-        { role: "Senior DevOps Engineer", company: "FinTech InnovateX", quote: "We cut our release cycle from 2 weeks to 2 days after migrating from Jenkins to GitLab CI—mostly because of the built-in registry and Review Apps saving us 15+ hours/week on env provisioning." },
-        { role: "Frontend Team Lead", company: "HealthTrack Labs", quote: "The MR-based pipeline status and inline test failures changed how our devs collaborate—no more 'it works on my machine' debates." },
-        { role: "Platform Architect", company: "GovSecure Systems", quote: "Audit trails for every pipeline change, plus FIPS-compliant runners, made GitLab the only CI/CD tool that passed our federal compliance review." }
-      ],
+    userQuotes: [],
   },
   {
     id: "travis-ci",
     name: "Travis CI",
     category: "CI/CD",
     rating: 4.1,
-    reviewCount: 8720,
+    reviewCount: 0,
     icon: "box",
     description: "Cloud-hosted CI service optimized for GitHub repos with simple YAML config and fast setup.",
     longDescription:
@@ -1498,7 +1295,7 @@ export const ALL_TOOLS: ToolData[] = [
     name: "TeamCity",
     category: "CI/CD",
     rating: 4.7,
-    reviewCount: 21560,
+    reviewCount: 0,
     icon: "box",
     description: "Powerful, on-premises CI/CD server by JetBrains with intuitive UI and deep IDE integration.",
     longDescription:
@@ -1556,25 +1353,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 89.5,
   },
 
-    userQuotes: [
-    {
-      role: "Senior Build Engineer",
-      company: "GlobalBank Systems",
-      quote: "TeamCity’s pre-tested commits and build chains saved us 17 hours/week in manual regression coordination—plus, our devs love running builds directly from IntelliJ."
-    },
-    {
-      role: "Platform Architect",
-      company: "MediSoft Devices",
-      quote: "We needed FDA-compliant traceability: TeamCity’s immutable build logs, agent signing, and audit export met all 21 CFR Part 11 requirements out of the box."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "bamboo",
     name: "Bamboo",
     category: "CI/CD",
     rating: 4.2,
-    reviewCount: 12850,
+    reviewCount: 0,
     icon: "box",
     description: "Atlassian's legacy CI/CD server with tight Jira & Bitbucket integration.",
     longDescription:
@@ -1635,23 +1421,7 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 53,
   },
 
-    userQuotes: [
-    {
-      role: "DevOps Lead",
-      company: "CapitalOne Financial",
-      quote: "Bamboo's audit trail and Jira-linked release tracking are unmatched for our FedRAMP-compliant pipelines—we wouldn't trade that traceability for flashier syntax"
-    },
-    {
-      role: "Senior Release Engineer",
-      company: "Boeing Defense",
-      quote: "We run 1,200+ build plans across 4 data centers—Bamboo's agent stability and offline resilience keep us shipping when other tools choke on network partitions"
-    },
-    {
-      role: "Platform Architect",
-      company: "State Farm Insurance",
-      quote: "The permission model saved us months of IAM overhead—fine-grained plan-level restrictions let app teams own their CD without granting infra access"
-    },
-  ],
+    userQuotes: [],
 
   },
   {
@@ -1659,7 +1429,7 @@ export const ALL_TOOLS: ToolData[] = [
     name: "ArgoCD",
     category: "CI/CD",
     rating: 4.7,
-    reviewCount: 42300,
+    reviewCount: 0,
     icon: "box",
     description: "Kubernetes-native GitOps continuous delivery tool for declarative deployments.",
     longDescription:
@@ -1717,25 +1487,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 95.8,
   },
 
-    userQuotes: [
-    {
-      role: "Platform Engineer",
-      company: "CloudNexus Inc.",
-      quote: "We manage 140+ apps across 6 clusters with Argo CD. The ApplicationSet controller cut our onboarding time from 3 days to 20 minutes per service."
-    },
-    {
-      role: "SRE Manager",
-      company: "DataSphere Analytics",
-      quote: "Argo CD’s health assessment saved us during a cert rotation outage—its automatic ‘Degraded’ status flagged misconfigured Ingress controllers before users noticed."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "spinnaker",
     name: "Spinnaker",
     category: "CI/CD",
     rating: 4.1,
-    reviewCount: 8950,
+    reviewCount: 0,
     icon: "box",
     description: "Open-source, multi-cloud continuous delivery platform built for scale.",
     longDescription:
@@ -1793,25 +1552,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 76.4,
   },
 
-    userQuotes: [
-    {
-      role: "Principal DevOps Architect",
-      company: "GlobalPay Fintech",
-      quote: "Our canary analysis caught a latency regression in payment auth services 12 minutes after deploy—Spinnaker rolled back before SLO breach. Worth every ops hour."
-    },
-    {
-      role: "Cloud Platform Lead",
-      company: "EcoGrid Utilities",
-      quote: "We run Spinnaker across AWS, Azure, and on-prem OpenStack. The unified pipeline UI lets our regional teams deploy safely—but upgrading from 1.25 to 1.27 took 3 weeks of testing."
-    },
-    ],
+    userQuotes: [],
   },
     {
     id: "drone-ci",
     name: "Drone CI",
     category: "CI/CD",
     rating: 4.3,
-    reviewCount: 12850,
+    reviewCount: 0,
     icon: "box",
     description: "Lightweight, container-native CI/CD platform built on Docker and Kubernetes.",
     longDescription:
@@ -1869,18 +1617,14 @@ export const ALL_TOOLS: ToolData[] = [
         popularity: 74.0,
       },
 
-    userQuotes: [
-      { role: "DevOps Lead", company: "FinTech Innovate Labs", quote: "We cut CI runtime by 40% after switching from Jenkins to Drone -- the container-first model eliminated environment drift, and our engineers now own pipelines end-to-end via Git." },
-      { role: "Senior Backend Engineer", company: "CloudScale Systems", quote: "Drone's YAML syntax is refreshingly predictable. We version our .drone.yml alongside app code, and the plugin system lets us reuse identical deploy steps across 12 microservices without duplication." },
-      { role: "CTO", company: "OpenSource Health", quote: "As a fully remote team, self-hosting Drone on our own K8s cluster gave us total control over compliance, latency, and cost -- no more worrying about third-party CI outages or egress fees." }
-      ],
+    userQuotes: [],
   },
   {
     id: "postman",
     name: "Postman",
     category: "API Development",
     rating: 4.5,
-    reviewCount: 44892,
+    reviewCount: 0,
     icon: "beaker",
     description: "Collaborative API client and testing platform with automation and documentation.",
     longDescription:
@@ -1938,25 +1682,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 95.2,
   },
 
-    userQuotes: [
-    {
-      role: "Staff API Engineer",
-      company: "Finova Labs",
-      quote: "The new AI-powered documentation generator cut our spec-to-doc time by 70%, but the stricter free tier forced us to upgrade earlier than planned -- still worth it for enterprise-grade traceability."
-    },
-    {
-      role: "DevOps Lead",
-      company: "HealthGrid Systems",
-      quote: "SSO reliability improved significantly after the Q1 2026 auth refactor, and the on-prem deployment option finally supports air-gapped environments -- but the price jump made budgeting tighter this cycle."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "swagger",
     name: "Swagger",
     category: "API Development",
     rating: 4.1,
-    reviewCount: 9200,
+    reviewCount: 0,
     icon: "book-open",
     description: "Open-source interactive API documentation renderer for OpenAPI specs.",
     longDescription:
@@ -2014,25 +1747,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 89.2,
   },
 
-    userQuotes: [
-    {
-      role: "API Architect",
-      company: "StellarGrid",
-      quote: "We serve Swagger UI directly from our /docs route — it’s the single source of truth for every API consumer, and it updates automatically when devs push new OpenAPI specs."
-    },
-    {
-      role: "Frontend Lead",
-      company: "Aurora Digital",
-      quote: "Swagger UI helped our React team prototype against mock backends before the Spring Boot services were ready — but we had to write custom interceptors for JWT handling."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "insomnia",
     name: "Insomnia",
     category: "API Development",
     rating: 4.6,
-    reviewCount: 12480,
+    reviewCount: 0,
     icon: "beaker",
     description: "Open-source REST and GraphQL client with environment management and automation.",
     longDescription:
@@ -2088,25 +1810,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 94.3,
   },
 
-    userQuotes: [
-    {
-      role: "Senior Backend Engineer",
-      company: "Stripe",
-      quote: "We use Insomnia for all internal service contract validation — its test runner catches breaking changes before they hit staging. The ability to version environments per branch saved us from dozens of prod incidents."
-    },
-    {
-      role: "API Platform Lead",
-      company: "Shopify",
-      quote: "Migrated from Postman after hitting rate limits on shared collections. Insomnia Sync + Git-backed environments gave us true ownership of API specs while keeping dev velocity high."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "hoppscotch",
     name: "Hoppscotch",
     category: "API Development",
     rating: 4.3,
-    reviewCount: 8720,
+    reviewCount: 0,
     icon: "beaker",
     description: "Lightweight, open-source API client that runs entirely in-browser.",
     longDescription:
@@ -2163,25 +1874,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 87.9,
   },
 
-    userQuotes: [
-    {
-      role: "Frontend Developer",
-      company: "Netflix",
-      quote: "I keep Hoppscotch pinned in Chrome for daily API checks — it loads faster than any desktop client, and I never worry about leaking auth tokens to a background process."
-    },
-    {
-      role: "DevOps Instructor",
-      company: "Linux Foundation",
-      quote: "In our cloud-native workshops, Hoppscotch lets learners test Kubernetes services instantly via port-forwarding — no CLI config or app installs required. Students grasp HTTP concepts 40% faster than with Postman."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "apollo-graphql",
     name: "Apollo GraphQL",
     category: "API Development",
     rating: 4.7,
-    reviewCount: 28560,
+    reviewCount: 0,
     icon: "share-2",
     description: "End-to-end platform for building, testing, and monitoring GraphQL APIs.",
     longDescription:
@@ -2237,25 +1937,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 97.1,
   },
 
-    userQuotes: [
-    {
-      role: "Staff GraphQL Engineer",
-      company: "GitHub",
-      quote: "Apollo Studio’s operation registry caught a misconfigured cache-control header across 12 microservices — we fixed it before users reported slowdowns. That visibility is irreplaceable."
-    },
-    {
-      role: "Platform Architect",
-      company: "Airbnb",
-      quote: "We run 47 subgraphs across 3 regions. Apollo Federation + Studio’s composition validation and trace correlation cut our incident MTTR by 60% — especially for cross-service N+1 issues."
-    },
-    ],
+    userQuotes: [],
   },
     {
     id: "rapidapi",
     name: "RapidAPI",
     category: "API Development",
     rating: 4.3,
-    reviewCount: 12478,
+    reviewCount: 0,
     icon: "link",
     description: "Unified API marketplace with testing, monitoring, and SDK generation.",
     longDescription:
@@ -2313,18 +2002,14 @@ export const ALL_TOOLS: ToolData[] = [
         popularity: 96.3,
       },
 
-    userQuotes: [
-      { role: "Senior Backend Engineer", company: "FinTechScale Inc.", quote: "We cut API integration time from 3-4 days to under 2 hours per service by leveraging RapidAPI's auto-generated SDKs and unified auth layer -- critical when we onboarded 12 payment gateways in Q3." },
-      { role: "DevOps Lead", company: "CloudNexus Labs", quote: "The real-time usage dashboard and alerting saved us from unexpected overages during our Black Friday surge -- visibility across 27 third-party APIs was impossible before RapidAPI." },
-      { role: "CTO", company: "HealthSync Systems", quote: "For HIPAA-aligned workflows, RapidAPI's audit log retention and SAML integration gave us the compliance trail we needed without building our own API gateway." }
-      ],
+    userQuotes: [],
   },
   {
     id: "dbeaver",
     name: "DBeaver",
     category: "Database Tools",
     rating: 4.7,
-    reviewCount: 42891,
+    reviewCount: 0,
     icon: "database",
     description: "Free universal database tool with ERD, SQL editor, and admin capabilities.",
     longDescription:
@@ -2383,25 +2068,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 97.1,
   },
 
-    userQuotes: [
-    {
-      role: "Data Engineer",
-      company: "GitLab",
-      quote: "We standardized on DBeaver across our data platform team—it’s the only tool that lets us query Redshift, Snowflake, and CockroachDB with identical UX and keyboard shortcuts."
-    },
-    {
-      role: "DevOps Lead",
-      company: "Cloudflare",
-      quote: "Using DBeaver’s metadata diff, we caught a missing NOT NULL constraint before deploying to prod—saved us 4 hours of rollback and incident response."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "pgadmin",
     name: "pgAdmin",
     category: "Database Tools",
     rating: 4.1,
-    reviewCount: 8765,
+    reviewCount: 0,
     icon: "database",
     description: "Official open-source administration and development platform for PostgreSQL.",
     longDescription:
@@ -2460,25 +2134,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 91.4,
   },
 
-    userQuotes: [
-    {
-      role: "Senior DBA",
-      company: "Crunchbase",
-      quote: "pgAdmin’s replication dashboard caught a 42-minute lag in our DR cluster 3 hours before the outage window—gave us time to fix the network ACL."
-    },
-    {
-      role: "Platform Architect",
-      company: "HashiCorp",
-      quote: "We use pgAdmin’s REST API to validate every PostgreSQL upgrade in staging—checking pg_stat_bgwriter metrics pre/post migration to confirm no regressions."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "mongodb-compass",
     name: "MongoDB Compass",
     category: "Database Tools",
     rating: 4.6,
-    reviewCount: 12480,
+    reviewCount: 0,
     icon: "database",
     description: "Official GUI for MongoDB with visual query builder and real-time performance insights.",
     longDescription:
@@ -2536,25 +2199,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 94.3,
   },
 
-    userQuotes: [
-    {
-      role: "Senior Backend Engineer",
-      company: "Stripe",
-      quote: "We use Compass daily to validate schema evolution across microservices — the schema analyzer caught a critical type mismatch in our user-profile embedding before it hit production."
-    },
-    {
-      role: "DevOps Lead",
-      company: "Shopify",
-      quote: "Its real-time oplog lag monitor helped us identify a hidden network partition in our sharded cluster — saved ~8 hours of manual log spelunking."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "tableplus",
     name: "TablePlus",
     category: "Database Tools",
     rating: 4.8,
-    reviewCount: 42650,
+    reviewCount: 0,
     icon: "database",
     description: "Modern, native database client with unified UI for 20+ databases and strong security focus.",
     longDescription:
@@ -2612,25 +2264,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 90.8,
   },
 
-    userQuotes: [
-    {
-      role: "Full Stack Developer",
-      company: "Notion",
-      quote: "Switched from three separate clients to TablePlus — cut connection setup time by 70% and finally trust my local Redis keys view after enabling TLS inspection."
-    },
-    {
-      role: "Data Engineer",
-      company: "Airbnb",
-      quote: "The bulk update with regex replace saved us days during GDPR anonymization — and the encrypted config sync meant my team could share safe, pre-tested connection profiles."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "datagrip",
     name: "DataGrip",
     category: "Database Tools",
     rating: 4.3,
-    reviewCount: 8920,
+    reviewCount: 0,
     icon: "database",
     description: "IntelliJ-based IDE for databases with deep SQL analysis, refactoring, and multi-DB support.",
     longDescription:
@@ -2689,25 +2330,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 82.3,
   },
 
-    userQuotes: [
-    {
-      role: "Database Architect",
-      company: "Goldman Sachs",
-      quote: "We standardized on DataGrip for all SQL development — its refactoring safety prevented 3 critical prod incidents last quarter alone."
-    },
-    {
-      role: "Analytics Engineer",
-      company: "Figma",
-      quote: "The ER diagram + Git diff combo lets us review dbt model changes visually *and* semantically — something no other tool does out-of-the-box."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "mysql-workbench",
     name: "MySQL Workbench",
     category: "Database Tools",
     rating: 4.3,
-    reviewCount: 12850,
+    reviewCount: 0,
     icon: "database",
     description: "Official GUI tool for MySQL database design, administration, and development.",
     longDescription:
@@ -2764,25 +2394,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 92.1,
   },
 
-    userQuotes: [
-    {
-      role: "Senior Database Administrator",
-      company: "CapitalOne FinTech",
-      quote: "We use Workbench for all MySQL schema reviews and deployment validation — its diff engine caught a charset mismatch that would’ve broken our Unicode search before prod rollout."
-    },
-    {
-      role: "Full Stack Developer",
-      company: "Shopify Partner Agency",
-      quote: "It’s the only tool I trust for safely tweaking foreign keys on 50M-row tables — the lock-aware ALTER preview saved us twice last quarter."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "redisinsight",
     name: "RedisInsight",
     category: "Database Tools",
     rating: 4.6,
-    reviewCount: 8420,
+    reviewCount: 0,
     icon: "database",
     description: "Official GUI for Redis development, debugging, and cluster management.",
     longDescription:
@@ -2839,25 +2458,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 88.4,
   },
 
-    userQuotes: [
-    {
-      role: "Platform Engineer",
-      company: "DoorDash Infrastructure",
-      quote: "We monitor RedisJSON memory bloat across 120+ microservices using Insigh's memory heatmap — caught a recursive $ref bug in our API gateway config that was leaking 4GB/day."
-    },
-    {
-      role: "Search Architect",
-      company: "Bloomberg L.P.",
-      quote: "The FT.SEARCH visual debugger let us optimize our fuzzy matching queries from 120ms to 8ms — seeing tokenization and index coverage side-by-side was game-changing."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "studio-3t",
     name: "Studio 3T",
     category: "Database Tools",
     rating: 4.1,
-    reviewCount: 7100,
+    reviewCount: 0,
     icon: "database",
     description: "Powerful MongoDB IDE with SQL query support and intuitive data visualization.",
     longDescription:
@@ -2914,25 +2522,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 81.6,
   },
 
-    userQuotes: [
-    {
-      role: "Lead Data Engineer",
-      company: "Netflix Content Platform",
-      quote: "We replaced legacy shell scripts with Studio 3T’s sync tool — cut our nightly catalog delta validation from 47 minutes to 6.2, and the diff UI caught a timezone-aware date truncation bug in our ingestion pipeline."
-    },
-    {
-      role: "BI Analyst",
-      company: "Spotify Ad Analytics",
-      quote: "Writing $lookup pipelines was slowing me down — Studio 3T’s SQL mode let me join campaign and impression collections in seconds, then export straight to Looker’s BigQuery connector."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "docker",
     name: "Docker",
     category: "Container & Orchestration",
     rating: 4.68,
-    reviewCount: 38412,
+    reviewCount: 0,
     icon: "box",
     description: "Local container runtime and development environment for macOS/Windows.",
     longDescription:
@@ -2990,30 +2587,14 @@ export const ALL_TOOLS: ToolData[] = [
       popularity: 9.6,
     },
 
-    userQuotes: [
-      {
-        role: "Senior DevOps Engineer",
-        company: "FinTech Innovations Inc.",
-        quote: "Docker cut our deployment time from 45 minutes to under 90 seconds--layered caching and immutable images eliminated environment drift across staging and prod.",
-      },
-      {
-        role: "Platform Architect",
-        company: "HealthCloud Systems",
-        quote: "We run 300+ microservices in Docker containers on bare metal--no VMs, no hypervisor tax. Resource utilization jumped 40% while reliability improved dramatically.",
-      },
-      {
-        role: "Staff Software Engineer",
-        company: "EduTech Labs",
-        quote: "Docker Desktop + WSL2 lets our entire frontend team run the full backend stack locally with one docker-compose up--onboarding time dropped from days to hours.",
-      },
-    ],
+    userQuotes: [],
   },
 {
     id: "kubernetes",
     name: "Kubernetes",
     category: "Container & Orchestration",
     rating: 4.3,
-    reviewCount: 42156,
+    reviewCount: 0,
     icon: "box",
     description: "Open-source container orchestration platform for automating deployment, scaling, and ops.",
     longDescription:
@@ -3071,25 +2652,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 98.0,
   },
 
-    userQuotes: [
-    {
-      role: "Senior Platform Engineer",
-      company: "FinTech Corp",
-      quote: "We cut audit prep time by 70% after migrating to Kubernetes with PSA and Kyverno—every pod deployment now enforces TLS, memory limits, and SOC2-compliant labels automatically."
-    },
-    {
-      role: "Staff SRE",
-      company: "E-Commerce Platform",
-      quote: "GKE Autopilot saved us 15 engineer-hours/week on node patching—but we still spend 20% of our time untangling Service Mesh mutual TLS failures during canary rollouts."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "terraform",
     name: "Terraform",
     category: "Container & Orchestration",
     rating: 4.7,
-    reviewCount: 36891,
+    reviewCount: 0,
     icon: "box",
     description: "Infrastructure-as-Code tool for provisioning and managing cloud, on-prem, and SaaS resources.",
     longDescription:
@@ -3147,30 +2717,14 @@ export const ALL_TOOLS: ToolData[] = [
       popularity: 9.4,
     },
 
-    userQuotes: [
-      {
-        role: "Senior DevOps Engineer",
-        company: "FinTech Corp",
-        quote: "Terraform's plan output gives us confidence before touching production--we catch drift and misconfigurations early.",
-      },
-      {
-        role: "Cloud Infrastructure Lead",
-        company: "HealthTech Inc",
-        quote: "We manage 20+ AWS accounts and 3 Azure regions with shared modules--Terraform's state locking saved us from concurrent apply disasters.",
-      },
-      {
-        role: "Platform Engineer",
-        company: "E-commerce Global",
-        quote: "The provider ecosystem lets us treat Kubernetes clusters, databases, and network firewalls as first-class resources--all under one consistent workflow.",
-      },
-    ],
+    userQuotes: [],
   },
   {
     id: "ansible",
     name: "Ansible",
     category: "Container & Orchestration",
     rating: 4.6,
-    reviewCount: 12478,
+    reviewCount: 0,
     icon: "settings",
     description: "Agentless IT automation platform for configuration management, deployment, and orchestration.",
     longDescription:
@@ -3227,25 +2781,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 94.1,
   },
 
-    userQuotes: [
-    {
-      role: "Site Reliability Engineer",
-      company: "CapitalOne",
-      quote: "We cut deployment rollback time from 45 minutes to under 90 seconds using idempotent Ansible playbooks — critical during FedRAMP audit windows."
-    },
-    {
-      role: "Cloud Infrastructure Lead",
-      company: "Shopify",
-      quote: "Ansible’s Windows module support let us unify Linux and Windows patching workflows without introducing WinRM agents — saved 12 FTEs annually."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "helm",
     name: "Helm",
     category: "Container & Orchestration",
     rating: 4.4,
-    reviewCount: 8723,
+    reviewCount: 0,
     icon: "box",
     description: "Kubernetes package manager for templating, installing, and managing Helm charts.",
     longDescription:
@@ -3304,25 +2847,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 93.6,
   },
 
-    userQuotes: [
-    {
-      role: "Platform Engineer",
-      company: "Spotify",
-      quote: "We manage 420+ Helm charts across 12 clusters — Helm's revision history and diff plugin cut production incidents from misconfigurations by 63% year-over-year."
-    },
-    {
-      role: "DevOps Manager",
-      company: "Stripe",
-      quote: "Using Helm OCI registries with cosign signing lets us verify chart integrity before deploying payment infrastructure — critical for SOC 2 compliance."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "podman",
     name: "Podman",
     category: "Container & Orchestration",
     rating: 4.3,
-    reviewCount: 6219,
+    reviewCount: 0,
     icon: "box",
     description: "Daemonless, rootless container engine compatible with Docker CLI and OCI standards.",
     longDescription:
@@ -3381,25 +2913,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 87.5,
   },
 
-    userQuotes: [
-    {
-      role: "Security Architect",
-      company: "US Department of Defense",
-      quote: "Adopting Podman rootless mode eliminated our top-3 container CVE exposure vector — no more privileged daemon running as root on 12,000 endpoints."
-    },
-    {
-      role: "Senior Developer",
-      company: "IBM",
-      quote: "Switching from Docker Desktop to Podman Desktop cut our local dev environment startup time by 40% and removed all macOS kernel extension conflicts."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "vagrant",
     name: "Vagrant",
     category: "Container & Orchestration",
     rating: 4.3,
-    reviewCount: 12850,
+    reviewCount: 0,
     icon: "box",
     description: "Lightweight wrapper for VMs and containers to standardize dev environments.",
     longDescription:
@@ -3459,25 +2980,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 82.7,
   },
 
-    userQuotes: [
-    {
-      role: "Senior DevOps Engineer",
-      company: "CapitalOne Labs",
-      quote: "We’ve used Vagrant for 8 years across 3 major mainframe-to-cloud migrations — it’s the only tool that let us replicate AIX and z/OS test dependencies inside Linux VMs without vendor lock-in."
-    },
-    {
-      role: "Frontend Team Lead",
-      company: "Shopify",
-      quote: "Our legacy Ruby on Rails theme engine still requires specific gemset versions tied to Ubuntu 18.04 — Vagrant keeps that stack alive while we incrementally refactor to Docker."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "packer",
     name: "Packer",
     category: "Container & Orchestration",
     rating: 4.6,
-    reviewCount: 8740,
+    reviewCount: 0,
     icon: "box",
     description: "Infrastructure-as-code tool for creating identical machine images across platforms.",
     longDescription:
@@ -3536,23 +3046,7 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 89,
   },
 
-    userQuotes: [
-    {
-      role: "Senior Infrastructure Engineer",
-      company: "Shopify",
-      quote: "We cut our PCI-compliant AMI rebuild cycle from 3 days to 4 hours using Packer's parallel builders and Vault-integrated secrets — and now enforce identical base images across 14 AWS regions."
-    },
-    {
-      role: "Platform Reliability Lead",
-      company: "Stripe",
-      quote: "Packer's deterministic output let us replace 12 legacy Jenkins jobs with 3 HCL templates — reducing image drift incidents by 94% and cutting CVE remediation SLA from 72h to <4h."
-    },
-    {
-      role: "Cloud Security Architect",
-      company: "Capital One",
-      quote: "The ability to validate checksums across clouds before promotion gave us the evidence we needed for FedRAMP ATO — no other tool delivers that level of cross-platform artifact fidelity."
-    },
-    ],
+    userQuotes: [],
 
   },
   {
@@ -3560,7 +3054,7 @@ export const ALL_TOOLS: ToolData[] = [
     name: "Datadog",
     category: "Monitoring & Debugging",
     rating: 4.5,
-    reviewCount: 48200,
+    reviewCount: 0,
     icon: "monitor",
     description: "Unified observability platform for metrics, traces, logs, and security.",
     longDescription:
@@ -3620,25 +3114,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 97.1,
   },
 
-    userQuotes: [
-    {
-      role: "SRE Director",
-      company: "Twilio",
-      quote: "Datadog’s service map + distributed tracing cut our MTTR for cross-service failures by 70% — we now see the full request path from API gateway to Kafka consumer in one click."
-    },
-    {
-      role: "CTO",
-      company: "Coinbase",
-      quote: "During the 2022 crypto crash, Datadog’s anomaly detection flagged unusual Redis latency spikes 4 minutes before user complaints — giving us time to failover before outage."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "sentry",
     name: "Sentry",
     category: "Monitoring & Debugging",
     rating: 4.6,
-    reviewCount: 12480,
+    reviewCount: 0,
     icon: "shield-check",
     description: "Real-time error tracking and debugging for modern web and mobile apps.",
     longDescription:
@@ -3697,30 +3180,14 @@ export const ALL_TOOLS: ToolData[] = [
       popularity: 8.9,
     },
 
-    userQuotes: [
-      {
-        role: "Staff Engineer",
-        company: "FinTech Startup",
-        quote: "Sentry cut our mean time to resolution by 65%--the release health dashboard alone changed how we ship.",
-      },
-      {
-        role: "DevOps Lead",
-        company: "E-commerce Platform",
-        quote: "We integrated Sentry into our CI pipeline and now block deploys when error rates spike above baseline.",
-      },
-      {
-        role: "Frontend Architect",
-        company: "SaaS Company",
-        quote: "The sourcemap debugging and React component stack traces saved us hours per week during production incidents.",
-      },
-    ],
+    userQuotes: [],
   },
   {
     id: "grafana",
     name: "Grafana",
     category: "Monitoring & Debugging",
     rating: 4.7,
-    reviewCount: 44580,
+    reviewCount: 0,
     icon: "monitor",
     description: "Open-source analytics and interactive visualization platform for time-series data.",
     longDescription:
@@ -3777,25 +3244,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 98,
   },
 
-    userQuotes: [
-    {
-      role: "Senior Site Reliability Engineer",
-      company: "CloudFin Technologies",
-      quote: "We cut mean-time-to-resolution by 65% after standardizing on Grafana with Prometheus and Loki—its alerting routing and dashboard templating let us scale observability across 12 microservices without duplicating effort."
-    },
-    {
-      role: "Platform Engineering Lead",
-      company: "NexusHealth Systems",
-      quote: "Grafana's GitOps provisioning and RBAC saved us months of manual dashboard governance; we now deploy 200+ tenant-specific dashboards automatically via Argo CD, with zero drift."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "prometheus",
     name: "Prometheus",
     category: "Monitoring & Debugging",
     rating: 4.5,
-    reviewCount: 28750,
+    reviewCount: 0,
     icon: "activity",
     description: "Open-source systems monitoring and alerting toolkit with a dimensional data model.",
     longDescription:
@@ -3855,25 +3311,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 94.6,
   },
 
-    userQuotes: [
-    {
-      role: "Infrastructure Architect",
-      company: "Uber",
-      quote: "We run 500+ Prometheus servers across regions. PromQL’s `histogram_quantile()` lets us calculate P99 latency per microservice—critical for our SLO engine."
-    },
-    {
-      role: "DevOps Engineer",
-      company: "Airbnb",
-      quote: "Cardinality blew up when we added user_id as a label. We now enforce label validation via promlint and reject high-risk metrics at the gateway."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "new-relic",
     name: "New Relic",
     category: "Monitoring & Debugging",
     rating: 4.3,
-    reviewCount: 12850,
+    reviewCount: 0,
     icon: "monitor",
     description: "Full-stack observability platform for real-time application performance monitoring.",
     longDescription:
@@ -3931,25 +3376,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 85.1,
   },
 
-    userQuotes: [
-    {
-      role: "Staff Engineer",
-      company: "FinTechScale Inc.",
-      quote: "We cut MTTR by 65% after migrating from custom ELK to New Relic—its service map and trace waterfall views made cross-service latency issues instantly visible."
-    },
-    {
-      role: "DevOps Lead",
-      company: "HealthCloud Systems",
-      quote: "NRQL saved us weeks of Logstash pipeline tuning, but we had to renegotiate our contract twice due to unexpected trace attribute inflation—monitor your cardinality closely!"
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "splunk",
     name: "Splunk",
     category: "Monitoring & Debugging",
     rating: 4.1,
-    reviewCount: 24600,
+    reviewCount: 0,
     icon: "search",
     description: "Enterprise-grade log analytics and security information platform with powerful search.",
     longDescription:
@@ -4007,25 +3441,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 91.8,
   },
 
-    userQuotes: [
-    {
-      role: "SOC Analyst",
-      company: "GlobalBank Trust",
-      quote: "We detected a zero-day credential stuffing attack by correlating failed logins across 17 disparate systems in under 90 seconds—only Splunk’s SPL could join that many sourcetypes reliably."
-    },
-    {
-      role: "Platform Architect",
-      company: "TelcoNet Solutions",
-      quote: "Our Splunk cluster handles 8TB/day, but license reviews are quarterly nightmares—we now route non-critical logs to Loki to cap ingest costs."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "elasticsearch",
     name: "Elasticsearch",
     category: "Monitoring & Debugging",
     rating: 4.6,
-    reviewCount: 48200,
+    reviewCount: 0,
     icon: "search",
     description: "Open-source, distributed search and analytics engine powering the Elastic Stack.",
     longDescription:
@@ -4083,25 +3506,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 95.7,
   },
 
-    userQuotes: [
-    {
-      role: "Lead SRE",
-      company: "StreamMedia Co.",
-      quote: "We run 200-node ES clusters handling 15TB/day—Kibana Lens lets our product team build self-serve funnels without touching SQL. But we burned 3 sprints tuning circuit breakers last year."
-    },
-    {
-      role: "CTO",
-      company: "ShopFlow Labs",
-      quote: "Switched from Splunk to Elastic Cloud—cut logging costs by 60% and gained full control over retention policies. Our ML jobs now detect checkout latency spikes before users complain."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "jaeger",
     name: "Jaeger",
     category: "Monitoring & Debugging",
     rating: 4.6,
-    reviewCount: 12480,
+    reviewCount: 0,
     icon: "activity",
     description: "Open-source distributed tracing system for microservices monitoring.",
     longDescription:
@@ -4156,25 +3568,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 96,
   },
 
-    userQuotes: [
-    {
-      role: "Senior Platform Engineer",
-      company: "FinTech Global Inc.",
-      quote: "Jaeger cut our mean time to resolution (MTTR) for cross-service latency issues by 65%—its flame graphs and dependency maps made invisible bottlenecks instantly obvious in our 200+ service mesh."
-    },
-    {
-      role: "DevOps Lead",
-      company: "HealthCloud Systems",
-      quote: "We standardized on Jaeger across all Kubernetes clusters because of its OpenTelemetry alignment and Helm-first deployment model—onboarding new teams now takes under two hours instead of days."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "opentelemetry",
     name: "OpenTelemetry",
     category: "Monitoring & Debugging",
     rating: 4.3,
-    reviewCount: 28750,
+    reviewCount: 0,
     icon: "share-2",
     description: "Vendor-neutral observability framework for telemetry data collection.",
     longDescription:
@@ -4231,25 +3632,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 92.4,
   },
 
-    userQuotes: [
-    {
-      role: "Principal Engineer",
-      company: "CloudFirst Labs",
-      quote: "OTel Collector’s batch processor cut our trace export bandwidth by 63% — but we spent two sprints debugging attribute propagation bugs in the Python SDK beta."
-    },
-    {
-      role: "DevOps Lead",
-      company: "GovTech Solutions",
-      quote: "Standardizing on OTel let us decommission three proprietary APM agents and unify dashboards across AWS, Azure, and on-prem OpenShift clusters."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "chronosphere",
     name: "Chronosphere",
     category: "Monitoring & Debugging",
     rating: 4.8,
-    reviewCount: 4230,
+    reviewCount: 0,
     icon: "monitor",
     description: "Enterprise-scale metrics platform built for Prometheus ecosystems.",
     longDescription:
@@ -4306,25 +3696,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 79.1,
   },
 
-    userQuotes: [
-    {
-      role: "VP of Observability",
-      company: "PayStream Global",
-      quote: "Chronosphere cut our SLO violation investigation time from 45 minutes to under 90 seconds — and its forecast engine helped us avoid a $2.1M infra overprovisioning mistake last quarter."
-    },
-    {
-      role: "Senior Platform Engineer",
-      company: "ScaleAI Ops",
-      quote: "We route 8.7B metrics/hour through Chronosphere Metrics Router — dynamically dropping low-value labels before ingestion. That alone saved us $380k/year in storage costs."
-    },
-    ],
+    userQuotes: [],
   },
     {
     id: "jest",
     name: "Jest",
     category: "Test Automation",
     rating: 4.6,
-    reviewCount: 12450,
+    reviewCount: 0,
     icon: "beaker",
     description: "Popular JavaScript testing framework for React, Node.js, and more.",
     longDescription:
@@ -4382,18 +3761,14 @@ export const ALL_TOOLS: ToolData[] = [
         popularity: 96.5,
       },
 
-    userQuotes: [
-      { role: "Senior Frontend Engineer", company: "Shopify", quote: "We run 20K+ Jest tests across our React monorepo -- its parallelization, snapshot diffing, and TypeScript-first DX cut our CI test time by 40% and made flakiness almost nonexistent." },
-      { role: "DevOps Lead", company: "Twilio", quote: "Jest's built-in coverage reports feed directly into our SonarQube pipeline. The consistency across repos and minimal config overhead lets us enforce quality gates without custom tooling sprawl." },
-      { role: "CTO", company: "Vercel", quote: "For a framework team shipping SDKs, Jest's mocking granularity and ESM-compatible test environments let us validate edge cases we'd miss with lighter tools -- it's the only test runner we trust for correctness at scale." },
-      ],
+    userQuotes: [],
   },
   {
     id: "selenium",
     name: "Selenium",
     category: "Test Automation",
     rating: 4.1,
-    reviewCount: 42300,
+    reviewCount: 0,
     icon: "beaker",
     description: "Open-source suite for automating web browsers across multiple platforms.",
     longDescription:
@@ -4452,25 +3827,14 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 9.3,
   },
 
-    userQuotes: [
-    {
-      role: "Developer",
-      company: "Tech Company",
-      quote: "We’ve relied on Selenium for 10+ years — it’s rock-solid for cross-browser validation, even if it demands patience."
-    },
-    {
-      role: "Developer",
-      company: "Tech Company",
-      quote: "Grid helped us cut regression time from days to hours — worth every hour spent debugging timeouts."
-    },
-    ],
+    userQuotes: [],
   },
   {
     id: "cypress",
     name: "Cypress",
     category: "Test Automation",
     rating: 4.8,
-    reviewCount: 8920,
+    reviewCount: 0,
     icon: "beaker",
     description: "Modern, developer-centric E2E testing framework with real-time reloads.",
     longDescription:
@@ -4528,18 +3892,7 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 8.9,
   },
 
-    userQuotes: [
-    {
-      role: "Developer",
-      company: "Tech Company",
-      quote: "Cypress cut our flaky test rate from 30% to near zero — the automatic waiting changed everything."
-    },
-    {
-      role: "Developer",
-      company: "Tech Company",
-      quote: "Our frontend devs now write tests *before* features. The DX is that good."
-    },
-    ],
+    userQuotes: [],
   },
 ];
 
