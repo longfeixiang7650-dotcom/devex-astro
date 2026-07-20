@@ -35,8 +35,6 @@ function renderContent(content: string): string {
       return `<li>${line.slice(2)}</li>`;
     if (line.startsWith('|'))
       return '';
-    if (line.startsWith('**') && line.endsWith('**'))
-      return `<p><strong>${line.slice(2, -2)}</strong></p>`;
 
     return `<p>${line}</p>`;
   }).filter(Boolean).join('\n');

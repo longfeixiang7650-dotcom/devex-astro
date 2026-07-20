@@ -3,56 +3,52 @@ import Base from '../layouts/Base.astro';
 ---
 
 <Base title="Contact Us" description="Get in touch with the DeveX Tools team. Contact us for tool suggestions, corrections, or partnership inquiries.">
-  <main class="min-h-screen py-20">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="text-4xl font-bold mb-8">Contact Us</h1>
+  <div class="container" style="padding-top: 32px; max-width: 740px; margin: 40px auto;">
+    <h1 class="page-title">Contact Us</h1>
+    
+    <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 32px;">
+      Have a question, suggestion, or tool recommendation? We'd love to hear from you.
+    </p>
+
+    <div style="border: 1px solid var(--border); border-radius: 8px; padding: 32px; margin-bottom: 32px; background: var(--bg-subtle);">
+      <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 16px;">Get in Touch</h2>
       
-      <div class="prose prose-lg max-w-none">
-        <p class="text-xl text-muted-foreground mb-8">
-          Have a question, suggestion, or tool recommendation? We'd love to hear from you.
-        </p>
-
-        <div class="bg-card border rounded-lg p-8 mb-8">
-          <h2 class="text-2xl font-semibold mb-4">Get in Touch</h2>
-          
-          <div class="space-y-4">
-            <div>
-              <h3 class="font-medium text-lg">Email</h3>
-              <p class="text-muted-foreground">
-                <a href="mailto:info@devex-tools.net" class="text-primary hover:underline">info@devex-tools.net</a>
-              </p>
-            </div>
-
-            <div>
-              <h3 class="font-medium text-lg">Tool Submissions</h3>
-              <p class="text-muted-foreground">
-                Know a developer tool we should review? Send us the details and we'll add it to our evaluation queue.
-              </p>
-            </div>
-
-            <div>
-              <h3 class="font-medium text-lg">Advertising & Partnerships</h3>
-              <p class="text-muted-foreground">
-                For advertising inquiries, please review our <a href="/disclosure" class="text-primary hover:underline">Disclosure</a> page first. We do not accept sponsored reviews.
-              </p>
-            </div>
-
-            <div>
-              <h3 class="font-medium text-lg">Corrections</h3>
-              <p class="text-muted-foreground">
-                Spot an error in one of our reviews? We appreciate corrections — email us and we'll update promptly.
-              </p>
-            </div>
-          </div>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div>
+          <h3 style="font-weight: 600; font-size: 1.05rem; margin-bottom: 4px;">Email</h3>
+          <p style="color: var(--text-secondary);">
+            <a href="mailto:info@devex-tools.net" style="color: var(--accent); text-decoration: underline;">info@devex-tools.net</a>
+          </p>
         </div>
 
-        <div class="bg-muted border rounded-lg p-8">
-          <h2 class="text-2xl font-semibold mb-4">Response Time</h2>
-          <p class="text-muted-foreground">
-            We typically respond within 1-2 business days. For urgent matters, please include "[Urgent]" in your subject line.
+        <div>
+          <h3 style="font-weight: 600; font-size: 1.05rem; margin-bottom: 4px;">Tool Submissions</h3>
+          <p style="color: var(--text-secondary);">
+            Know a developer tool we should review? Send us the details and we'll add it to our evaluation queue.
+          </p>
+        </div>
+
+        <div>
+          <h3 style="font-weight: 600; font-size: 1.05rem; margin-bottom: 4px;">Advertising & Partnerships</h3>
+          <p style="color: var(--text-secondary);">
+            For advertising inquiries, please review our <a href="/disclosure" style="color: var(--accent); text-decoration: underline;">Disclosure</a> page first. We do not accept sponsored reviews.
+          </p>
+        </div>
+
+        <div>
+          <h3 style="font-weight: 600; font-size: 1.05rem; margin-bottom: 4px;">Corrections</h3>
+          <p style="color: var(--text-secondary);">
+            Spot an error in one of our reviews? We appreciate corrections — email us and we'll update promptly.
           </p>
         </div>
       </div>
     </div>
-  </main>
+
+    <div style="border: 1px solid var(--border); border-radius: 8px; padding: 32px; background: var(--bg-subtle);">
+      <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 16px;">Response Time</h2>
+      <p style="color: var(--text-secondary);">
+        We typically respond within 1-2 business days. For urgent matters, please include "[Urgent]" in your subject line.
+      </p>
+    </div>
+  </div>
 </Base>
