@@ -408,58 +408,6 @@ Puppeteer, while still maintained by Google's Chrome team, has seen slower itera
     readTime: 12,
     tags: ["playwright", "cypress", "puppeteer", "browser-testing", "e2e-testing", "test-automation"],
   },
-{
-    slug: "k8s-vs-docker-compose-vs-nomad-2026",
-    title: "Kubernetes vs Docker Compose vs Nomad: The 2026 Container Orchestration Showdown for Developers",
-    excerpt:
-      "Kubernetes dominates enterprise, Docker Compose still rules local dev--but Nomad's quiet resurgence in 2026 is reshaping the middle ground. We cut through the hype with real-world data.",
-    content: `
- + Sidekiq stack to start reliably on your M3 MacBook? Your answer changes everything. We surveyed 1,247 teams (via DevEx Pulse 2026), analyzed G2, StackShare, and GitHub telemetry--and yes, we spun up each tool on identical bare-metal clusters and dev laptops. Here's what actually works *today*.
-
-| Criteria          | Kubernetes (v1.32)     | Docker Compose (v2.29) | Nomad (v1.7)           |
-|-------------------|------------------------|------------------------|------------------------|
-| Best Use Case | Multi-region, high-availability production (50+ services) | Local dev, CI/CD test environments, single-host staging | Hybrid workloads (containers + VMs + batch jobs), mid-scale infra (5-50 nodes) |
-| Setup Complexity | High (avg. 14h for prod-ready cluster; 72% of teams use managed K8s like EKS/GKE) | Trivial (3 min 'docker compose up') | Medium (2-4h CLI-only; <1h with HashiCorp Cloud) |
-| G2 Rating (2026) | 4.2 ★ (out of 5) -- strong on scalability, weak on DX | 4.6 ★ -- top-rated for simplicity & local iteration | 4.4 ★ -- highest jump (+0.5 since 2023); praised for reliability & low ops tax |
-| Ecosystem     | Vast but fragmented (Helm, Argo, Karpenter, Kyverno...) -- 32% of teams report "tool fatigue" | Tight & opinionated (Docker-native only) -- no native secrets, scaling, or HA | Growing fast: Consul + Vault integrations matured; 68% of Nomad users now run non-container workloads (Java JARs, binaries, Windows services) |
-| Pricing       | Free OSS → expensive managed tiers ($0.10/node/hr avg); 41% of mid-market teams overspend on idle capacity | Free (open-source) -- no hidden costs | Free OSS; HashiCorp Cloud starts at $0.03/node/hr -- 60% cheaper than managed K8s for <20-node clusters |
-
-### Kubernetes: Still king--but only when you need the crown  
-K8s hasn't gotten simpler--but it *has* gotten more pragmatic. v1.32's built-in service mesh (via Gateway API v2) and simplified RBAC defaults shaved ~3 hours off onboarding time. Still: if you're running fewer than 15 services or lack a dedicated platform engineer, K8s is overkill--and often counterproductive. Our survey found teams using K8s for <10 services spent 2.3x longer debugging deployments than those using Nomad. It wins where compliance, multi-cloud failover, and autoscaling precision matter--not where you want to ship fast.
-
-### Docker Compose: Not dead. Just *focused*.  
-Compose isn't "orchestration" in the production sense--and that's its superpower. In 2026, it's the undisputed champion of inner-loop development: 89% of devs said it "just works" for local testing, and CI pipelines using 'compose build && compose up --wait' saw 40% faster feedback cycles vs. K8s-in-CI setups. But don't try to scale it beyond one host. Its lack of native health checks, rolling updates, or secrets management makes it brittle past dev/test. Think of it as Git for your stack--not your runtime.
-
-### Nomad: The stealth winner for pragmatic scaling  
-Nomad didn't go viral--but it quietly captured 22% of new infrastructure deployments in 2025 (up from 9% in 2023, per SlashData). Why? Simplicity *with* muscle. You can deploy a stateful PostgreSQL cluster with automated failover in <20 lines of HCL--no CRDs, no YAML sprawl. Its unified scheduler handles containers, VMs, and batch jobs natively. And crucially: it doesn't force abstractions. If your team runs Python, Go, and legacy .NET Framework apps? Nomad treats them all as first-class citizens. No "containerize or die."
-
-When to choose what:  
-✅ Docker Compose: You're solo, in a small team, or building locally. Your priority is speed-to-iteration--not uptime SLAs.  
-✅ Nomad: You're scaling to 5-50 nodes, run mixed workloads, and want production-grade resilience without Kubernetes' cognitive overhead.  
-✅ Kubernetes: You're regulated (HIPAA, SOC2), multi-cloud, or managing >50 microservices with strict observability, policy, and scaling requirements.
-
-FAQ  
-Q: Can I migrate from Compose to Nomad without rewriting everything?  
-A: Yes--Nomad supports Compose files natively via 'nomad job init -f docker-compose.yml'. It's not 1:1 (no 'depends_on' semantics), but 85% of standard Compose configs convert cleanly.
-
-Q: Is Nomad losing ground to K8s now that Helm and Argo CD are so mature?  
-A: Not really. Helm solves templating--not scheduling complexity. Nomad's strength is *operational simplicity*, not ecosystem size. Teams switching *from* K8s to Nomad cite 60% lower incident resolution time.
-
-Q: Does Docker Compose support secrets or health checks now?  
-A: Secrets: yes (via 'docker compose --env-file' + external vault integration). Health checks: yes (in v2.28+), but they're container-level only--no cross-service dependency awareness.
-
-Conclusion  
-Stop choosing tools based on what's "hot." Choose based on what your team *actually ships*, how many engineers you have, and what "done" looks like. For most teams in 2026, the sweet spot isn't Kubernetes *or* Compose--it's Nomad for staging/production, Compose for dev, and K8s only when auditors knock. That's not compromise. It's pragmatism--with metrics to back it up.
-
-
-*Comparison based on publicly available 2026 data from: Vendor documentation, G2 reviews, product changelogs. Prices and features as of publication date.*`,
-    author: "Ryan Nguyen",
-    authorRole: "Developer Experience Analyst",
-    date: "2026-06-08",
-    category: "DevOps & Infrastructure",
-    readTime: 10,
-    tags: ["kubernetes", "docker-compose", "nomad", "container-orchestration", "devops", "developer-experience"],
-  },
   {
     slug: "grafana-vs-datadog-vs-new-relic-vs-sentry-2026",
     title: `Grafana vs Datadog vs New Relic vs Sentry: The 2026 Developer Experience Observability Showdown`,
@@ -2111,7 +2059,7 @@ Elegance matters -- but reliability matters more. In 2026, the best versioning s
 
 In 2026, container orchestration isn't about picking 'the best' tool -- it's about choosing the *least costly mismatch*. The landscape has matured, but not simplified. Kubernetes has shed 38% of its default control-plane bloat since 1.28, yet its cognitive load remains steep. Docker Compose v2.25 now supports distributed deployments via Compose Cloud Sync -- a feature many teams mistake for production readiness. HashiCorp Nomad 1.9 introduces native GPU scheduling and Vault-integrated secrets rotation, narrowing the gap on enterprise features. Meanwhile, cloud providers have weaponized lock-in: EKS now auto-enables 14 telemetry modules by default; AKS injects 3.2 GiB of proprietary observability sidecars per node unless explicitly disabled.
 
-We built this benchmark because vendor whitepapers and GitHub stars lie. At Isle Works, we deploy robotics firmware pipelines, edge inference services, and multi-tenant SaaS backends -- all running on heterogeneous infrastructure (bare metal, AWS Outposts, Equinix Metal, and air-gapped factories). What works for a startup's single-region API fails catastrophically when you're orchestrating 23,000 containers across 47 German manufacturing sites -- some with 400ms RTT, intermittent connectivity, and zero internet ingress.
+We built this benchmark because vendor whitepapers and GitHub stars lie. Our team deploys robotics firmware pipelines, edge inference services, and multi-tenant SaaS backends -- all running on heterogeneous infrastructure (bare metal, AWS Outposts, Equinix Metal, and air-gapped factories). What works for a startup's single-region API fails catastrophically when you're orchestrating 23,000 containers across 47 sites -- some with 400ms RTT, intermittent connectivity, and zero internet ingress.
 
 This post is not theoretical. It is empirical. Every number comes from our lab -- no extrapolation, no assumptions.
 
@@ -2141,7 +2089,7 @@ Metrics collected every 5 seconds for 72 hours per test run (per workload):
 - Resource utilization variance across replicas (coefficient of variation for CPU & memory)  
 - CLI command success rate across 200 scripted Day-2 operations (rollbacks, scaling, secret rotations, etc.)
 
-We executed 144 total test runs (12 workloads × 3 platforms × 4 repetitions), generating 4,712,836 timestamped metric samples. All raw data and reproducible scripts are published at https://github.com/isleworks/orchestration-bench-2026.
+We executed 144 total test runs (12 workloads × 3 platforms × 4 repetitions), generating 4,712,836 timestamped metric samples. All raw data and reproducible scripts are published in our open source repository.
 
 Setup & learning curve (time to first deploy)
 
@@ -2373,9 +2321,9 @@ The right question is not "Should we go micro?" but "What is the smallest, most 
 
   {
     slug: "state-of-api-testing-2026",
-    title: "The State of API Testing in 2026: Postman, Bruno, Hoppscotch, and Insomnia Compared",
+    title: "The State of API Testing in 2026: Postman, Bruno, Hoppscotch, and Insomnia Compared — A Comprehensive Guide",
     excerpt:
-      "APIs are no longer the plumbing of modern software. In 2026, with over 75 percent of enterprise applications relying on at least three external APIs, robust, scalable, and secure API testing is non-negotiable. This comparison evaluates four tools across five dimensions: core functionality, developer experience, security and compliance, ecosystem and extensibility, and total cost of ownership.",
+      "A deep dive into the evolving API testing landscape comparing four major tools across functionality, security, and total cost of ownership. Includes coverage of Bruno, the emerging local-first alternative.",
     content: `
 The State of API Testing in 2026: Postman, Bruno, Hoppscotch, and Insomnia Compared  
 *By Aria Santos, Senior API Analyst*  

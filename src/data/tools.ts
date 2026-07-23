@@ -676,7 +676,7 @@ export const ALL_TOOLS: ToolData[] = [
     features: [
       "Native AI-powered code suggestions via GitHub Copilot integrated into PR reviews and commit authoring",
       "Real-time collaborative editing in VS Code and JetBrains IDEs using GitHub Codespaces with persistent dev containers",
-      "Automated dependency graph updates with CVE-2026-XXXX remediation patches applied via PR bots",
+      "Automated dependency graph updates with security vulnerability remediation patches applied via PR bots",
       "GitHub Actions runner groups with ARM64 and confidential computing (Intel TDX) support for secure CI",
       "Built-in SBOM generation and attestation signing using Sigstore Cosign and Fulcio integration",
       "Fine-grained personal access token (PAT) scopes with time-bound, JIT-issued tokens via OAuth 2.1",
