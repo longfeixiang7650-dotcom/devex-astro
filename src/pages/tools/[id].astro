@@ -51,8 +51,8 @@ const hasVideo = !!videoId;
             <div style="font-size: 0.6875rem; color: var(--text-muted);">Rating</div>
           </div>
           <div style="text-align: center; padding: 12px 8px; background: var(--bg-subtle); border-radius: 6px; border: 1px solid var(--border);">
-            <div style="font-size: 1.25rem; font-weight: 800; color: var(--text);">{(tool.reviewCount / 1000).toFixed(1)}k</div>
-            <div style="font-size: 0.6875rem; color: var(--text-muted);">Reviews</div>
+            <div style="font-size: 1.25rem; font-weight: 800; color: var(--text);">✓</div>
+            <div style="font-size: 0.6875rem; color: var(--text-muted);">Reviewed</div>
           </div>
           <div style="text-align: center; padding: 12px 8px; background: var(--bg-subtle); border-radius: 6px; border: 1px solid var(--border);">
             <div style="font-size: 1.25rem; font-weight: 800; color: var(--text);">{tool.features?.length || 0}</div>
@@ -196,7 +196,7 @@ const hasVideo = !!videoId;
             <div style="padding: 4px 0;"><strong>Category:</strong> {tool.category}</div>
             <div style="padding: 4px 0;"><strong>Pricing:</strong> {tool.pricing}</div>
             <div style="padding: 4px 0;"><strong>Website:</strong> <a href={tool.websiteUrl} target="_blank">{tool.websiteUrl?.replace('https://', '').replace('http://', '')}</a></div>
-            <div style="padding: 4px 0;"><strong>Reviews:</strong> {tool.reviewCount.toLocaleString()}</div>
+            <div style="padding: 4px 0;"><strong>Reviewed:</strong> Editorially by our engineering team</div>
           </div>
         </div>
 

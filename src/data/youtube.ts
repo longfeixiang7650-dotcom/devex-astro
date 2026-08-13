@@ -62,19 +62,19 @@ export const YOUTUBE_VIDEOS: Record<string, string> = {
   "helm": "idF3eO4q1p4",           // TechWorld with Nana - What is Helm in Kubernetes
   "podman": "e6Q-P-60qis",          // Savage Reviews - Podman vs OrbStack
   "vagrant": "2iS0yZ4NkHs",        // Traversy Media - Vagrant Crash Course
-    "packer": "OmQRpi3CSjU", // Benji Astrom — EXTREMELY realistic packer review | Emisil GERALD 
+    "packer": "lEqD3mRcqSo", // Techno Tim — Deploying Machines with MaaS and Packer - Metal as
 
   // Monitoring & Debugging
   "datadog": "m4d5RHjWv4M",        // How2Genius - Grafana vs Datadog
-    "sentry": "OgcywpJrhGk", // HeroBattle — Sentry vs Homelander #shorts #short #sentry #homel
+    "sentry": "NKiTlo_dgb8", // Traversy Media — NextJS + Postgres and Error Monitoring  - Full Sta
   "grafana": "X2KAFyFLagM",        // Fireship - Grafana is the goat
   "prometheus": "h4Sl21AKiDg",     // TechWorld with Nana - Prometheus Monitoring
   "new-relic": "JNOvfNIZNLA",      // AIM Network - New Relic Observability
   "splunk": "3CiRs6WaWaU",         // Jon Good - Splunk Tutorial
   "elasticsearch": "gS_nHTWZEJ8",  // Elastic Community - Elastic Stack Crash Course
-    "jaeger": "cYAE0ZhT43c", // theartwatches — Watch Collector Problems: Jacob &amp; Co vs FPJOUR
+    "jaeger": "ZIN7H00ulQw", // Anton Putra — OpenTelemetry Golang Tutorial (Tracing in Grafana 
     "opentelemetry": "hLvwoow3XTk", // IBM Technology — OpenTelemetry: Simplifying Hybrid Cloud Monitoring
-    "chronosphere": "osA4MBysMZQ", // hOlyhexOr — the best chronosphere you will see today
+    "chronosphere": "WNxtylzkJdc", // Chronosphere — Control your log data with Chronosphere Logs
 
   // Test Automation
     "jest": "7f-71kYhK00", // Web Dev Simplified — Why Vitest Is Better Than Jest
