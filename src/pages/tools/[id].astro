@@ -1,7 +1,6 @@
 ---
 // Dynamically generate routes for all tools
 import Base from '../../layouts/Base.astro';
-import ScoreRadarChart from '../../components/ScoreRadarChart.astro';
 import { ALL_TOOLS } from '../../data/tools';
 import { YOUTUBE_VIDEOS } from '../../data/youtube';
 
@@ -19,6 +18,8 @@ const relatedTools = ALL_TOOLS
 const youtubeQuery = encodeURIComponent(`${tool.name} review tutorial`);
 const videoId = YOUTUBE_VIDEOS[tool.id];
 const hasVideo = !!videoId;
+const _pl = tool.pricing.toLowerCase();
+const pricingLabel = (_pl.includes('free') && /paid|pro|premium|team|enterprise|per user|\$|tier/i.test(tool.pricing)) ? 'Freemium' : (_pl.includes('free') || _pl.includes('open')) ? 'Free' : /paid|\$|subscription/i.test(tool.pricing) ? 'Paid' : 'Commercial';
 ---
 <Base title={`${tool.name} Review 2026 — Hands-on Analysis | DeveX Tools`} description={`Honest hands-on review of ${tool.name}. ${tool.description.slice(0, 150)}`}>
   <div class="container" style="padding-top: 32px;">
@@ -47,8 +48,8 @@ const hasVideo = !!videoId;
         
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 16px;">
           <div style="text-align: center; padding: 12px 8px; background: var(--bg-subtle); border-radius: 6px; border: 1px solid var(--border);">
-            <div style="font-size: 1.25rem; font-weight: 800; color: var(--accent);">{tool.rating}</div>
-            <div style="font-size: 0.6875rem; color: var(--text-muted);">Rating</div>
+            <div style="font-size: 1.25rem; font-weight: 800; color: var(--accent);">{pricingLabel}</div>
+            <div style="font-size: 0.6875rem; color: var(--text-muted);">Pricing</div>
           </div>
           <div style="text-align: center; padding: 12px 8px; background: var(--bg-subtle); border-radius: 6px; border: 1px solid var(--border);">
             <div style="font-size: 1.25rem; font-weight: 800; color: var(--text);">✓</div>
@@ -71,7 +72,6 @@ const hasVideo = !!videoId;
       <a href="#overview" style="padding: 8px 16px; background: var(--accent-light); color: var(--accent); border-radius: 20px; font-size: 0.8125rem; font-weight: 600; text-decoration: none; white-space: nowrap;">Overview</a>
       <a href="#pros-cons" style="padding: 8px 16px; background: var(--bg-subtle); color: var(--text-secondary); border-radius: 20px; font-size: 0.8125rem; text-decoration: none; white-space: nowrap;">Pros &amp; Cons</a>
       <a href="#features" style="padding: 8px 16px; background: var(--bg-subtle); color: var(--text-secondary); border-radius: 20px; font-size: 0.8125rem; text-decoration: none; white-space: nowrap;">Features</a>
-      <a href="#score" style="padding: 8px 16px; background: var(--bg-subtle); color: var(--text-secondary); border-radius: 20px; font-size: 0.8125rem; text-decoration: none; white-space: nowrap;">Score</a>
       <a href="#pricing" style="padding: 8px 16px; background: var(--bg-subtle); color: var(--text-secondary); border-radius: 20px; font-size: 0.8125rem; text-decoration: none; white-space: nowrap;">Pricing</a>
       <a href="#video" style="padding: 8px 16px; background: var(--bg-subtle); color: var(--text-secondary); border-radius: 20px; font-size: 0.8125rem; text-decoration: none; white-space: nowrap;">Video</a>
     </div>
@@ -130,33 +130,6 @@ const hasVideo = !!videoId;
           )}
         </section>
 
-        <section id="score" style="margin-bottom: 32px; scroll-margin-top: 80px;">
-          <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 16px;">Score Breakdown</h2>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start;">
-            <div style="display: flex; flex-direction: column; gap: 12px;">
-              {Object.entries(tool.scoreBreakdown || {}).map(([key, val]) => (
-                <div>
-                  <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
-                    <span style="font-size: 0.8125rem; color: var(--text-secondary); text-transform: capitalize;">{key}</span>
-                    <span style="font-size: 0.8125rem; font-weight: 600;">{val}/100</span>
-                  </div>
-                  <div style="height: 10px; background: var(--bg-subtle); border-radius: 5px; overflow: hidden;">
-                    <div style={`height: 100%; width: ${val}%; background: linear-gradient(90deg, var(--accent), #60a5fa); border-radius: 5px;`}></div>
-                  </div>
-                </div>
-              ))}
-              <div style="margin-top: 8px; padding: 12px; background: var(--bg-subtle); border-radius: 6px; text-align: center; border: 1px solid var(--border);">
-                <span style="font-size: 0.8125rem; color: var(--text-muted);">Overall Rating</span>
-                <div style="font-size: 1.5rem; font-weight: 800; color: var(--accent);">{tool.rating}/5.0</div>
-              </div>
-            </div>
-            <div style="border: 1px solid var(--border); border-radius: 8px; padding: 16px;">
-              <h3 style="font-size: 0.8125rem; font-weight: 600; margin-bottom: 8px; color: var(--text-muted); text-align: center;">Performance Radar</h3>
-              <ScoreRadarChart scoreBreakdown={tool.scoreBreakdown} />
-            </div>
-          </div>
-        </section>
-
         <section id="pricing" style="margin-bottom: 32px; scroll-margin-top: 80px;">
           <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 12px;">Pricing</h2>
           <div style="border: 1px solid var(--border); border-radius: 8px; padding: 20px; background: var(--bg-subtle);">
@@ -164,20 +137,6 @@ const hasVideo = !!videoId;
             <div style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.5;">{tool.pricingDetail}</div>
           </div>
         </section>
-
-        {tool.userQuotes?.length > 0 && (
-          <section style="margin-bottom: 32px;">
-            <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 12px;">What Users Say</h2>
-            <div style="display: grid; gap: 12px;">
-              {tool.userQuotes.map(q => (
-                <div style="border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px;">
-                  <p style="font-size: 0.875rem; color: var(--text-secondary); font-style: italic; margin-bottom: 8px;">"{q.quote}"</p>
-                  <div style="font-size: 0.8125rem; font-weight: 600;">— {q.role}{q.company ? `, ${q.company}` : ''}</div>
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
 
         <section style="margin-bottom: 32px;">
           <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 12px;">Best For</h2>

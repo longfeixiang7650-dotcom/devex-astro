@@ -3,9 +3,9 @@ import Base from '../layouts/Base.astro';
 import { ALL_TOOLS } from '../data/tools';
 import { BLOG_POSTS } from '../data/blog-posts';
 
-// Top tools by rating (take 12 for grid)
+// Featured tools (by feature richness — objective & verifiable)
 const topTools = [...ALL_TOOLS]
-  .sort((a, b) => b.rating - a.rating)
+  .sort((a, b) => b.features.length - a.features.length)
   .slice(0, 12);
 
 // Recent blog posts
@@ -24,14 +24,14 @@ ALL_TOOLS.forEach(t => {
 
 // Stats
 const totalTools = ALL_TOOLS.length;
-const avgRating = (ALL_TOOLS.reduce((s, t) => s + t.rating, 0) / totalTools).toFixed(1);
-const totalReviews = ALL_TOOLS.reduce((s, t) => s + t.reviewCount, 0);
+const totalCategories = categories.length;
+const freeTools = ALL_TOOLS.filter(t => /free|open[- ]?source/i.test(t.pricing)).length;
 
-// Editor's picks - highest rated from 4 key categories
+// Editor's picks - most feature-rich from 4 key categories
 const keyCategories = ['IDE / Code Editor', 'CI/CD', 'Version Control', 'API Development'];
 const editorPicks = [];
 for (const cat of keyCategories) {
-  const best = ALL_TOOLS.filter(t => t.category === cat).sort((a, b) => b.rating - a.rating)[0];
+  const best = ALL_TOOLS.filter(t => t.category === cat).sort((a, b) => b.features.length - a.features.length)[0];
   if (best) editorPicks.push(best);
 }
 ---
@@ -46,12 +46,12 @@ for (const cat of keyCategories) {
         <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 2px;">Tools Reviewed</div>
       </div>
       <div style="text-align: center; padding: 20px 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-card);">
-        <div style="font-size: 1.75rem; font-weight: 800; color: var(--text);">{avgRating}</div>
-        <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 2px;">Avg Rating</div>
+        <div style="font-size: 1.75rem; font-weight: 800; color: var(--text);">{totalCategories}</div>
+        <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 2px;">Categories</div>
       </div>
       <div style="text-align: center; padding: 20px 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-card);">
-        <div style="font-size: 1.75rem; font-weight: 800; color: var(--text);">{totalTools * 3}</div>
-        <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 2px;">Hours of Testing</div>
+        <div style="font-size: 1.75rem; font-weight: 800; color: var(--text);">{freeTools}</div>
+        <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 2px;">Free &amp; Open Source</div>
       </div>
       <div style="text-align: center; padding: 20px 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-card);">
         <div style="font-size: 1.75rem; font-weight: 800; color: var(--text);">{BLOG_POSTS.length}</div>
@@ -79,7 +79,7 @@ for (const cat of keyCategories) {
 
     <!-- === FEATURED: TOP TOOLS WITH SCREENSHOTS === -->
     <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 16px; letter-spacing: -0.01em;">
-      ⭐ Top Rated Developer Tools
+      ⭐ Featured Developer Tools
     </h2>
     <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin-bottom: 40px;">
       {topTools.slice(0, 8).map(tool => (
@@ -97,7 +97,7 @@ for (const cat of keyCategories) {
           <div style="padding: 14px;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
               <div style="font-weight: 600; font-size: 0.9375rem;">{tool.name}</div>
-              <div style="font-weight: 700; color: var(--accent); font-size: 0.875rem;">{tool.rating}</div>
+              <div style="font-weight: 700; color: var(--accent); font-size: 0.875rem;">{tool.features.length} features</div>
             </div>
             <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 6px;">{tool.category}</div>
             <p style="font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
@@ -126,7 +126,7 @@ for (const cat of keyCategories) {
                 <div style="font-weight: 600; font-size: 0.8125rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{tool.name}</div>
                 <div style="font-size: 0.6875rem; color: var(--text-muted);">{tool.category}</div>
               </div>
-              <div style="margin-left: auto; font-size: 0.75rem; color: var(--accent); font-weight: 600;">{tool.rating}</div>
+              <div style="margin-left: auto; font-size: 0.75rem; color: var(--accent); font-weight: 600;">{tool.features.length} features</div>
             </a>
           );
         })}
@@ -190,7 +190,7 @@ for (const cat of keyCategories) {
           <h3 class="sidebar-title">📊 Quick Stats</h3>
           <div style="font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.8;">
             <div>✅ {totalTools} tools reviewed</div>
-            <div>⭐ Avg rating: {avgRating}/5</div>
+            <div>🆓 {freeTools} free &amp; open-source tools</div>
             <div>📝 {BLOG_POSTS.length} in-depth articles</div>
             <div>📂 {categories.length} categories</div>
           </div>

@@ -35,13 +35,13 @@ const categorySlug = category.toLowerCase().replace(/[\/\s]+/g, '-');
             <div>
               <div class="card-title">{tool.name}</div>
             </div>
-            <div style="font-weight: 700; color: var(--accent);">{tool.rating}</div>
+            <div style="font-weight: 700; color: var(--accent);">{tool.features.length} features</div>
           </div>
           <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
             {tool.description}
           </p>
           <div style="margin-top: 8px; font-size: 0.8125rem; color: var(--text-muted);">
-            {tool.pricing} · {tool.reviewCount.toLocaleString()} reviews
+            {tool.pricing}
           </div>
         </a>
       ))}

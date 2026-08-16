@@ -3,8 +3,6 @@ export interface ToolData {
   id: string;
   name: string;
   category: string;
-  rating: number;
-  reviewCount: number;
   icon: string;
   description: string;
   longDescription: string;
@@ -16,17 +14,6 @@ export interface ToolData {
   useCase: string;
   websiteUrl: string;
   alternatives: string[];
-  scoreBreakdown: {
-    features: number;
-    reviews: number;
-    momentum: number;
-    popularity: number;
-  };
-  userQuotes: {
-    role: string;
-    company: string;
-    quote: string;
-  }[];
 }
 
 export const ALL_TOOLS: ToolData[] = [
@@ -34,8 +21,6 @@ export const ALL_TOOLS: ToolData[] = [
     id: "vscode",
     name: "Visual Studio Code",
     category: "IDE / Code Editor",
-    rating: 4.7,
-    reviewCount: 0,
     icon: "code-2",
     description: "Lightweight, extensible, open-source code editor with rich debugging and Git integration.",
     longDescription:
@@ -79,21 +64,11 @@ export const ALL_TOOLS: ToolData[] = [
       "vim"
     ],
 
-    scoreBreakdown: {
-    features: 85.0,
-    reviews: 85.0,
-    momentum: 85.0,
-    popularity: 85.0,
-  },
-
-    userQuotes: [],
   },
 {
     id: "intellij-idea",
     name: "IntelliJ IDEA",
     category: "IDE / Code Editor",
-    rating: 4.6,
-    reviewCount: 0,
     icon: "code-2",
     description: "Feature-rich Java IDE with unmatched smart coding assistance and framework support.",
     longDescription:
@@ -143,21 +118,11 @@ export const ALL_TOOLS: ToolData[] = [
       "sublime-text",
     ],
 
-    scoreBreakdown: {
-    features: 96.0,
-    reviews: 93.5,
-    momentum: 90.2,
-    popularity: 91.5,
-  },
-
-    userQuotes: [],
   },
   {
     id: "sublime-text",
     name: "Sublime Text",
     category: "IDE / Code Editor",
-    rating: 4.3,
-    reviewCount: 0,
     icon: "code-2",
     description: "Fast, minimalist text editor prized for speed, simplicity, and powerful multi-cursor editing.",
     longDescription:
@@ -204,21 +169,11 @@ export const ALL_TOOLS: ToolData[] = [
       "neovim"
     ],
 
-    scoreBreakdown: {
-    features: 85.0,
-    reviews: 85.0,
-    momentum: 85.0,
-    popularity: 85.0,
-  },
-
-    userQuotes: [],
   },
   {
     id: "vim",
     name: "Vim",
     category: "IDE / Code Editor",
-    rating: 4.6,
-    reviewCount: 0,
     icon: "terminal",
     description: "Modal, terminal-based text editor famed for efficiency and minimalism.",
     longDescription:
@@ -259,21 +214,11 @@ export const ALL_TOOLS: ToolData[] = [
       "vs-code"
     ],
 
-    scoreBreakdown: {
-    features: 85.0,
-    reviews: 85.0,
-    momentum: 85.0,
-    popularity: 85.0,
-  },
-
-    userQuotes: [],
   },
   {
     id: "eclipse-ide",
     name: "Eclipse IDE",
     category: "IDE / Code Editor",
-    rating: 4.1,
-    reviewCount: 0,
     icon: "code-2",
     description: "Extensible Java-centric IDE with rich plugin architecture and enterprise tooling.",
     longDescription:
@@ -323,16 +268,11 @@ export const ALL_TOOLS: ToolData[] = [
         "android-studio"
       ],
 
-    scoreBreakdown: { features: 92.0, reviews: 86.0, momentum: 76.0, popularity: 82.0 },
-
-    userQuotes: [],
   },
   {
     id: "neovim",
     name: "Neovim",
     category: "IDE / Code Editor",
-    rating: 4.8,
-    reviewCount: 0,
     icon: "terminal",
     description: "Modern, hackable Vim fork with async plugins, LSP, and embedded terminal.",
     longDescription:
@@ -382,16 +322,11 @@ export const ALL_TOOLS: ToolData[] = [
         "sublime-text"
       ],
 
-    scoreBreakdown: { features: 94.0, reviews: 90.0, momentum: 96.0, popularity: 86.0 },
-
-    userQuotes: [],
   },
   {
     id: "webstorm",
     name: "WebStorm",
     category: "IDE / Code Editor",
-    rating: 4.6,
-    reviewCount: 0,
     icon: "code-2",
     description: "JetBrains' intelligent IDE for modern JavaScript, TypeScript, and web development.",
     longDescription:
@@ -441,21 +376,11 @@ export const ALL_TOOLS: ToolData[] = [
       "vscode",
     ],
 
-    scoreBreakdown: {
-    features: 93.8,
-    reviews: 92.0,
-    momentum: 80.1,
-    popularity: 84.5,
-  },
-
-    userQuotes: [],
   },
 {
     id: "xcode",
     name: "Xcode",
     category: "IDE / Code Editor",
-    rating: 4.8,
-    reviewCount: 0,
     icon: "code-2",
     description: "Apple's official IDE for macOS, iOS, iPadOS, watchOS, and visionOS development.",
     longDescription:
@@ -506,21 +431,11 @@ export const ALL_TOOLS: ToolData[] = [
       "vscode",
     ],
 
-    scoreBreakdown: {
-    features: 97.0,
-    reviews: 95.2,
-    momentum: 90.0,
-    popularity: 93.5,
-  },
-
-    userQuotes: [],
   },
   {
     id: "android-studio",
     name: "Android Studio",
     category: "IDE / Code Editor",
-    rating: 4.3,
-    reviewCount: 0,
     icon: "code-2",
     description: "Official IDE for Android development, based on IntelliJ IDEA with deep Kotlin/Java tooling.",
     longDescription:
@@ -569,21 +484,11 @@ export const ALL_TOOLS: ToolData[] = [
       "vscode",
     ],
 
-    scoreBreakdown: {
-    features: 94,
-    reviews: 89,
-    momentum: 92,
-    popularity: 97,
-  },
-
-    userQuotes: [],
   },
   {
     id: "pycharm",
     name: "PyCharm",
     category: "IDE / Code Editor",
-    rating: 4.6,
-    reviewCount: 0,
     icon: "code-2",
     description: "Powerful Python-focused IDE with intelligent code assistance and integrated tools.",
     longDescription:
@@ -633,21 +538,11 @@ export const ALL_TOOLS: ToolData[] = [
       "gitlab",
     ],
 
-    scoreBreakdown: {
-    features: 94.2,
-    reviews: 91.7,
-    momentum: 85.3,
-    popularity: 88.9,
-  },
-
-    userQuotes: [],
   },
   {
     id: "github",
     name: "GitHub",
     category: "Version Control",
-    rating: 4.7,
-    reviewCount: 0,
     icon: "git-branch",
     description: "Cloud-based Git platform with collaboration, CI/CD, and project management tools.",
     longDescription:
@@ -697,21 +592,11 @@ export const ALL_TOOLS: ToolData[] = [
       "pycharm",
     ],
 
-    scoreBreakdown: {
-    features: 96,
-    reviews: 92,
-    momentum: 97,
-    popularity: 98,
-  },
-
-    userQuotes: [],
   },
   {
     id: "gitlab",
     name: "GitLab",
     category: "Version Control",
-    rating: 4.3,
-    reviewCount: 0,
     icon: "git-branch",
     description: "Unified DevOps platform with Git repo management, CI/CD, security, and monitoring.",
     longDescription:
@@ -761,21 +646,11 @@ export const ALL_TOOLS: ToolData[] = [
       "pycharm",
     ],
 
-    scoreBreakdown: {
-    features: 91.4,
-    reviews: 86.7,
-    momentum: 79.2,
-    popularity: 83.5,
-  },
-
-    userQuotes: [],
   },
   {
     id: "bitbucket",
     name: "Bitbucket",
     category: "Version Control",
-    rating: 4.2,
-    reviewCount: 0,
     icon: "git-branch",
     description: "Git and Mercurial repository hosting with built-in CI/CD, PRs, and team collaboration.",
     longDescription:
@@ -826,21 +701,11 @@ export const ALL_TOOLS: ToolData[] = [
       "github",
     ],
 
-    scoreBreakdown: {
-    features: 87.5,
-    reviews: 82.3,
-    momentum: 71.0,
-    popularity: 79.6,
-  },
-
-    userQuotes: [],
   },
   {
     id: "sourceforge",
     name: "SourceForge",
     category: "Version Control",
-    rating: 3.9,
-    reviewCount: 0,
     icon: "git-branch",
     description: "Legacy open-source hosting platform supporting Git, SVN, Mercurial, and CVS with download analytics.",
     longDescription:
@@ -893,21 +758,11 @@ export const ALL_TOOLS: ToolData[] = [
       "gitlab",
     ],
 
-    scoreBreakdown: {
-    features: 83.1,
-    reviews: 88.4,
-    momentum: 73.2,
-    popularity: 80.8,
-  },
-
-    userQuotes: [],
   },
   {
     id: "apache-subversion",
     name: "Apache Subversion",
     category: "Version Control",
-    rating: 4.6,
-    reviewCount: 0,
     icon: "git-branch",
     description: "Centralized, enterprise-grade version control system with atomic commits and path-based permissions.",
     longDescription:
@@ -959,21 +814,11 @@ export const ALL_TOOLS: ToolData[] = [
       "git",
     ],
 
-    scoreBreakdown: {
-    features: 94.7,
-    reviews: 91.2,
-    momentum: 76.8,
-    popularity: 88.5,
-  },
-
-    userQuotes: [],
   },
   {
     id: "jenkins",
     name: "Jenkins",
     category: "CI/CD",
-    rating: 4.3,
-    reviewCount: 0,
     icon: "box",
     description: "Open-source automation server for building, testing, and deploying software.",
     longDescription: `Jenkins remains the de facto open-source automation server for CI/CD, uniquely balancing deep customization with enterprise-scale orchestration--deployed by 85% of Fortune 500 companies and powering over 1.2 million active instances globally (CloudBees 2024 State of Jenkins Report). Its strength lies in unparalleled extensibility: 1,850+ production-ready plugins, Groovy-based Pipeline-as-Code enabling dynamic Kubernetes agent provisioning, and native support for heterogeneous toolchains--from COBOL on z/OS to Rust on ARM. Capital One reports 24,300+ weekly builds across 17 legacy and modern stacks, sustaining a 92.4% build success rate and median duration of 4.7 minutes; Bosch uses custom Jenkins agents to flash firmware onto 200K+ embedded controllers per month; and Netflix's Spinnaker still relies on Jenkins for pre-deployment validation pipelines. Yet Jenkins demands significant operational overhead: median time-to-production for new teams is 14.2 hours (DevEx Tools Benchmark, Q2 2024), requiring manual HA clustering, RBAC hardening, and JVM tuning (heap >4GB + G1GC) to sustain >500 concurrent jobs without UI latency. Plugin risk persists--37% of Jenkins-related CVEs in 2023 traced to third-party plugins, necessitating rigorous audit workflows. Compared to GitLab CI (tighter SCM integration, built-in container registry, but less flexible agent topology), GitHub Actions (developer-friendly YAML, excellent for cloud-native apps, yet constrained in on-prem or air-gapped environments), and CircleCI (strong macOS/iOS support, faster out-of-box setup, but limited plugin ecosystem and self-hosting complexity), Jenkins stands alone in hybrid, regulated, or deeply customized contexts--especially finance, aerospace, and industrial IoT. Looking ahead, Jenkins 2.4x's improved Blue Ocean UX, declarative pipeline enhancements, and Project Wisdom's AI-assisted pipeline debugging signal a pragmatic evolution--not a pivot toward simplicity, but toward *sustainable* complexity. For organizations where control, compliance, and legacy interoperability outweigh developer velocity, Jenkins isn't legacy--it's infrastructure.`,
@@ -1023,16 +868,11 @@ export const ALL_TOOLS: ToolData[] = [
         "circleci"
       ],
 
-    scoreBreakdown: { features: 4.8, reviews: 4.5, momentum: 3.9, popularity: 4.7 },
-
-    userQuotes: [],
   },
   {
     id: "github-actions",
     name: "GitHub Actions",
     category: "CI/CD",
-    rating: 4.68,
-    reviewCount: 0,
     icon: "git-branch",
     description: "Native CI/CD platform tightly integrated with GitHub repositories and workflows.",
     longDescription: `GitHub Actions is GitHub's native automation platform--more than just CI/CD, it's a unified workflow engine deeply embedded in the developer's daily context. Launched in 2018 and now used by over 90% of Fortune 500 engineering teams, it processes more than 40 million workflows daily across 100+ million public repositories. Its YAML-driven syntax supports complex orchestration--including matrix builds (e.g., testing across 12 OS/Node.js version combos in parallel), concurrency limits (up to 100 jobs/account on Team plans), and fine-grained permissions (e.g., PR-triggered workflows run with read-only tokens by default). Benchmarks show median job startup latency of 8-12 seconds on hosted runners, with Linux job completion averaging 47s for standard Node.js test suites--on par with CircleCI (45s) but 18% faster than GitLab CI (58s) for equivalent configurations. Unlike Jenkins (which requires extensive plugin management and infrastructure upkeep) or Bitbucket Pipelines (limited to 50 build minutes/month on free tier), GitHub Actions offers generous free tiers (2,000 minutes/month on Linux, 1,000 on Windows) and seamless integration with GitHub-native features: auto-merging Dependabot PRs post-test, triggering issue-based deployments via /deploy comments, and syncing status to Projects boards. Financial services firms use it for SOC2-compliant artifact signing with self-hosted runners air-gapped from the internet; SaaS startups leverage reusable workflows to enforce Terraform plan validation across 50+ microservices. Still, limitations persist: Windows runner queue times exceed 3 minutes during peak hours (affecting 20% of Windows-targeted workflows), macOS runners lack M2 support in public pools, and audit logging requires Enterprise-level billing. Looking ahead, GitHub's 2024 roadmap emphasizes AI-assisted workflow generation (via Copilot Actions), improved observability with OpenTelemetry-native tracing, and expanded ARM64 and GPU-accelerated runner availability--signaling a shift from infrastructure automation toward intelligent, context-aware DevEx orchestration.`,
@@ -1079,16 +919,11 @@ export const ALL_TOOLS: ToolData[] = [
         "gitlab-ci-cd"
       ],
 
-    scoreBreakdown: { features: 4.7, reviews: 4.7, momentum: 4.8, popularity: 4.6 },
-
-    userQuotes: [],
   },
   {
     id: "circleci",
     name: "CircleCI",
     category: "CI/CD",
-    rating: 4.1,
-    reviewCount: 0,
     icon: "box",
     description: "Cloud-native CI/CD platform optimized for speed, caching, and parallelism.",
     longDescription:
@@ -1138,21 +973,11 @@ export const ALL_TOOLS: ToolData[] = [
       "github-actions",
     ],
 
-    scoreBreakdown: {
-    features: 88.6,
-    reviews: 83.2,
-    momentum: 78.9,
-    popularity: 85.4,
-  },
-
-    userQuotes: [],
   },
   {
     id: "gitlab-ci-cd",
     name: "GitLab CI/CD",
     category: "CI/CD",
-    rating: 4.6,
-    reviewCount: 0,
     icon: "git-branch",
     description: "Integrated, Git-native CI/CD platform with pipelines, environments, and security scanning.",
     longDescription: `GitLab CI/CD is the industry's most tightly coupled, Git-native automation platform--uniquely embedded within a unified DevOps suite rather than bolted on as an add-on. With 30+ million registered users and adoption by 75% of Fortune 100 enterprises (GitLab 2023 Annual Report), it delivers unparalleled traceability: every pipeline stage maps directly to a commit, branch, or merge request, enabling true end-to-end auditability. Benchmarks show median pipeline startup latency of 780ms for repos <10k LOC and 1.8s for 50k-100k LOC (GitLab 2023 Performance Whitepaper), outperforming GitHub Actions (avg. 2.4s) and Bitbucket Pipelines (avg. 3.1s) in controlled multi-tenant SaaS environments. Unlike Jenkins--whose plugin-driven architecture introduces configuration drift and scaling complexity--GitLab uses declarative YAML (.gitlab-ci.yml) with built-in support for dynamic child pipelines, cross-project triggers, and matrix builds across 12+ executor types (Docker, Kubernetes, HashiCorp Nomad, custom). Real-world deployments include Siemens' industrial IoT firmware pipelines (reducing release cycles from 6 weeks to 96 hours), Capital One's PCI-compliant banking microservices (enabling 12,000+ daily deployments with SOC 2-aligned artifact signing), and NASA JPL's open-source flight software CI (leveraging air-gapped self-hosted runners with FIPS 140-2 validated encryption). While GitLab excels in visibility and compliance--offering built-in SAST (powered by Semgrep & CodeQL), DAST (ZAP-based), container scanning, and dependency scanning--it faces trade-offs: self-hosted instances require significant operational overhead (e.g., Redis/Elasticsearch tuning for >500 concurrent jobs), and complex monorepo workflows still lag behind Buildkite's granular job routing and caching fidelity. Pricing transparency remains a pain point--advanced security and compliance features (e.g., policy-as-code enforcement, audit event streaming) are gated behind Ultimate-tier subscriptions ($99/user/year). Looking ahead, GitLab's 2024 roadmap prioritizes AI-assisted pipeline optimization (auto-suggesting parallelization and cache strategies), deeper Kubernetes-native observability via OpenTelemetry integration, and expanded edge CI for embedded systems. For organizations prioritizing auditability, regulatory alignment, and single-vendor lifecycle management, GitLab CI/CD remains the benchmark--though high-scale, polyglot infrastructure teams may still supplement with Jenkins or Buildkite for niche orchestration needs.`,
@@ -1201,16 +1026,11 @@ export const ALL_TOOLS: ToolData[] = [
         "circleci"
       ],
 
-    scoreBreakdown: { features: 4.8, reviews: 4.6, momentum: 4.7, popularity: 4.5 },
-
-    userQuotes: [],
   },
   {
     id: "travis-ci",
     name: "Travis CI",
     category: "CI/CD",
-    rating: 4.1,
-    reviewCount: 0,
     icon: "box",
     description: "Cloud-hosted CI service optimized for GitHub repos with simple YAML config and fast setup.",
     longDescription:
@@ -1238,7 +1058,6 @@ export const ALL_TOOLS: ToolData[] = [
     pricing: "Paid only",
     pricingDetail: "Updated detailed pricing for Travis CI in 2026: Free tier includes 1,000 monthly build minutes for public repos; Pro tier ($29/user/month) adds 2,500 private repo minutes, priority queueing, and advanced security scanning; Enterprise tier ($99/user/month) includes SSO, audit logs, SLA guarantees, dedicated runners, and custom domain support.",
 
-
     features: [
       "YAML-driven configuration with support for multi-language runtimes (Ruby, Python, Node.js, Java, Go, Rust, Elixir)",
       "Parallel job execution across up to 10 concurrent jobs per build with automatic test suite distribution",
@@ -1264,38 +1083,11 @@ export const ALL_TOOLS: ToolData[] = [
       "gitlab-ci-cd",
     ],
 
-    scoreBreakdown: {
-    features: 85,
-    reviews: 80,
-    momentum: 54,
-    popularity: 65,
-  },
-
-  userQuotes: [
-    {
-      role: "Lead Maintainer",
-      company: "ExampleOrg",
-      quote: "Travis CI's matrix builds cut our cross-platform test runtime from 42 to 17 minutes—worth the config overhead"
-    },
-    {
-      role: "DevOps Engineer",
-      company: "Company2",
-      quote: "We migrated from Jenkins solely for its GitHub-native workflow and reliable macOS CI, though we had to build our own cache invalidation logic"
-    },
-    {
-      role: "OSS Contributor",
-      company: "Project3",
-      quote: "Free OSS minutes kept our CI running through three major dependency upgrades—no credit card required, no surprises"
-    },
-  ],
-
 },
 {
   id: "teamcity",
     name: "TeamCity",
     category: "CI/CD",
-    rating: 4.7,
-    reviewCount: 0,
     icon: "box",
     description: "Powerful, on-premises CI/CD server by JetBrains with intuitive UI and deep IDE integration.",
     longDescription:
@@ -1346,21 +1138,11 @@ export const ALL_TOOLS: ToolData[] = [
       "azure-pipelines",
     ],
 
-    scoreBreakdown: {
-    features: 96.4,
-    reviews: 93.7,
-    momentum: 84.2,
-    popularity: 89.5,
-  },
-
-    userQuotes: [],
   },
   {
     id: "bamboo",
     name: "Bamboo",
     category: "CI/CD",
-    rating: 4.2,
-    reviewCount: 0,
     icon: "box",
     description: "Atlassian's legacy CI/CD server with tight Jira & Bitbucket integration.",
     longDescription:
@@ -1388,7 +1170,6 @@ export const ALL_TOOLS: ToolData[] = [
     pricing: "Paid",
     pricingDetail: "Updated detailed pricing for Bamboo in 2026... Bamboo is now offered exclusively as Atlassian Data Center (on-premises/private cloud) with annual subscription tiers: Starter ($1,200/year for up to 5 agents), Standard ($4,800/year for up to 25 agents), and Enterprise ($14,500/year for unlimited agents + premium SLA & 24/7 support). Cloud migration path discontinued; legacy Bamboo Cloud customers migrated to Bitbucket Pipelines with bundled credits. All tiers include free upgrades, security patches, and access to Atlassian Marketplace plugins.",
 
-
     features: [
       "Visual pipeline designer with drag-and-drop task configuration and real-time validation",
       "Bamboo Specs support for infrastructure-as-code pipelines stored directly in source repositories (YAML/Java)",
@@ -1414,22 +1195,11 @@ export const ALL_TOOLS: ToolData[] = [
       "gitlab-ci-cd",
     ],
 
-    scoreBreakdown: {
-    features: 88,
-    reviews: 90,
-    momentum: 36,
-    popularity: 53,
-  },
-
-    userQuotes: [],
-
   },
   {
     id: "argocd",
     name: "ArgoCD",
     category: "CI/CD",
-    rating: 4.7,
-    reviewCount: 0,
     icon: "box",
     description: "Kubernetes-native GitOps continuous delivery tool for declarative deployments.",
     longDescription:
@@ -1480,21 +1250,11 @@ export const ALL_TOOLS: ToolData[] = [
       "spinnaker",
     ],
 
-    scoreBreakdown: {
-    features: 94.2,
-    reviews: 92.7,
-    momentum: 97.5,
-    popularity: 95.8,
-  },
-
-    userQuotes: [],
   },
   {
     id: "spinnaker",
     name: "Spinnaker",
     category: "CI/CD",
-    rating: 4.1,
-    reviewCount: 0,
     icon: "box",
     description: "Open-source, multi-cloud continuous delivery platform built for scale.",
     longDescription:
@@ -1545,21 +1305,11 @@ export const ALL_TOOLS: ToolData[] = [
       "bamboo",
     ],
 
-    scoreBreakdown: {
-    features: 90.3,
-    reviews: 84.1,
-    momentum: 72.8,
-    popularity: 76.4,
-  },
-
-    userQuotes: [],
   },
     {
     id: "drone-ci",
     name: "Drone CI",
     category: "CI/CD",
-    rating: 4.3,
-    reviewCount: 0,
     icon: "box",
     description: "Lightweight, container-native CI/CD platform built on Docker and Kubernetes.",
     longDescription:
@@ -1610,21 +1360,11 @@ export const ALL_TOOLS: ToolData[] = [
         "gitlab-ci-cd",
       ],
 
-    scoreBreakdown: {
-        features: 92.5,
-        reviews: 87.0,
-        momentum: 78.5,
-        popularity: 74.0,
-      },
-
-    userQuotes: [],
   },
   {
     id: "postman",
     name: "Postman",
     category: "API Development",
-    rating: 4.5,
-    reviewCount: 0,
     icon: "beaker",
     description: "Collaborative API client and testing platform with automation and documentation.",
     longDescription:
@@ -1675,21 +1415,11 @@ export const ALL_TOOLS: ToolData[] = [
       "swagger",
     ],
 
-    scoreBreakdown: {
-    features: 92.8,
-    reviews: 91.5,
-    momentum: 89.7,
-    popularity: 95.2,
-  },
-
-    userQuotes: [],
   },
   {
     id: "swagger",
     name: "Swagger",
     category: "API Development",
-    rating: 4.1,
-    reviewCount: 0,
     icon: "book-open",
     description: "Open-source interactive API documentation renderer for OpenAPI specs.",
     longDescription:
@@ -1740,21 +1470,11 @@ export const ALL_TOOLS: ToolData[] = [
       "drone-ci",
     ],
 
-    scoreBreakdown: {
-    features: 83.0,
-    reviews: 86.4,
-    momentum: 73.8,
-    popularity: 89.2,
-  },
-
-    userQuotes: [],
   },
   {
     id: "insomnia",
     name: "Insomnia",
     category: "API Development",
-    rating: 4.6,
-    reviewCount: 0,
     icon: "beaker",
     description: "Open-source REST and GraphQL client with environment management and automation.",
     longDescription:
@@ -1803,21 +1523,11 @@ export const ALL_TOOLS: ToolData[] = [
       "apollo-graphql",
     ],
 
-    scoreBreakdown: {
-    features: 92.4,
-    reviews: 89.1,
-    momentum: 86.7,
-    popularity: 94.3,
-  },
-
-    userQuotes: [],
   },
   {
     id: "hoppscotch",
     name: "Hoppscotch",
     category: "API Development",
-    rating: 4.3,
-    reviewCount: 0,
     icon: "beaker",
     description: "Lightweight, open-source API client that runs entirely in-browser.",
     longDescription:
@@ -1867,21 +1577,11 @@ export const ALL_TOOLS: ToolData[] = [
       "apollo-graphql",
     ],
 
-    scoreBreakdown: {
-    features: 83.2,
-    reviews: 91.5,
-    momentum: 95.8,
-    popularity: 87.9,
-  },
-
-    userQuotes: [],
   },
   {
     id: "apollo-graphql",
     name: "Apollo GraphQL",
     category: "API Development",
-    rating: 4.7,
-    reviewCount: 0,
     icon: "share-2",
     description: "End-to-end platform for building, testing, and monitoring GraphQL APIs.",
     longDescription:
@@ -1930,21 +1630,11 @@ export const ALL_TOOLS: ToolData[] = [
       "hoppscotch",
     ],
 
-    scoreBreakdown: {
-    features: 96.8,
-    reviews: 93.2,
-    momentum: 88.5,
-    popularity: 97.1,
-  },
-
-    userQuotes: [],
   },
     {
     id: "rapidapi",
     name: "RapidAPI",
     category: "API Development",
-    rating: 4.3,
-    reviewCount: 0,
     icon: "link",
     description: "Unified API marketplace with testing, monitoring, and SDK generation.",
     longDescription:
@@ -1995,21 +1685,11 @@ export const ALL_TOOLS: ToolData[] = [
         "insomnia",
       ],
 
-    scoreBreakdown: {
-        features: 94.2,
-        reviews: 87.5,
-        momentum: 91.8,
-        popularity: 96.3,
-      },
-
-    userQuotes: [],
   },
   {
     id: "dbeaver",
     name: "DBeaver",
     category: "Database Tools",
-    rating: 4.7,
-    reviewCount: 0,
     icon: "database",
     description: "Free universal database tool with ERD, SQL editor, and admin capabilities.",
     longDescription:
@@ -2061,21 +1741,11 @@ export const ALL_TOOLS: ToolData[] = [
       "kubernetes",
     ],
 
-    scoreBreakdown: {
-    features: 96.8,
-    reviews: 93.2,
-    momentum: 88.5,
-    popularity: 97.1,
-  },
-
-    userQuotes: [],
   },
   {
     id: "pgadmin",
     name: "pgAdmin",
     category: "Database Tools",
-    rating: 4.1,
-    reviewCount: 0,
     icon: "database",
     description: "Official open-source administration and development platform for PostgreSQL.",
     longDescription:
@@ -2127,21 +1797,11 @@ export const ALL_TOOLS: ToolData[] = [
       "postman",
     ],
 
-    scoreBreakdown: {
-    features: 94.2,
-    reviews: 82.7,
-    momentum: 76.9,
-    popularity: 91.4,
-  },
-
-    userQuotes: [],
   },
   {
     id: "mongodb-compass",
     name: "MongoDB Compass",
     category: "Database Tools",
-    rating: 4.6,
-    reviewCount: 0,
     icon: "database",
     description: "Official GUI for MongoDB with visual query builder and real-time performance insights.",
     longDescription:
@@ -2192,21 +1852,11 @@ export const ALL_TOOLS: ToolData[] = [
       "robo-3t",
     ],
 
-    scoreBreakdown: {
-    features: 87.2,
-    reviews: 92.5,
-    momentum: 89.1,
-    popularity: 94.3,
-  },
-
-    userQuotes: [],
   },
   {
     id: "tableplus",
     name: "TablePlus",
     category: "Database Tools",
-    rating: 4.8,
-    reviewCount: 0,
     icon: "database",
     description: "Modern, native database client with unified UI for 20+ databases and strong security focus.",
     longDescription:
@@ -2257,21 +1907,11 @@ export const ALL_TOOLS: ToolData[] = [
       "dbeaver",
     ],
 
-    scoreBreakdown: {
-    features: 91.4,
-    reviews: 96.7,
-    momentum: 93.2,
-    popularity: 90.8,
-  },
-
-    userQuotes: [],
   },
   {
     id: "datagrip",
     name: "DataGrip",
     category: "Database Tools",
-    rating: 4.3,
-    reviewCount: 0,
     icon: "database",
     description: "IntelliJ-based IDE for databases with deep SQL analysis, refactoring, and multi-DB support.",
     longDescription:
@@ -2323,21 +1963,11 @@ export const ALL_TOOLS: ToolData[] = [
       "vscode",
     ],
 
-    scoreBreakdown: {
-    features: 95.6,
-    reviews: 84.2,
-    momentum: 78.9,
-    popularity: 82.3,
-  },
-
-    userQuotes: [],
   },
   {
     id: "mysql-workbench",
     name: "MySQL Workbench",
     category: "Database Tools",
-    rating: 4.3,
-    reviewCount: 0,
     icon: "database",
     description: "Official GUI tool for MySQL database design, administration, and development.",
     longDescription:
@@ -2387,21 +2017,11 @@ export const ALL_TOOLS: ToolData[] = [
       "studio-3t",
     ],
 
-    scoreBreakdown: {
-    features: 87.5,
-    reviews: 89.2,
-    momentum: 76.3,
-    popularity: 92.1,
-  },
-
-    userQuotes: [],
   },
   {
     id: "redisinsight",
     name: "RedisInsight",
     category: "Database Tools",
-    rating: 4.6,
-    reviewCount: 0,
     icon: "database",
     description: "Official GUI for Redis development, debugging, and cluster management.",
     longDescription:
@@ -2451,21 +2071,11 @@ export const ALL_TOOLS: ToolData[] = [
       "studio-3t",
     ],
 
-    scoreBreakdown: {
-    features: 94.1,
-    reviews: 91.8,
-    momentum: 95.6,
-    popularity: 88.4,
-  },
-
-    userQuotes: [],
   },
   {
     id: "studio-3t",
     name: "Studio 3T",
     category: "Database Tools",
-    rating: 4.1,
-    reviewCount: 0,
     icon: "database",
     description: "Powerful MongoDB IDE with SQL query support and intuitive data visualization.",
     longDescription:
@@ -2515,21 +2125,11 @@ export const ALL_TOOLS: ToolData[] = [
       "redisinsight",
     ],
 
-    scoreBreakdown: {
-    features: 90.8,
-    reviews: 85.5,
-    momentum: 74.1,
-    popularity: 81.6,
-  },
-
-    userQuotes: [],
   },
   {
     id: "docker",
     name: "Docker",
     category: "Container & Orchestration",
-    rating: 4.68,
-    reviewCount: 0,
     icon: "box",
     description: "Local container runtime and development environment for macOS/Windows.",
     longDescription:
@@ -2580,21 +2180,11 @@ export const ALL_TOOLS: ToolData[] = [
       "podman",
     ],
 
-    scoreBreakdown: {
-      features: 9.4,
-      reviews: 8.9,
-      momentum: 8.7,
-      popularity: 9.6,
-    },
-
-    userQuotes: [],
   },
 {
     id: "kubernetes",
     name: "Kubernetes",
     category: "Container & Orchestration",
-    rating: 4.3,
-    reviewCount: 0,
     icon: "box",
     description: "Open-source container orchestration platform for automating deployment, scaling, and ops.",
     longDescription:
@@ -2645,21 +2235,11 @@ export const ALL_TOOLS: ToolData[] = [
       "openshift",
     ],
 
-    scoreBreakdown: {
-    features: 96.5,
-    reviews: 84.5,
-    momentum: 93.8,
-    popularity: 98.0,
-  },
-
-    userQuotes: [],
   },
   {
     id: "terraform",
     name: "Terraform",
     category: "Container & Orchestration",
-    rating: 4.7,
-    reviewCount: 0,
     icon: "box",
     description: "Infrastructure-as-Code tool for provisioning and managing cloud, on-prem, and SaaS resources.",
     longDescription:
@@ -2710,21 +2290,11 @@ export const ALL_TOOLS: ToolData[] = [
       "pulumi",
     ],
 
-    scoreBreakdown: {
-      features: 9.2,
-      reviews: 8.7,
-      momentum: 8.9,
-      popularity: 9.4,
-    },
-
-    userQuotes: [],
   },
   {
     id: "ansible",
     name: "Ansible",
     category: "Container & Orchestration",
-    rating: 4.6,
-    reviewCount: 0,
     icon: "settings",
     description: "Agentless IT automation platform for configuration management, deployment, and orchestration.",
     longDescription:
@@ -2774,21 +2344,11 @@ export const ALL_TOOLS: ToolData[] = [
       "github",
     ],
 
-    scoreBreakdown: {
-    features: 92.5,
-    reviews: 89.3,
-    momentum: 76.8,
-    popularity: 94.1,
-  },
-
-    userQuotes: [],
   },
   {
     id: "helm",
     name: "Helm",
     category: "Container & Orchestration",
-    rating: 4.4,
-    reviewCount: 0,
     icon: "box",
     description: "Kubernetes package manager for templating, installing, and managing Helm charts.",
     longDescription:
@@ -2840,21 +2400,11 @@ export const ALL_TOOLS: ToolData[] = [
       "argocd",
     ],
 
-    scoreBreakdown: {
-    features: 88.7,
-    reviews: 85.2,
-    momentum: 91.4,
-    popularity: 93.6,
-  },
-
-    userQuotes: [],
   },
   {
     id: "podman",
     name: "Podman",
     category: "Container & Orchestration",
-    rating: 4.3,
-    reviewCount: 0,
     icon: "box",
     description: "Daemonless, rootless container engine compatible with Docker CLI and OCI standards.",
     longDescription:
@@ -2906,21 +2456,11 @@ export const ALL_TOOLS: ToolData[] = [
       "kubernetes",
     ],
 
-    scoreBreakdown: {
-    features: 86.2,
-    reviews: 83.7,
-    momentum: 89.9,
-    popularity: 87.5,
-  },
-
-    userQuotes: [],
   },
   {
     id: "vagrant",
     name: "Vagrant",
     category: "Container & Orchestration",
-    rating: 4.3,
-    reviewCount: 0,
     icon: "box",
     description: "Lightweight wrapper for VMs and containers to standardize dev environments.",
     longDescription:
@@ -2973,21 +2513,11 @@ export const ALL_TOOLS: ToolData[] = [
       "github",
     ],
 
-    scoreBreakdown: {
-    features: 86.2,
-    reviews: 89.5,
-    momentum: 71.3,
-    popularity: 82.7,
-  },
-
-    userQuotes: [],
   },
   {
     id: "packer",
     name: "Packer",
     category: "Container & Orchestration",
-    rating: 4.6,
-    reviewCount: 0,
     icon: "box",
     description: "Infrastructure-as-code tool for creating identical machine images across platforms.",
     longDescription:
@@ -3012,7 +2542,6 @@ export const ALL_TOOLS: ToolData[] = [
 
     pricing: "Free",
     pricingDetail: "Packer is fully open-source under the Mozilla Public License 2.0. HashiCorp offers enterprise support, SLAs, and advanced features (e.g., policy-as-code enforcement, centralized template registry) via HashiCorp Cloud Platform starting at $50/user/month — but core Packer functionality remains free forever.",
-
 
     features: [
       "Multi-cloud builder support (AWS, Azure, GCP, VMware, OpenStack, QEMU/KVM, Docker)",
@@ -3039,22 +2568,11 @@ export const ALL_TOOLS: ToolData[] = [
       "docker",
     ],
 
-    scoreBreakdown: {
-    features: 92,
-    reviews: 87,
-    momentum: 78,
-    popularity: 89,
-  },
-
-    userQuotes: [],
-
   },
   {
     id: "datadog",
     name: "Datadog",
     category: "Monitoring & Debugging",
-    rating: 4.5,
-    reviewCount: 0,
     icon: "monitor",
     description: "Unified observability platform for metrics, traces, logs, and security.",
     longDescription:
@@ -3107,21 +2625,11 @@ export const ALL_TOOLS: ToolData[] = [
       "kubernetes",
     ],
 
-    scoreBreakdown: {
-    features: 95.8,
-    reviews: 91.2,
-    momentum: 96.4,
-    popularity: 97.1,
-  },
-
-    userQuotes: [],
   },
   {
     id: "sentry",
     name: "Sentry",
     category: "Monitoring & Debugging",
-    rating: 4.6,
-    reviewCount: 0,
     icon: "shield-check",
     description: "Real-time error tracking and debugging for modern web and mobile apps.",
     longDescription:
@@ -3173,21 +2681,11 @@ export const ALL_TOOLS: ToolData[] = [
       "github",
     ],
 
-    scoreBreakdown: {
-      features: 9.2,
-      reviews: 8.7,
-      momentum: 9.0,
-      popularity: 8.9,
-    },
-
-    userQuotes: [],
   },
   {
     id: "grafana",
     name: "Grafana",
     category: "Monitoring & Debugging",
-    rating: 4.7,
-    reviewCount: 0,
     icon: "monitor",
     description: "Open-source analytics and interactive visualization platform for time-series data.",
     longDescription:
@@ -3237,21 +2735,11 @@ export const ALL_TOOLS: ToolData[] = [
       "datadog",
     ],
 
-    scoreBreakdown: {
-    features: 96,
-    reviews: 94,
-    momentum: 97,
-    popularity: 98,
-  },
-
-    userQuotes: [],
   },
   {
     id: "prometheus",
     name: "Prometheus",
     category: "Monitoring & Debugging",
-    rating: 4.5,
-    reviewCount: 0,
     icon: "activity",
     description: "Open-source systems monitoring and alerting toolkit with a dimensional data model.",
     longDescription:
@@ -3304,21 +2792,11 @@ export const ALL_TOOLS: ToolData[] = [
       "influxdb",
     ],
 
-    scoreBreakdown: {
-    features: 89.5,
-    reviews: 87.9,
-    momentum: 91.2,
-    popularity: 94.6,
-  },
-
-    userQuotes: [],
   },
   {
     id: "new-relic",
     name: "New Relic",
     category: "Monitoring & Debugging",
-    rating: 4.3,
-    reviewCount: 0,
     icon: "monitor",
     description: "Full-stack observability platform for real-time application performance monitoring.",
     longDescription:
@@ -3369,21 +2847,11 @@ export const ALL_TOOLS: ToolData[] = [
       "datadog",
     ],
 
-    scoreBreakdown: {
-    features: 92.5,
-    reviews: 87.3,
-    momentum: 79.6,
-    popularity: 85.1,
-  },
-
-    userQuotes: [],
   },
   {
     id: "splunk",
     name: "Splunk",
     category: "Monitoring & Debugging",
-    rating: 4.1,
-    reviewCount: 0,
     icon: "search",
     description: "Enterprise-grade log analytics and security information platform with powerful search.",
     longDescription:
@@ -3434,21 +2902,11 @@ export const ALL_TOOLS: ToolData[] = [
       "graylog",
     ],
 
-    scoreBreakdown: {
-    features: 96.2,
-    reviews: 83.7,
-    momentum: 71.4,
-    popularity: 91.8,
-  },
-
-    userQuotes: [],
   },
   {
     id: "elasticsearch",
     name: "Elasticsearch",
     category: "Monitoring & Debugging",
-    rating: 4.6,
-    reviewCount: 0,
     icon: "search",
     description: "Open-source, distributed search and analytics engine powering the Elastic Stack.",
     longDescription:
@@ -3499,21 +2957,11 @@ export const ALL_TOOLS: ToolData[] = [
       "opensearch",
     ],
 
-    scoreBreakdown: {
-    features: 94.8,
-    reviews: 92.1,
-    momentum: 88.9,
-    popularity: 95.7,
-  },
-
-    userQuotes: [],
   },
   {
     id: "jaeger",
     name: "Jaeger",
     category: "Monitoring & Debugging",
-    rating: 4.6,
-    reviewCount: 0,
     icon: "activity",
     description: "Open-source distributed tracing system for microservices monitoring.",
     longDescription:
@@ -3561,21 +3009,11 @@ export const ALL_TOOLS: ToolData[] = [
       "chronosphere",
     ],
 
-    scoreBreakdown: {
-    features: 92,
-    reviews: 94,
-    momentum: 89,
-    popularity: 96,
-  },
-
-    userQuotes: [],
   },
   {
     id: "opentelemetry",
     name: "OpenTelemetry",
     category: "Monitoring & Debugging",
-    rating: 4.3,
-    reviewCount: 0,
     icon: "share-2",
     description: "Vendor-neutral observability framework for telemetry data collection.",
     longDescription:
@@ -3625,21 +3063,11 @@ export const ALL_TOOLS: ToolData[] = [
       "chronosphere",
     ],
 
-    scoreBreakdown: {
-    features: 94.1,
-    reviews: 85.7,
-    momentum: 97.8,
-    popularity: 92.4,
-  },
-
-    userQuotes: [],
   },
   {
     id: "chronosphere",
     name: "Chronosphere",
     category: "Monitoring & Debugging",
-    rating: 4.8,
-    reviewCount: 0,
     icon: "monitor",
     description: "Enterprise-scale metrics platform built for Prometheus ecosystems.",
     longDescription:
@@ -3689,21 +3117,11 @@ export const ALL_TOOLS: ToolData[] = [
       "opentelemetry",
     ],
 
-    scoreBreakdown: {
-    features: 96.5,
-    reviews: 94.2,
-    momentum: 86.7,
-    popularity: 79.1,
-  },
-
-    userQuotes: [],
   },
     {
     id: "jest",
     name: "Jest",
     category: "Test Automation",
-    rating: 4.6,
-    reviewCount: 0,
     icon: "beaker",
     description: "Popular JavaScript testing framework for React, Node.js, and more.",
     longDescription:
@@ -3754,21 +3172,11 @@ export const ALL_TOOLS: ToolData[] = [
         "playwright",
       ],
 
-    scoreBreakdown: {
-        features: 94.0,
-        reviews: 87.5,
-        momentum: 82.0,
-        popularity: 96.5,
-      },
-
-    userQuotes: [],
   },
   {
     id: "selenium",
     name: "Selenium",
     category: "Test Automation",
-    rating: 4.1,
-    reviewCount: 0,
     icon: "beaker",
     description: "Open-source suite for automating web browsers across multiple platforms.",
     longDescription:
@@ -3820,21 +3228,11 @@ export const ALL_TOOLS: ToolData[] = [
       "webdriverio",
     ],
 
-    scoreBreakdown: {
-    features: 8.8,
-    reviews: 7.6,
-    momentum: 6.2,
-    popularity: 9.3,
-  },
-
-    userQuotes: [],
   },
   {
     id: "cypress",
     name: "Cypress",
     category: "Test Automation",
-    rating: 4.8,
-    reviewCount: 0,
     icon: "beaker",
     description: "Modern, developer-centric E2E testing framework with real-time reloads.",
     longDescription:
@@ -3885,14 +3283,6 @@ export const ALL_TOOLS: ToolData[] = [
       "vitest",
     ],
 
-    scoreBreakdown: {
-    features: 9.5,
-    reviews: 9.4,
-    momentum: 9.6,
-    popularity: 8.9,
-  },
-
-    userQuotes: [],
   },
 ];
 
