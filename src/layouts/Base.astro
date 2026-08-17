@@ -8,7 +8,7 @@ const { title, description } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title ? `${title} — DeveX Tools` : 'DeveX Tools — Developer Tools, Independently Reviewed'}</title>
+    <title>{title ? (title.includes('DeveX Tools') ? title : `${title} — DeveX Tools`) : 'DeveX Tools — Developer Tools, Independently Reviewed'}</title>
     <meta name="description" content={description || 'Independent developer tool resource and comparison site. IDEs, CI/CD platforms, Git tools, and more — researched by an independent developer.'} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
