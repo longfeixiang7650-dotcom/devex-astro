@@ -63,11 +63,9 @@ function renderContent(content: string): string {
         </div>
         <h1 class="page-title" style="font-size: 2rem; margin-bottom: 12px;">{post.title}</h1>
         <div style="display: flex; align-items: center; gap: 10px;">
-          <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--accent); color: white; display: flex; align-items: center; justify-content: center; font-size: 0.8125rem; font-weight: 700;">
-            {post.author?.split(' ').map(n => n[0]).join('')}
-          </div>
+          <img src="/avatar.png" alt={post.author} style="width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;" />
           <div>
-            <div style="font-size: 0.875rem; font-weight: 600;">{post.author}</div>
+            <div style="font-size: 0.875rem; font-weight: 600;"><a href="https://github.com/longfeixiang7650-dotcom" target="_blank" rel="noopener" style="color: var(--text); text-decoration: none;">{post.author}</a></div>
             <div style="font-size: 0.75rem; color: var(--text-muted);">{post.authorRole}</div>
           </div>
         </div>

@@ -111,8 +111,8 @@ Below is a concise, vendor-agnostic assessment of ten widely used CI/CD tools in
 Choosing a CI/CD tool depends on team size, compliance needs, infrastructure strategy, and existing platform investments. Prioritize tools that enforce security by default, reduce configuration complexity, and make failures actionable—not just fast. The most effective systems are those developers understand, trust, and maintain with minimal friction.
 
 *Data sourced from official vendor documentation, changelogs, and public pricing pages as of mid-2026.*`,
-    author: "DeveX Editorial Team",
-    authorRole: "Editorial Team",
+    author: "Long Feixiang",
+    authorRole: "Independent Developer",
     date: "2026-06-05",
     category: "DevOps and Infrastructure",
     readTime: 10,
@@ -209,8 +209,8 @@ Docker Desktop offers the most integrated Windows experience (via WSL2). Podman 
 Unlikely soon. Docker’s ecosystem — including Hub, CI integrations, and de facto standards — remains dominant. Podman fills a distinct niche: security-conscious, open-source, Linux-native tooling.
 
 Sources: Official documentation (Docker v4.32, Podman v4.9, OrbStack v1.12), G2 reviews (Spring 2026), GitHub issue trends, and vendor release notes — all publicly available as of May 2026.`,
-    author: "DeveX Editorial Team",
-    authorRole: "Editorial Team",
+    author: "Long Feixiang",
+    authorRole: "Independent Developer",
     date: "2026-06-06",
     category: "DevOps & Infrastructure",
     readTime: 13,
@@ -284,8 +284,8 @@ This comparison reflects the current state of three widely adopted browser autom
 None of these tools is universally “best.” Selection depends on concrete requirements: browser matrix, testing scope (E2E vs. component vs. automation), team expertise, and infrastructure constraints. Evaluating them against actual project needs — rather than generalized benchmarks — remains the most reliable path forward.
 
 *Sources: Official documentation (playwright.dev, cypress.io, pptr.dev), published changelogs (2024–2026), G2 and StackShare adoption data, and open-source repository activity (GitHub stars, commit frequency, issue resolution patterns).*`,
-    author: "DeveX Editorial Team",
-    authorRole: "Editorial Team",
+    author: "Long Feixiang",
+    authorRole: "Independent Developer",
     date: "2026-06-07",
     category: "Testing & QA",
     readTime: 12,
@@ -346,8 +346,8 @@ Focused squarely on error capture, crash grouping, and developer-facing diagnost
 No tool fully replaces the others. Many teams use Sentry alongside Grafana or Datadog to cover both error-centric and infrastructure-centric concerns. The strongest observability setups tend to be layered—not monolithic.
 
 *Sources: Vendor documentation, public changelogs, G2 product pages, and OpenTelemetry conformance reports as of June 2026.*`,
-    author: "DeveX Editorial Team",
-    authorRole: "Editorial Team",
+    author: "Long Feixiang",
+    authorRole: "Independent Developer",
     date: "2026-06-09",
     category: "DevOps & Infrastructure",
     readTime: 12,
@@ -433,8 +433,8 @@ GitHub Actions benefits from extensive community templates and YAML-first syntax
 No tool “wins” universally. The strongest choices align with team size, compliance requirements, platform engineering capacity, and existing infrastructure commitments. Prioritize interoperability (e.g., OpenTelemetry, OCI, GitOps standards) over proprietary abstractions—and measure outcomes that matter: mean time to recovery, change failure rate, and developer-reported friction—not just build duration.
 
 *Sources: Vendor documentation (Harvested Q2 2026), CNCF Annual Survey 2025, Linux Foundation State of Developer Experience 2026, G2 Enterprise DevOps Reports, StackShare Technology Adoption Data.*`,
-    author: "DeveX Editorial Team",
-    authorRole: "Editorial Team",
+    author: "Long Feixiang",
+    authorRole: "Independent Developer",
     date: "2026-06-10",
     category: "DevOps & Infrastructure",
     readTime: 10,
@@ -528,8 +528,8 @@ Cost comparisons depend heavily on team size, infrastructure model, and internal
 No platform is universally superior. The strongest choice aligns with your existing infrastructure, team expertise, compliance requirements, and tolerance for operational overhead. Evaluate based on real constraints — not hypothetical benchmarks. Prioritize maintainability, security hygiene, and developer ergonomics over feature count alone.
 
 *Sources: GitHub Docs (2026), GitLab Documentation (v17.0+), Jenkins.io, G2 Crowd (Q2 2026), State of DevOps Report (2026), CloudBees Enterprise Survey (2026).*`,
-    author: "DeveX Editorial Team",
-    authorRole: "Editorial Team",
+    author: "Long Feixiang",
+    authorRole: "Independent Developer",
     date: "2026-06-11",
     category: "DevOps & Infrastructure",
     readTime: 9,
@@ -604,9 +604,9 @@ The most specialized tier maps changes against dependency graphs, service bounda
 
 No single tool covers all needs. Effective adoption hinges on matching capability to workflow—not chasing feature count. As with any automation, the strongest ROI comes not from replacing reviewers, but from sharpening their focus on what only humans can assess.
 
-*Reviewed by the DevEx Tools Editorial Team | June 2026*`,
-    author: "DeveX Editorial Team",
-    authorRole: "Editorial Team",
+*Reviewed by Long Feixiang | June 2026*`,
+    author: "Long Feixiang",
+    authorRole: "Independent Developer",
     date: "2026-06-12",
     category: "Code Review / AI Tools",
     readTime: 9,
@@ -691,8 +691,8 @@ No—Biome’s formatter is compatible with many Prettier configurations and off
 Not yet. Projects like \`llm-guard\` exist but lack production-grade multi-language support and tuning for false positives.
 
 Code quality tools in 2026 serve less as rigid enforcers and more as contextual collaborators—surfacing assumptions, aligning intent across human and AI contributors, and making trade-offs visible. The strongest setups combine complementary strengths: precision scanning, behavioral insight, and developer ergonomics—without overpromising automation or concealing complexity.`,
-    author: "DeveX Editorial Team",
-    authorRole: "Editorial Team",
+    author: "Long Feixiang",
+    authorRole: "Independent Developer",
     date: "2026-06-13",
     category: "Code Quality / DevTools",
     readTime: 10,
@@ -802,8 +802,8 @@ Emerging offerings—including Dagger Cloud, Railway, and Qwak—embed DevEx bes
 DevEx engineering is not “DevOps with a new name.” It addresses a distinct layer: the developer’s interaction with tools, platforms, and processes. Its value lies not in abstract ideals, but in observable outcomes—faster iteration, lower onboarding friction, higher retention, and more resilient systems.
 
 The strongest DevEx initiatives share three traits: they’re grounded in real developer workflows, measured with both technical and human-centered signals, and iterated on transparently. As AI accelerates code generation, the bottleneck shifts from writing to understanding, validating, and integrating. DevEx is the discipline that sustains clarity in that shift.`,
-    author: "DeveX Editorial Team",
-    authorRole: "Editorial Team",
+    author: "Long Feixiang",
+    authorRole: "Independent Developer",
     date: "2026-06-14",
     category: "DevEx / Platform Engineering",
     readTime: 10,
@@ -879,8 +879,8 @@ This overview reflects publicly documented features, official documentation, lic
 All major tools now support some form of codebase-awareness, multi-file editing, and model flexibility. Differentiation increasingly hinges on *deployment model*, *ecosystem alignment*, and *resource efficiency*—not fundamental capability gaps.
 
 No tool eliminates the need for human review. Correctness, security, and maintainability still depend on developer judgment—not AI output alone.`,
-    author: "DeveX Editorial Team",
-    authorRole: "Editorial Team",
+    author: "Long Feixiang",
+    authorRole: "Independent Developer",
     date: "2026-06-15",
     category: "AI / Developer Tools",
     readTime: 13,
@@ -975,8 +975,8 @@ No single tool dominates all dimensions. Many mature teams adopt a pragmatic spl
 
 *Data sources: Official documentation, GitHub repositories, CNCF landscape reports, and public pricing pages as of June 2026.*`,
 
-    author: "DeveX Editorial Team",
-    authorRole: "Editorial Team",
+    author: "Long Feixiang",
+    authorRole: "Independent Developer",
     date: "2026-06-16",
     category: "DevOps & Infrastructure",
     readTime: 14,
@@ -1071,8 +1071,8 @@ For teams maintaining large Webpack configurations—especially those with custo
 
 The choice isn’t between “old” and “new,” but between two coherent models: one built for incremental evolution, the other for composability and standards alignment.`,
 
-    author: "DeveX Editorial Team",
-    authorRole: "Editorial Team",
+    author: "Long Feixiang",
+    authorRole: "Independent Developer",
     date: "2026-06-17",
     category: "Frontend & DX",
     readTime: 9,
@@ -1172,8 +1172,8 @@ No single tool dominates across all dimensions. Postman excels in enterprise col
 Teams increasingly adopt hybrid approaches: using Hoppscotch for rapid exploration, Insomnia for focused development, and Postman for documentation and CI—leveraging each tool where its architecture aligns with the task. The trend reflects broader shifts toward modular, purpose-built developer tooling rather than monolithic platforms.
 
 All three tools are actively maintained as of June 2026, with clear roadmaps published on their respective GitHub repositories and blogs.`,
-    author: "DeveX Editorial Team",
-    authorRole: "Editorial Team",
+    author: "Long Feixiang",
+    authorRole: "Independent Developer",
     date: "2026-06-18",
     category: "API Development",
     readTime: 12,
@@ -1282,8 +1282,8 @@ There is no universally “best” versioning strategy—only context-appropriat
 When choosing, prioritize what your least-experienced consumer (a partner developer, a legacy client, or a caching layer you don’t control) will handle reliably—not just what looks clean in a spec file.
 
 Pair any versioning choice with clear deprecation policies, observable version usage, and automated enforcement at the edge or application layer. Without those, even the most elegant scheme will erode over time.`,
-    author: "DeveX Editorial Team",
-    authorRole: "Editorial Team",
+    author: "Long Feixiang",
+    authorRole: "Independent Developer",
     date: "2026-06-19",
     category: "API Development",
     readTime: 10,
@@ -1359,8 +1359,8 @@ Docker Compose remains unmatched for local development velocity—but conflating
 ### Conclusion
 
 There is no universal “best” orchestrator. Kubernetes excels where portability, ecosystem depth, and strict declarative guarantees are required. Nomad offers a pragmatic balance of simplicity, flexibility, and production capability—particularly outside hyperscale environments. Docker Compose serves a narrow, vital role: accelerating inner-loop development. Using it beyond that scope invites technical debt, not efficiency. Choose based on what your workload *requires*, not what your tooling team prefers.`,
-    author: "DeveX Editorial Team",
-    authorRole: "Editorial Team",
+    author: "Long Feixiang",
+    authorRole: "Independent Developer",
     date: "2026-06-20",
     category: "DevOps",
     readTime: 10,
@@ -1461,8 +1461,8 @@ Decomposition fails most often due to misaligned scope—not technical limits:
 ## Conclusion
 
 Architecture in 2026 is about precision—not purity. Monoliths excel where coherence, speed, and simplicity matter most. Microservices unlock agility where scale, heterogeneity, and compliance demand isolation. The strongest systems treat boundaries as hypotheses—validated by metrics, refined over time, and never assumed. Ask not “Should we break up?” but “What boundary gives us the clearest path to shipping faster, complying reliably, and adapting to AI and edge shifts—without accumulating debt?” Let evidence—not ideology—guide the answer.`,
-    author: "DeveX Editorial Team",
-    authorRole: "Editorial Team",
+    author: "Long Feixiang",
+    authorRole: "Independent Developer",
     date: "2026-06-21",
     category: "Backend Architecture",
     readTime: 12,
@@ -1595,8 +1595,8 @@ No single tool leads across all dimensions. Selection depends on concrete constr
 - **Choose Insomnia** if your team works across multiple protocols and needs deep extensibility—particularly with Rust plugins, custom auth flows, or schema-aware tooling.  
 
 The right choice aligns with how your team builds, ships, and governs software—not with feature checklists or marketing claims.`,
-    author: "DeveX Editorial Team",
-    authorRole: "Editorial Team",
+    author: "Long Feixiang",
+    authorRole: "Independent Developer",
     date: "2026-06-22",
     category: "API Development",
     readTime: 12,
@@ -1616,8 +1616,8 @@ The right choice aligns with how your team builds, ships, and governs software�
     title: "The Rise of Platform Engineering Teams in 2026",
     excerpt: "Platform engineering has grown from a niche practice into a strategic priority for technology organizations, as teams standardize tooling and reduce friction for engineers. This post looks at how internal developer platforms reflect a broader shift from managing infrastructure in isolation to treating the developer experience as a first-class product.",
     content: '# The Rise of Platform Engineering Teams in 2026\n\n## Why Platform Engineering Is No Longer Optional\n\nPlatform engineering has grown from a niche practice into a strategic priority for many technology organizations. Industry analysts broadly agree that as cloud infrastructure grows more complex, teams are increasingly investing in internal developer platforms (IDPs) that standardize tooling and reduce friction for engineers. The maturing practice reflects a shift in mindset: from managing infrastructure in isolation to treating the developer experience as a first-class product.\n\n## From DevOps to Platform Engineering: A Strategic Evolution\n\nDevOps laid the foundation for reliable delivery pipelines; platform engineering extends that work by owning the entire developer journey -- provisioning, testing, observability, security guardrails, and local development environments. In many organizations platform teams now report directly to technical leadership rather than infrastructure teams, and their success metrics center on developer satisfaction, self-service adoption, and adherence to standardized golden paths.\n\nThe economic argument is straightforward: empowering developers to ship code without waiting on other teams reduces interruption and increases velocity. A recurring theme across industry commentary is that a comparatively small platform team can support a much larger population of product engineers through well-designed, composable internal tooling.\n\n## Key Tools Powering the Platform Stack\n\nNo single tool defines a platform team\'s stack; instead, interoperable and composable components do. Open-source services for developer portals, infrastructure resource provisioning, and workload orchestration are widely cited as common building blocks. In practice, many teams assemble an IDP from a developer portal for discoverability, infrastructure composition layers that let developers request capabilities rather than raw cloud resources, and standardized deployment workflows.\n\nThese components interoperate through open specifications, which reduces integration effort and lets platform teams focus on meaningful standardization rather than bespoke glue code.\n\n## Metrics That Matter: Measuring Platform Impact\n\nPlatform teams succeed when they improve measurable outcomes for the engineers they serve. Commonly tracked metrics include the share of workflows a developer can complete through self-service, the proportion of services deployed via approved and secure patterns, developer satisfaction scores, and the time required to stand up a new service. When these improve, organizations report reduced context-switching and faster time to value.\n\nA recurring observation across the community is that platform engineering is less about building more dashboards and more about reducing cognitive load -- removing the friction that slows engineers down.\n\n## What\'s Next: Predictions for H2 2026 and Beyond\n\nThree trends are likely to shape the rest of 2026:\n- AI-native platform assistants that draw on internal documentation, runbooks, and incident history to accelerate common workflows.\n- Growing product-management discipline for internal platforms, with dedicated owners accountable for roadmap and adoption.\n- Increasing attention to software supply chain integrity, prompting interest in standardized security and compliance guidance for developer platforms.\n\n## Final Thoughts: Building Platforms, Not Just Pipelines\n\nPlatform engineering in 2026 is less about YAML and more about empathy. Every minute a developer spends wrestling with tooling is time taken away from innovation. The rise of platform teams reflects a cultural shift from optimizing for reliability alone to optimizing for human productivity and satisfaction. The specific tools will keep evolving, but the goal remains constant: clear golden paths, deliberate simplification, and genuine attention to developer pain points.',
-    author: "DeveX Editorial Team",
-    authorRole: "Editorial Team",
+    author: "Long Feixiang",
+    authorRole: "Independent Developer",
     date: "2026-06-23",
     category: "DevOps",
     readTime: 8,
@@ -1726,8 +1726,8 @@ Adoption decisions should align with concrete constraints:
 The broader trend is clear: terminals are evolving from passive I/O interfaces toward active, contextual components of development environments. But as of 2026, no single solution satisfies all needs—and interoperability (e.g., pairing Ghostty with Fig on macOS, or using Fig alongside standard terminals elsewhere) remains a pragmatic path forward.
 
 Which tools are your teams evaluating—or deploying? We welcome technical feedback grounded in real-world implementation constraints.`,
-    author: "DeveX Editorial Team",
-    authorRole: "Editorial Team",
+    author: "Long Feixiang",
+    authorRole: "Independent Developer",
     date: "2026-06-24",
     category: "Developer Productivity",
     readTime: 10,
@@ -1795,8 +1795,8 @@ AI coding assistants are now widely adopted across engineering organizations —
 5. **Measure outcomes, not activity**: Velocity gains are real but uneven. Focus on cycle time reduction for specific task types (e.g., “time to first test” or “docs-to-PR latency”), not aggregate story points.
 
 AI coding assistants in 2026 are productivity amplifiers — not autonomous agents. Their impact is shaped less by raw capability and more by how thoughtfully they’re embedded in engineering practice. The strongest teams treat them like linters or formatters: useful, fallible, and always secondary to human ownership of correctness, safety, and intent.`,
-    author: "DeveX Editorial Team",
-    authorRole: "Editorial Team",
+    author: "Long Feixiang",
+    authorRole: "Independent Developer",
     date: "2026-06-25",
     category: "AI & Development",
     readTime: 10,
