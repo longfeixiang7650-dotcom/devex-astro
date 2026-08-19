@@ -21,7 +21,7 @@ const hasVideo = !!videoId;
 const _pl = tool.pricing.toLowerCase();
 const pricingLabel = (_pl.includes('free') && /paid|pro|premium|team|enterprise|per user|\$|tier/i.test(tool.pricing)) ? 'Freemium' : (_pl.includes('free') || _pl.includes('open')) ? 'Free' : /paid|\$|subscription/i.test(tool.pricing) ? 'Paid' : 'Commercial';
 ---
-<Base title={`${tool.name} Review 2026 — Hands-on Analysis | DeveX Tools`} description={`Honest hands-on review of ${tool.name}. ${tool.description.slice(0, 150)}`}>
+<Base title={`${tool.name} — Guide & Comparison 2026 | DeveX Tools`} description={`Guide to ${tool.name}. ${tool.description.slice(0, 150)}`}>
   <div class="container" style="padding-top: 32px;">
     <div class="breadcrumb">
       <a href="/">Home</a>
@@ -53,7 +53,7 @@ const pricingLabel = (_pl.includes('free') && /paid|pro|premium|team|enterprise|
           </div>
           <div style="text-align: center; padding: 12px 8px; background: var(--bg-subtle); border-radius: 6px; border: 1px solid var(--border);">
             <div style="font-size: 1.25rem; font-weight: 800; color: var(--text);">✓</div>
-            <div style="font-size: 0.6875rem; color: var(--text-muted);">Reviewed</div>
+            <div style="font-size: 0.6875rem; color: var(--text-muted);">Listed</div>
           </div>
           <div style="text-align: center; padding: 12px 8px; background: var(--bg-subtle); border-radius: 6px; border: 1px solid var(--border);">
             <div style="font-size: 1.25rem; font-weight: 800; color: var(--text);">{tool.features?.length || 0}</div>
@@ -70,7 +70,7 @@ const pricingLabel = (_pl.includes('free') && /paid|pro|premium|team|enterprise|
 
     <div style="display: flex; gap: 4px; overflow-x: auto; padding-bottom: 12px; margin-bottom: 24px; border-bottom: 1px solid var(--border);">
       <a href="#overview" style="padding: 8px 16px; background: var(--accent-light); color: var(--accent); border-radius: 20px; font-size: 0.8125rem; font-weight: 600; text-decoration: none; white-space: nowrap;">Overview</a>
-      <a href="#first-hand" style="padding: 8px 16px; background: var(--bg-subtle); color: var(--text-secondary); border-radius: 20px; font-size: 0.8125rem; text-decoration: none; white-space: nowrap;">First-Hand Look</a>
+      <a href="#site-overview" style="padding: 8px 16px; background: var(--bg-subtle); color: var(--text-secondary); border-radius: 20px; font-size: 0.8125rem; text-decoration: none; white-space: nowrap;">Site Overview</a>
       <a href="#pros-cons" style="padding: 8px 16px; background: var(--bg-subtle); color: var(--text-secondary); border-radius: 20px; font-size: 0.8125rem; text-decoration: none; white-space: nowrap;">Pros &amp; Cons</a>
       <a href="#features" style="padding: 8px 16px; background: var(--bg-subtle); color: var(--text-secondary); border-radius: 20px; font-size: 0.8125rem; text-decoration: none; white-space: nowrap;">Features</a>
       <a href="#pricing" style="padding: 8px 16px; background: var(--bg-subtle); color: var(--text-secondary); border-radius: 20px; font-size: 0.8125rem; text-decoration: none; white-space: nowrap;">Pricing</a>
@@ -86,12 +86,12 @@ const pricingLabel = (_pl.includes('free') && /paid|pro|premium|team|enterprise|
           </div>
         </section>
 
-        <section id="first-hand" style="margin-bottom: 32px; scroll-margin-top: 80px;">
-          <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 12px;">👁 A First-Hand Look</h2>
+        <section id="site-overview" style="margin-bottom: 32px; scroll-margin-top: 80px;">
+          <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 12px;">🔍 Official Site Overview</h2>
           <div style="padding: 18px 22px; border-left: 3px solid var(--accent); background: var(--bg-subtle); border-radius: 8px; font-size: 0.9375rem; color: var(--text-secondary); line-height: 1.7;">
             {tool.firstHandNote}
           </div>
-          <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 8px;">Written from a direct visit to the official site, August 2026.</p>
+          <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 8px;">Compiled from a direct visit to the official site, August 2026.</p>
         </section>
 
         <section id="pros-cons" style="margin-bottom: 32px; scroll-margin-top: 80px;">
@@ -131,7 +131,7 @@ const pricingLabel = (_pl.includes('free') && /paid|pro|premium|team|enterprise|
             <div style="display: flex; flex-direction: column; gap: 12px; padding: 32px 24px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-subtle); text-align: center;">
               <div style="font-size: 2.5rem;">🎥</div>
               <div style="font-size: 1rem; font-weight: 600;">Watch "{tool.name}" Reviews on YouTube</div>
-              <p style="font-size: 0.875rem; color: var(--text-secondary); max-width: 400px; margin: 0 auto;">See real users demonstrate and review {tool.name} — hands-on walkthroughs, feature deep-dives, and honest comparisons.</p>
+              <p style="font-size: 0.875rem; color: var(--text-secondary); max-width: 400px; margin: 0 auto;">See real users demonstrate and review {tool.name} — walkthroughs, feature deep-dives, and comparisons.</p>
               <a href={`https://www.youtube.com/results?search_query=${youtubeQuery}`} target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="display: inline-flex; justify-content: center; gap: 6px; margin-top: 4px;">
                 ▶ Watch on YouTube
               </a>
@@ -153,7 +153,7 @@ const pricingLabel = (_pl.includes('free') && /paid|pro|premium|team|enterprise|
         </section>
 
         <section style="border-top: 1px solid var(--border); padding-top: 16px; margin-top: 32px;">
-          <p style="font-size: 0.75rem; color: var(--text-muted);">⚖️ All listings reflect independent research by the site's founder. We do not accept sponsored placements. We currently do not participate in affiliate programs — see our <a href="/disclosure">full disclosure</a>.</p>
+          <p style="font-size: 0.75rem; color: var(--text-muted);">⚖️ All listings are compiled from official documentation and publicly available data. We do not accept sponsored placements. We currently do not participate in affiliate programs — see our <a href="/disclosure">full disclosure</a>.</p>
         </section>
       </div>
 
@@ -164,7 +164,7 @@ const pricingLabel = (_pl.includes('free') && /paid|pro|premium|team|enterprise|
             <div style="padding: 4px 0;"><strong>Category:</strong> {tool.category}</div>
             <div style="padding: 4px 0;"><strong>Pricing:</strong> {tool.pricing}</div>
             <div style="padding: 4px 0;"><strong>Website:</strong> <a href={tool.websiteUrl} target="_blank">{tool.websiteUrl?.replace('https://', '').replace('http://', '')}</a></div>
-            <div style="padding: 4px 0;"><strong>Reviewed:</strong> Independently reviewed by the site's founder</div>
+            <div style="padding: 4px 0;"><strong>Source:</strong> Compiled from official documentation</div>
           </div>
         </div>
 

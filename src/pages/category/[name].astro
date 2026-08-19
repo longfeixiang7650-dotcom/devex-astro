@@ -15,7 +15,7 @@ const tools = ALL_TOOLS.filter(t => t.category === category);
 const categorySlug = category.toLowerCase().replace(/[\/\s]+/g, '-');
 ---
 
-<Base title={`${category} Tools — DeveX Tools`} description={`Browse our collection of ${tools.length} ${category} tool reviews and comparisons.`}>
+<Base title={`${category} Tools — DeveX Tools`} description={`Browse our collection of ${tools.length} ${category} tool guides and comparisons.`}>
   <div class="container" style="padding-top: 32px;">
     <div class="breadcrumb">
       <a href="/">Home</a>
@@ -26,7 +26,7 @@ const categorySlug = category.toLowerCase().replace(/[\/\s]+/g, '-');
     </div>
 
     <h1 class="page-title">{category} Tools</h1>
-    <p class="page-subtitle">{tools.length} tools reviewed in this category</p>
+    <p class="page-subtitle">{tools.length} tools listed in this category</p>
 
     <div class="tools-grid">
       {tools.map(tool => (

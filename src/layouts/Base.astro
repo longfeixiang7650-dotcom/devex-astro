@@ -8,8 +8,8 @@ const { title, description } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title ? (title.includes('DeveX Tools') ? title : `${title} — DeveX Tools`) : 'DeveX Tools — Developer Tools, Independently Reviewed'}</title>
-    <meta name="description" content={description || 'Independent developer tool resource and comparison site. IDEs, CI/CD platforms, Git tools, and more — researched by an independent developer.'} />
+    <title>{title ? (title.includes('DeveX Tools') ? title : `${title} — DeveX Tools`) : 'DeveX Tools — Developer Tool Guides & Comparisons'}</title>
+    <meta name="description" content={description || 'A curated directory of developer tools — IDEs, CI/CD platforms, Git tools, API tools, and more. Compiled from official documentation and public data.'} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
@@ -31,7 +31,7 @@ const { title, description } = Astro.props;
 
     <footer class="site-footer">
       <div class="footer-inner">
-        <span>&copy; {new Date().getFullYear()} DeveX Tools. Independent developer tool reviews.</span>
+        <span>&copy; {new Date().getFullYear()} DeveX Tools. Curated developer tool guides & comparisons.</span>
         <div class="footer-links">
           <a href="/about">About</a>
           <a href="/contact">Contact</a>

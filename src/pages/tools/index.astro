@@ -5,10 +5,10 @@ import { ALL_TOOLS } from '../../data/tools';
 const categories = [...new Set(ALL_TOOLS.map(t => t.category))];
 ---
 
-<Base title="All Developer Tools — DeveX Tools" description="Browse our complete collection of developer tool reviews. IDEs, CI/CD, version control, API tools, and more.">
+<Base title="All Developer Tools — DeveX Tools" description="Browse our complete collection of developer tool guides and comparisons. IDEs, CI/CD, version control, API tools, and more.">
   <div class="container" style="padding-top: 32px;">
     <h1 class="page-title">All Developer Tools</h1>
-    <p class="page-subtitle">{ALL_TOOLS.length} tools, independently reviewed</p>
+    <p class="page-subtitle">{ALL_TOOLS.length} tools, curated &amp; compared</p>
 
     <!-- Category filters -->
     <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; padding-bottom: 20px; border-bottom: 1px solid var(--border);">
@@ -43,7 +43,7 @@ const categories = [...new Set(ALL_TOOLS.map(t => t.category))];
             ))}
           </div>
           <div style="margin-top: 12px; font-size: 0.75rem; color: var(--text-muted);">
-            {tool.pricing} · <span style="color: var(--accent);">Read review →</span>
+            {tool.pricing} · <span style="color: var(--accent);">Details →</span>
           </div>
         </a>
       ))}
