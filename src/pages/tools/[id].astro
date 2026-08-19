@@ -70,6 +70,7 @@ const pricingLabel = (_pl.includes('free') && /paid|pro|premium|team|enterprise|
 
     <div style="display: flex; gap: 4px; overflow-x: auto; padding-bottom: 12px; margin-bottom: 24px; border-bottom: 1px solid var(--border);">
       <a href="#overview" style="padding: 8px 16px; background: var(--accent-light); color: var(--accent); border-radius: 20px; font-size: 0.8125rem; font-weight: 600; text-decoration: none; white-space: nowrap;">Overview</a>
+      <a href="#first-hand" style="padding: 8px 16px; background: var(--bg-subtle); color: var(--text-secondary); border-radius: 20px; font-size: 0.8125rem; text-decoration: none; white-space: nowrap;">First-Hand Look</a>
       <a href="#pros-cons" style="padding: 8px 16px; background: var(--bg-subtle); color: var(--text-secondary); border-radius: 20px; font-size: 0.8125rem; text-decoration: none; white-space: nowrap;">Pros &amp; Cons</a>
       <a href="#features" style="padding: 8px 16px; background: var(--bg-subtle); color: var(--text-secondary); border-radius: 20px; font-size: 0.8125rem; text-decoration: none; white-space: nowrap;">Features</a>
       <a href="#pricing" style="padding: 8px 16px; background: var(--bg-subtle); color: var(--text-secondary); border-radius: 20px; font-size: 0.8125rem; text-decoration: none; white-space: nowrap;">Pricing</a>
@@ -83,6 +84,14 @@ const pricingLabel = (_pl.includes('free') && /paid|pro|premium|team|enterprise|
           <div style="line-height: 1.7; color: var(--text-secondary);">
             {tool.longDescription.split('\n').map(p => p.trim()).filter(p => p).map(p => (<p style="margin-bottom: 12px;">{p}</p>))}
           </div>
+        </section>
+
+        <section id="first-hand" style="margin-bottom: 32px; scroll-margin-top: 80px;">
+          <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 12px;">👁 A First-Hand Look</h2>
+          <div style="padding: 18px 22px; border-left: 3px solid var(--accent); background: var(--bg-subtle); border-radius: 8px; font-size: 0.9375rem; color: var(--text-secondary); line-height: 1.7;">
+            {tool.firstHandNote}
+          </div>
+          <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 8px;">Written from a direct visit to the official site, August 2026.</p>
         </section>
 
         <section id="pros-cons" style="margin-bottom: 32px; scroll-margin-top: 80px;">
