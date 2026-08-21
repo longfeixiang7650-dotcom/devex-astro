@@ -15,7 +15,7 @@ export const BLOG_POSTS: BlogPost[] = [
 {
     slug: "top-10-ci-cd-tools-2026",
     title: "CI/CD Tools in 2026: GitHub Actions, GitLab CI, Jenkins, and More Compared",
-    excerpt: "After years of using various CI systems, the author adopted GitHub Actions for personal projects, discontinued Jenkins, and canceled underutilized hosted CI services. This shift was driven by practical considerations around cost, maintenance, and workflow efficiency.",
+    excerpt: "A comparison of GitHub Actions, GitLab CI, Jenkins, CircleCI, and Buildkite for solo developers — covering pricing for public and private repositories, debugging speed, self-hosting overhead, and configuration maintainability.",
     content: `# CI/CD Tools in 2026: GitHub Actions, GitLab CI, Jenkins, and More Compared
 
 For solo developers maintaining small-scale projects, the choice of CI/CD tool is less about enterprise-grade orchestration and more about sustainability, cost efficiency, and integration with existing workflows. This guide compares widely used CI/CD platforms—GitHub Actions, GitLab CI, Jenkins, CircleCI, and Buildkite—based on objective criteria relevant to independent developers: pricing models for public and private repositories, debugging speed and visibility, operational overhead (especially self-hosting requirements), and configuration maintainability.
@@ -96,7 +96,7 @@ For developers whose primary code hosting and collaboration platform is GitHub, 
   {
     slug: "docker-vs-podman-vs-orbstack-2026-developer-experience",
     title: "Docker vs Podman vs OrbStack: A 2026 Comparison for Local Development",
-    excerpt: "The author uses Docker on servers and OrbStack on macOS, having evaluated Podman before selecting alternatives. This post outlines the practical criteria and real-world considerations guiding container engine selection in 2026.",
+    excerpt: "A 2026 comparison of Docker, Podman, and OrbStack for local development — covering performance, platform support, licensing, and the practical trade-offs when choosing a container engine.",
     content: `# Docker vs Podman vs OrbStack: A 2026 Comparison for Local Development
 
 The container runtime landscape in 2026 is less defined by technical superiority and more shaped by platform alignment. Docker remains the de facto standard for production deployments and cross-platform tooling, while alternatives have gained traction in specific contexts—particularly on macOS and Linux workstations where resource efficiency, integration, and security posture are prioritized.
@@ -292,7 +292,7 @@ In either case, adopting *some* form of structured observability is strongly adv
   {
     slug: "best-devops-tools-2026-comparison",
     title: "The Best DevOps Tools in 2026: A Practical Comparison",
-    excerpt: "The author’s DevOps stack has been reduced to roughly a dozen trusted tools, with more discarded than retained. The summary examines which tools endured real-world project use and the reasons for their continued adoption.",
+    excerpt: "A practical comparison of the DevOps tooling landscape in 2026 — which tools offer the best balance of capability, cost, and operational overhead for small teams and solo developers.",
     content: `# The Best DevOps Tools in 2026: A Practical Comparison
 
 A sustainable DevOps toolchain is not defined by feature count or vendor marketing, but by resilience under real-world constraints: limited maintenance bandwidth, variable team size, and evolving operational scale. This guide reflects a distilled set of tools that have demonstrated long-term viability across diverse project types — from solo development to small-team cloud deployments — based on objective criteria including usability at different scales, operational durability, and failure transparency.
@@ -810,7 +810,7 @@ Migration risk is low when approached methodically: begin with Vite’s defaults
   {
     slug: "best-api-testing-tools-2026-postman-vs-insomnia-vs-hoppscotch",
     title: "Postman vs Insomnia vs Hoppscotch: API Testing Tools Compared in 2026",
-    excerpt: "After Postman’s pricing changes, the author switched to Hoppscotch for API testing and compared the trade-offs between the two tools.",
+    excerpt: "A comparison of Postman, Insomnia, and Hoppscotch for API testing in 2026 — covering pricing changes, feature differences, and the trade-offs when migrating between tools.",
     content: `# Postman vs Insomnia vs Hoppscotch: API Testing Tools Compared in 2026
 
 This comparison evaluates three widely used API testing tools—Postman, Insomnia, and Hoppscotch—based on functionality, architecture, pricing, collaboration capabilities, and suitability for different development workflows. The analysis reflects publicly documented features, licensing models, and architectural tradeoffs as of mid-2026.
@@ -1243,7 +1243,7 @@ This approach yields a “platform of one” or “platform of few”—a lightw
   {
     slug: "developer-productivity-tools-comparison-2026",
     title: "Terminal and Shell Tools Compared: Warp, Fig, Ghostty, and More",
-    excerpt: "The author previously used Fig, then tried Warp, and now uses Ghostty daily. Flashy features were seldom retained, with practical considerations driving the choice of terminal emulator.",
+    excerpt: "A 2026 comparison of modern terminal emulators — Warp, Fig, Ghostty, and others — focusing on the features that matter in daily development work versus marketing flash.",
 
     content: `# Terminal and Shell Tools Compared: Warp, Ghostty, and Historical Context
 
