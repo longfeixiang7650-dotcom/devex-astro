@@ -14,7 +14,7 @@ const categories = [...new Set(ALL_TOOLS.map(t => t.category))];
     <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; padding-bottom: 20px; border-bottom: 1px solid var(--border);">
       <span class="tag" style="background: var(--accent); color: white; padding: 6px 14px; cursor: default;">All</span>
       {categories.map(cat => (
-        <a href={`/category/${cat.toLowerCase().replace(/[\/\s]+/g, '-')}`} class="tag" style="padding: 6px 14px; text-decoration: none;">
+        <a href={`/category/${cat.toLowerCase().replace(/[\/\s&]+/g, '-')}`} class="tag" style="padding: 6px 14px; text-decoration: none;">
           {cat}
         </a>
       ))}

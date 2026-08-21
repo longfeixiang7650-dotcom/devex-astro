@@ -32,7 +32,7 @@ export const GET: APIRoute = async () => {
   // Category pages (from tool categories)
   const categories = [...new Set(ALL_TOOLS.map(t => t.category))];
   const categoryPages = categories.map(cat => ({
-    url: `/category/${cat.toLowerCase().replace(/[\/\s]+/g, '-')}`,
+    url: `/category/${cat.toLowerCase().replace(/[\/\s&]+/g, '-')}`,
     priority: 0.5,
   }));
 

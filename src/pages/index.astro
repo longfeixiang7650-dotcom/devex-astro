@@ -173,7 +173,7 @@ for (const cat of keyCategories) {
         </h2>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
           {categories.map(cat => (
-            <a href={`/category/${cat.toLowerCase().replace(/[\/\s]+/g, '-')}`} style="display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; border: 1px solid var(--border); border-radius: 8px; text-decoration: none; color: inherit; transition: border-color 0.15s;">
+            <a href={`/category/${cat.toLowerCase().replace(/[\/\s&]+/g, '-')}`} style="display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; border: 1px solid var(--border); border-radius: 8px; text-decoration: none; color: inherit; transition: border-color 0.15s;">
               <span style="font-size: 0.875rem; font-weight: 500;">{cat}</span>
               <span style="font-size: 0.75rem; color: var(--text-muted); background: var(--bg-subtle); padding: 2px 10px; border-radius: 12px;">
                 {categoryCounts[cat]} tools
@@ -198,7 +198,7 @@ for (const cat of keyCategories) {
         <div class="sidebar-section">
           <h3 class="sidebar-title">Categories</h3>
           {categories.map(cat => (
-            <a href={`/category/${cat.toLowerCase().replace(/[\/\s]+/g, '-')}`} class="sidebar-link">
+            <a href={`/category/${cat.toLowerCase().replace(/[\/\s&]+/g, '-')}`} class="sidebar-link">
               {cat}
               <span style="float: right; color: var(--text-muted); font-size: 0.75rem;">({categoryCounts[cat]})</span>
             </a>
